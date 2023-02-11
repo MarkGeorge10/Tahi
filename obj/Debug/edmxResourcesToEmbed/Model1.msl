@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_a8d12b_amahmyModelStoreContainer" CdmEntityContainer="db_a8d12b_amahmyEntities">
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.Country">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="ContID" ColumnName="ContID" />
+          <ScalarProperty Name="country_code" ColumnName="country_code" />
+          <ScalarProperty Name="country_enName" ColumnName="country_enName" />
+          <ScalarProperty Name="country_arName" ColumnName="country_arName" />
+          <ScalarProperty Name="country_enNationality" ColumnName="country_enNationality" />
+          <ScalarProperty Name="country_arNationality" ColumnName="country_arNationality" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiAdmins">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiAdmin">
+        <MappingFragment StoreEntitySet="ElTahiAdmins">
+          <ScalarProperty Name="EltahiAdminID" ColumnName="EltahiAdminID" />
+          <ScalarProperty Name="EltahiAdUserName" ColumnName="EltahiAdUserName" />
+          <ScalarProperty Name="EltahiAdUserPassWord" ColumnName="EltahiAdUserPassWord" />
+          <ScalarProperty Name="EltahiAdRegdateTime" ColumnName="EltahiAdRegdateTime" />
+          <ScalarProperty Name="EltahiAdRoleID" ColumnName="EltahiAdRoleID" />
+          <ScalarProperty Name="EltahiAdStatusID" ColumnName="EltahiAdStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiCategories">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiCategory">
+        <MappingFragment StoreEntitySet="ElTahiCategory">
+          <ScalarProperty Name="ElTahiCategoryID" ColumnName="ElTahiCategoryID" />
+          <ScalarProperty Name="ElTahiCategory1" ColumnName="ElTahiCategory" />
+          <ScalarProperty Name="ElTahiCategoryRegDT" ColumnName="ElTahiCategoryRegDT" />
+          <ScalarProperty Name="ElTahiCategoryRegUserID" ColumnName="ElTahiCategoryRegUserID" />
+          <ScalarProperty Name="ElTahiCategoryStatusID" ColumnName="ElTahiCategoryStatusID" />
+          <ScalarProperty Name="ElTahiCategoryActivationFlag" ColumnName="ElTahiCategoryActivationFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiPostComponents">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostComponent">
+        <MappingFragment StoreEntitySet="ElTahiPostComponent">
+          <ScalarProperty Name="ElTahiPostComponentsID" ColumnName="ElTahiPostComponentsID" />
+          <ScalarProperty Name="ElTahiPostComponents" ColumnName="ElTahiPostComponents" />
+          <ScalarProperty Name="ElTahiPostComponentsUserID" ColumnName="ElTahiPostComponentsUserID" />
+          <ScalarProperty Name="ElTahiPostComRegDT" ColumnName="ElTahiPostComRegDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiPostComponentRelations">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostComponentRelation">
+        <MappingFragment StoreEntitySet="ElTahiPostComponentRelations">
+          <ScalarProperty Name="ElTahiPostComponentRelationID" ColumnName="ElTahiPostComponentRelationID" />
+          <ScalarProperty Name="ElTahiPostID" ColumnName="ElTahiPostID" />
+          <ScalarProperty Name="ElTahiComponentID" ColumnName="ElTahiComponentID" />
+          <ScalarProperty Name="ElTahiPostComRelationUserID" ColumnName="ElTahiPostComRelationUserID" />
+          <ScalarProperty Name="ElTahiPostComRelationRegDT" ColumnName="ElTahiPostComRelationRegDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiPostImages">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostImage">
+        <MappingFragment StoreEntitySet="ElTahiPostImages">
+          <ScalarProperty Name="ElTahiPostImageID" ColumnName="ElTahiPostImageID" />
+          <ScalarProperty Name="ElTahiPostImageURL" ColumnName="ElTahiPostImageURL" />
+          <ScalarProperty Name="ElTahiPostImageUserID" ColumnName="ElTahiPostImageUserID" />
+          <ScalarProperty Name="ElTahiPostImageStatusID" ColumnName="ElTahiPostImageStatusID" />
+          <ScalarProperty Name="ElTahiPostImageRegDT" ColumnName="ElTahiPostImageRegDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiPostImagesRelations">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostImagesRelation">
+        <MappingFragment StoreEntitySet="ElTahiPostImagesRelations">
+          <ScalarProperty Name="ElTahiPostImageRelationID" ColumnName="ElTahiPostImageRelationID" />
+          <ScalarProperty Name="ElTahiPostID" ColumnName="ElTahiPostID" />
+          <ScalarProperty Name="ElTahiPostImageID" ColumnName="ElTahiPostImageID" />
+          <ScalarProperty Name="ElTahiRelationRegUserID" ColumnName="ElTahiRelationRegUserID" />
+          <ScalarProperty Name="ElTahiRelationRegDT" ColumnName="ElTahiRelationRegDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiPosts">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPost">
+        <MappingFragment StoreEntitySet="ElTahiPosts">
+          <ScalarProperty Name="ElTahiPostID" ColumnName="ElTahiPostID" />
+          <ScalarProperty Name="ElTahiPostHeader" ColumnName="ElTahiPostHeader" />
+          <ScalarProperty Name="ElTahiPostBody" ColumnName="ElTahiPostBody" />
+          <ScalarProperty Name="ElTahiPostUserID" ColumnName="ElTahiPostUserID" />
+          <ScalarProperty Name="ElTahiPostStatusID" ColumnName="ElTahiPostStatusID" />
+          <ScalarProperty Name="ELTahiPostRegDT" ColumnName="ELTahiPostRegDT" />
+          <ScalarProperty Name="ElTahiPostUpdateDT" ColumnName="ElTahiPostUpdateDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiPostVideos">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostVideo">
+        <MappingFragment StoreEntitySet="ElTahiPostVideos">
+          <ScalarProperty Name="ElTahiPostVideosID" ColumnName="ElTahiPostVideosID" />
+          <ScalarProperty Name="ElTahiPostVideosURL" ColumnName="ElTahiPostVideosURL" />
+          <ScalarProperty Name="ElTahiPostVideosUserID" ColumnName="ElTahiPostVideosUserID" />
+          <ScalarProperty Name="ElTahiPostVideosStatusID" ColumnName="ElTahiPostVideosStatusID" />
+          <ScalarProperty Name="ElTahiPostVideosRegDT" ColumnName="ElTahiPostVideosRegDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiPostVideosRelations">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostVideosRelation">
+        <MappingFragment StoreEntitySet="ElTahiPostVideosRelations">
+          <ScalarProperty Name="ElTahiPostVideosRelationID" ColumnName="ElTahiPostVideosRelationID" />
+          <ScalarProperty Name="ElTahiPostID" ColumnName="ElTahiPostID" />
+          <ScalarProperty Name="ElTahiPostVideosID" ColumnName="ElTahiPostVideosID" />
+          <ScalarProperty Name="ElTahiVidRelationRegUserID" ColumnName="ElTahiVidRelationRegUserID" />
+          <ScalarProperty Name="ElTahiVidRelationRegDT" ColumnName="ElTahiVidRelationRegDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiProfileImages">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiProfileImage">
+        <MappingFragment StoreEntitySet="ElTahiProfileImage">
+          <ScalarProperty Name="ElTahiProfileImageID" ColumnName="ElTahiProfileImageID" />
+          <ScalarProperty Name="ElTahiProfileImageURL" ColumnName="ElTahiProfileImageURL" />
+          <ScalarProperty Name="ElTahiProfileImageName" ColumnName="ElTahiProfileImageName" />
+          <ScalarProperty Name="ElTahiProfileImageUserID" ColumnName="ElTahiProfileImageUserID" />
+          <ScalarProperty Name="UploadDateTime" ColumnName="UploadDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiRoles">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiRole">
+        <MappingFragment StoreEntitySet="ElTahiRole">
+          <ScalarProperty Name="ElTahiRoleID" ColumnName="ElTahiRoleID" />
+          <ScalarProperty Name="ElTahiRole1" ColumnName="ElTahiRole" />
+          <ScalarProperty Name="ElTahiRoleDesc" ColumnName="ElTahiRoleDesc" />
+          <ScalarProperty Name="ElTahiRoleUserID" ColumnName="ElTahiRoleUserID" />
+          <ScalarProperty Name="ElTahiRegDT" ColumnName="ElTahiRegDT" />
+          <ScalarProperty Name="RoleActivavtionFlag" ColumnName="RoleActivavtionFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiStatus">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiStatu">
+        <MappingFragment StoreEntitySet="ElTahiStatus">
+          <ScalarProperty Name="ElTahiStatusID" ColumnName="ElTahiStatusID" />
+          <ScalarProperty Name="ElTahiStatus" ColumnName="ElTahiStatus" />
+          <ScalarProperty Name="ElTahiStatusRegAdminID" ColumnName="ElTahiStatusRegAdminID" />
+          <ScalarProperty Name="ElTahiStatusRegDT" ColumnName="ElTahiStatusRegDT" />
+          <ScalarProperty Name="ElTahiStatusUpdateAdminID" ColumnName="ElTahiStatusUpdateAdminID" />
+          <ScalarProperty Name="ElTahiStatusUpdateDT" ColumnName="ElTahiStatusUpdateDT" />
+          <ScalarProperty Name="ActivationFlag" ColumnName="ActivationFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiSuppliers">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiSupplier">
+        <MappingFragment StoreEntitySet="ElTahiSupplier">
+          <ScalarProperty Name="ElTahiSupplierID" ColumnName="ElTahiSupplierID" />
+          <ScalarProperty Name="ElTahiSupplierCompName" ColumnName="ElTahiSupplierCompName" />
+          <ScalarProperty Name="ElTahiFirstName" ColumnName="ElTahiFirstName" />
+          <ScalarProperty Name="ELTahiSecondName" ColumnName="ELTahiSecondName" />
+          <ScalarProperty Name="ElTahiLastName" ColumnName="ElTahiLastName" />
+          <ScalarProperty Name="ElTahiSupplierBirthdate" ColumnName="ElTahiSupplierBirthdate" />
+          <ScalarProperty Name="ElTahiSupplierEmail" ColumnName="ElTahiSupplierEmail" />
+          <ScalarProperty Name="ElTahiSupplierMobile" ColumnName="ElTahiSupplierMobile" />
+          <ScalarProperty Name="ElTahiSupplierTypeID" ColumnName="ElTahiSupplierTypeID" />
+          <ScalarProperty Name="ElTahiSupplierBio" ColumnName="ElTahiSupplierBio" />
+          <ScalarProperty Name="ElTahiRegDateTime" ColumnName="ElTahiRegDateTime" />
+          <ScalarProperty Name="ElTahiUpdateDT" ColumnName="ElTahiUpdateDT" />
+          <ScalarProperty Name="ElTahiLastLoginDT" ColumnName="ElTahiLastLoginDT" />
+          <ScalarProperty Name="ELTahiSupplierStatusID" ColumnName="ELTahiSupplierStatusID" />
+          <ScalarProperty Name="ELTahiSupplierName" ColumnName="ELTahiSupplierName" />
+          <ScalarProperty Name="ElTahiSupplierPassWord" ColumnName="ElTahiSupplierPassWord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ELTahiTopSuppliers">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ELTahiTopSupplier">
+        <MappingFragment StoreEntitySet="ELTahiTopSupplier">
+          <ScalarProperty Name="ElTahiTopSupplierID" ColumnName="ElTahiTopSupplierID" />
+          <ScalarProperty Name="ElTahiSupplierID" ColumnName="ElTahiSupplierID" />
+          <ScalarProperty Name="ElTahiSupplierStatusID" ColumnName="ElTahiSupplierStatusID" />
+          <ScalarProperty Name="ELTahiTopSupplierRegDt" ColumnName="ELTahiTopSupplierRegDt" />
+          <ScalarProperty Name="ElTahiTopSupplierCategoryID" ColumnName="ElTahiTopSupplierCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ELTahiTopUsers">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ELTahiTopUser">
+        <MappingFragment StoreEntitySet="ELTahiTopUser">
+          <ScalarProperty Name="ElTahiTopUserID" ColumnName="ElTahiTopUserID" />
+          <ScalarProperty Name="ElTahiUserID" ColumnName="ElTahiUserID" />
+          <ScalarProperty Name="ElTahiUserStatusID" ColumnName="ElTahiUserStatusID" />
+          <ScalarProperty Name="ELTahiTopUserRegDt" ColumnName="ELTahiTopUserRegDt" />
+          <ScalarProperty Name="ElTahiTopUserCategoryID" ColumnName="ElTahiTopUserCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiTypes">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiType">
+        <MappingFragment StoreEntitySet="ElTahiType">
+          <ScalarProperty Name="ElTahiTypesID" ColumnName="ElTahiTypesID" />
+          <ScalarProperty Name="ElTahiType1" ColumnName="ElTahiType" />
+          <ScalarProperty Name="ElTahiTypeRegDT" ColumnName="ElTahiTypeRegDT" />
+          <ScalarProperty Name="ElTahiTypeRegUserID" ColumnName="ElTahiTypeRegUserID" />
+          <ScalarProperty Name="ElTahiTypeStatusID" ColumnName="ElTahiTypeStatusID" />
+          <ScalarProperty Name="ElTahiTypeActivationFlag" ColumnName="ElTahiTypeActivationFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiUsers">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiUser">
+        <MappingFragment StoreEntitySet="ElTahiUsers">
+          <ScalarProperty Name="ElTahiRestTypeID" ColumnName="ElTahiRestTypeID" />
+          <ScalarProperty Name="ElTahiComName" ColumnName="ElTahiComName" />
+          <ScalarProperty Name="ElTahiComAddress" ColumnName="ElTahiComAddress" />
+          <ScalarProperty Name="ElTahiUserID" ColumnName="ElTahiUserID" />
+          <ScalarProperty Name="ElTahiFirstName" ColumnName="ElTahiFirstName" />
+          <ScalarProperty Name="ELTahiSecondName" ColumnName="ELTahiSecondName" />
+          <ScalarProperty Name="ElTahiLastName" ColumnName="ElTahiLastName" />
+          <ScalarProperty Name="ElTahiUserBirthdate" ColumnName="ElTahiUserBirthdate" />
+          <ScalarProperty Name="ElTahiUserEmail" ColumnName="ElTahiUserEmail" />
+          <ScalarProperty Name="ElTahiUserMobile" ColumnName="ElTahiUserMobile" />
+          <ScalarProperty Name="ElTahiUserTypeID" ColumnName="ElTahiUserTypeID" />
+          <ScalarProperty Name="ElTahiUserBio" ColumnName="ElTahiUserBio" />
+          <ScalarProperty Name="ElTahiRegDateTime" ColumnName="ElTahiRegDateTime" />
+          <ScalarProperty Name="ElTahiUpdateDT" ColumnName="ElTahiUpdateDT" />
+          <ScalarProperty Name="ElTahiLastLoginDT" ColumnName="ElTahiLastLoginDT" />
+          <ScalarProperty Name="ELTahiUserStatusID" ColumnName="ELTahiUserStatusID" />
+          <ScalarProperty Name="ELTahiUserName" ColumnName="ELTahiUserName" />
+          <ScalarProperty Name="ElTahiUserPassWord" ColumnName="ElTahiUserPassWord" />
+          <ScalarProperty Name="ELTahiUserCountryID" ColumnName="ELTahiUserCountryID" />
+          <ScalarProperty Name="ELTahiNationalID" ColumnName="ELTahiNationalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="db_a8d12b_amahmyModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="db_a8d12b_amahmyModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="db_a8d12b_amahmyModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="db_a8d12b_amahmyModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_a8d12b_amahmyModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="db_a8d12b_amahmyModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="db_a8d12b_amahmyModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="db_a8d12b_amahmyModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="db_a8d12b_amahmyModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="ELTahiIngredients">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ELTahiIngredient">
+        <MappingFragment StoreEntitySet="ELTahiIngredient">
+          <ScalarProperty Name="IngredientName" ColumnName="IngredientName" />
+          <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiPostRecipIngradients">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostRecipIngradient">
+        <MappingFragment StoreEntitySet="ElTahiPostRecipIngradient">
+          <ScalarProperty Name="ElTahiRecipeIngDetails" ColumnName="ElTahiRecipeIngDetails" />
+          <ScalarProperty Name="ELTahiPostWightUnit" ColumnName="ELTahiPostWightUnit" />
+          <ScalarProperty Name="ELTahiPostUserID" ColumnName="ELTahiPostUserID" />
+          <ScalarProperty Name="ElTahiRecipePostID" ColumnName="ElTahiRecipePostID" />
+          <ScalarProperty Name="ElTahiPostRecipWight" ColumnName="ElTahiPostRecipWight" />
+          <ScalarProperty Name="ElTahiPostRecipIngrName" ColumnName="ElTahiPostRecipIngrName" />
+          <ScalarProperty Name="ElTahiPostingradientID" ColumnName="ElTahiPostingradientID" />
+          <ScalarProperty Name="ELTahiRecipIngerPostID" ColumnName="ELTahiRecipIngerPostID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiRecipeRelations">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiRecipeRelation">
+        <MappingFragment StoreEntitySet="ElTahiRecipeRelation">
+          <ScalarProperty Name="TahiRecipeRelationRegDT" ColumnName="TahiRecipeRelationRegDT" />
+          <ScalarProperty Name="TahiUserID" ColumnName="TahiUserID" />
+          <ScalarProperty Name="TahiRecipeChild" ColumnName="TahiRecipeChild" />
+          <ScalarProperty Name="TahiRecipeParentID" ColumnName="TahiRecipeParentID" />
+          <ScalarProperty Name="TahiRecipeRelationID" ColumnName="TahiRecipeRelationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiRescipePosts">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiRescipePost">
+        <MappingFragment StoreEntitySet="ElTahiRescipePosts">
+          <ScalarProperty Name="ElTahiPerentPostID" ColumnName="ElTahiPerentPostID" />
+          <ScalarProperty Name="ElTahiRecipePostUpdateDT" ColumnName="ElTahiRecipePostUpdateDT" />
+          <ScalarProperty Name="ELTahiRecipePostRegDT" ColumnName="ELTahiRecipePostRegDT" />
+          <ScalarProperty Name="ElTahiRecipePostStatusID" ColumnName="ElTahiRecipePostStatusID" />
+          <ScalarProperty Name="ElTahiRecipePostUserID" ColumnName="ElTahiRecipePostUserID" />
+          <ScalarProperty Name="ElTahiRecipePostBody" ColumnName="ElTahiRecipePostBody" />
+          <ScalarProperty Name="ElTahiRecipePostHeader" ColumnName="ElTahiRecipePostHeader" />
+          <ScalarProperty Name="ElTahiRecipePostID" ColumnName="ElTahiRecipePostID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiSubRecipePostIngradients">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiSubRecipePostIngradient">
+        <MappingFragment StoreEntitySet="ElTahiSubRecipePostIngradient">
+          <ScalarProperty Name="ElTahSubResIngDetails" ColumnName="ElTahSubResIngDetails" />
+          <ScalarProperty Name="ELTahiPostWightUnit" ColumnName="ELTahiPostWightUnit" />
+          <ScalarProperty Name="ELTahiPostUserID" ColumnName="ELTahiPostUserID" />
+          <ScalarProperty Name="ElTahiPostID" ColumnName="ElTahiPostID" />
+          <ScalarProperty Name="ElTahiPostRecipWight" ColumnName="ElTahiPostRecipWight" />
+          <ScalarProperty Name="ElTahiPostRecipIngrName" ColumnName="ElTahiPostRecipIngrName" />
+          <ScalarProperty Name="ElTahiPostingradientID" ColumnName="ElTahiPostingradientID" />
+          <ScalarProperty Name="ElTahiSubRecipePostID" ColumnName="ElTahiSubRecipePostID" />
+          <ScalarProperty Name="ElTahiRecipePostID" ColumnName="ElTahiRecipePostID" />
+          <ScalarProperty Name="ELTahiSubRecipPostID" ColumnName="ELTahiSubRecipPostID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiSupRescipePosts">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiSupRescipePost">
+        <MappingFragment StoreEntitySet="ElTahiSupRescipePosts">
+          <ScalarProperty Name="ElTahiRecipePostUpdateDT" ColumnName="ElTahiRecipePostUpdateDT" />
+          <ScalarProperty Name="ELTahiRecipePostRegDT" ColumnName="ELTahiRecipePostRegDT" />
+          <ScalarProperty Name="ElTahiRecipePostStatusID" ColumnName="ElTahiRecipePostStatusID" />
+          <ScalarProperty Name="ElTahiRecipePostUserID" ColumnName="ElTahiRecipePostUserID" />
+          <ScalarProperty Name="ElTahiRecipePostBody" ColumnName="ElTahiRecipePostBody" />
+          <ScalarProperty Name="ElTahiRecipePostHeader" ColumnName="ElTahiRecipePostHeader" />
+          <ScalarProperty Name="ElTahiRecipePostID" ColumnName="ElTahiRecipePostID" />
+          <ScalarProperty Name="ElTahiSubRecipePostID" ColumnName="ElTahiSubRecipePostID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ELTahiMeasuringUnits">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ELTahiMeasuringUnit">
+        <MappingFragment StoreEntitySet="ELTahiMeasuringUnit">
+          <ScalarProperty Name="TahiMeasuringUnitRegDT" ColumnName="TahiMeasuringUnitRegDT" />
+          <ScalarProperty Name="TahiMeasuringUnitCapital" ColumnName="TahiMeasuringUnitCapital" />
+          <ScalarProperty Name="TahiMeasuringUnitSmall" ColumnName="TahiMeasuringUnitSmall" />
+          <ScalarProperty Name="ElTahiMeasuringUnitID" ColumnName="ElTahiMeasuringUnitID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CookingMethods">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.CookingMethod">
+        <MappingFragment StoreEntitySet="CookingMethod">
+          <ScalarProperty Name="CookMedthodName" ColumnName="CookMedthodName" />
+          <ScalarProperty Name="CookmethodID" ColumnName="CookmethodID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiRecipePostMethods">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiRecipePostMethod">
+        <MappingFragment StoreEntitySet="ElTahiRecipePostMethod">
+          <ScalarProperty Name="ElTahiRMethodUpdateDt" ColumnName="ElTahiRMethodUpdateDt" />
+          <ScalarProperty Name="ElTahiUserReg" ColumnName="ElTahiUserReg" />
+          <ScalarProperty Name="ElTahiCuisineID" ColumnName="ElTahiCuisineID" />
+          <ScalarProperty Name="ElTahiCookingMethodID" ColumnName="ElTahiCookingMethodID" />
+          <ScalarProperty Name="ElTahiRecipeTypeID" ColumnName="ElTahiRecipeTypeID" />
+          <ScalarProperty Name="ElTahiRecipePostID" ColumnName="ElTahiRecipePostID" />
+          <ScalarProperty Name="ElTahiRecipePostMethodID" ColumnName="ElTahiRecipePostMethodID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EltahiRecipeTypes">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.EltahiRecipeType">
+        <MappingFragment StoreEntitySet="EltahiRecipeType">
+          <ScalarProperty Name="RecipeTypeName" ColumnName="RecipeTypeName" />
+          <ScalarProperty Name="RecipeTypeID" ColumnName="RecipeTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TahiCuisines">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.TahiCuisine">
+        <MappingFragment StoreEntitySet="TahiCuisine">
+          <ScalarProperty Name="ElTahiCuisineName" ColumnName="ElTahiCuisineName" />
+          <ScalarProperty Name="ElTahiCuisineID" ColumnName="ElTahiCuisineID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiRecipePostImagesRelations">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiRecipePostImagesRelation">
+        <MappingFragment StoreEntitySet="ElTahiRecipePostImagesRelations">
+          <ScalarProperty Name="ElTahiRelationRegDT" ColumnName="ElTahiRelationRegDT" />
+          <ScalarProperty Name="ElTahiRelationRegUserID" ColumnName="ElTahiRelationRegUserID" />
+          <ScalarProperty Name="ElTahiPostImageID" ColumnName="ElTahiPostImageID" />
+          <ScalarProperty Name="ElTahiRecipePostID" ColumnName="ElTahiRecipePostID" />
+          <ScalarProperty Name="ElTahiPostImageRelationID" ColumnName="ElTahiPostImageRelationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiRestuarantTypes">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiRestuarantType">
+        <MappingFragment StoreEntitySet="ElTahiRestuarantType">
+          <ScalarProperty Name="ElTahiRestType" ColumnName="ElTahiRestType" />
+          <ScalarProperty Name="ELTahiRestTypeID" ColumnName="ELTahiRestTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ELTahiJobPosts">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ELTahiJobPost">
+        <MappingFragment StoreEntitySet="ELTahiJobPosts">
+          <ScalarProperty Name="ElTahiPerantPostID" ColumnName="ElTahiPerantPostID" />
+          <ScalarProperty Name="TahiJobRegesterDateT" ColumnName="TahiJobRegesterDateT" />
+          <ScalarProperty Name="TahiJobFlag" ColumnName="TahiJobFlag" />
+          <ScalarProperty Name="TahiJobEndDate" ColumnName="TahiJobEndDate" />
+          <ScalarProperty Name="TahiJobDescraption" ColumnName="TahiJobDescraption" />
+          <ScalarProperty Name="TahiJobWorkplace" ColumnName="TahiJobWorkplace" />
+          <ScalarProperty Name="TahiJobType" ColumnName="TahiJobType" />
+          <ScalarProperty Name="TahiJobLocation" ColumnName="TahiJobLocation" />
+          <ScalarProperty Name="TahiJobComp" ColumnName="TahiJobComp" />
+          <ScalarProperty Name="TahiJobTitle" ColumnName="TahiJobTitle" />
+          <ScalarProperty Name="TahiJobUserID" ColumnName="TahiJobUserID" />
+          <ScalarProperty Name="TahiJobPostID" ColumnName="TahiJobPostID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ELTahiPerantPosts">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ELTahiPerantPost">
+        <MappingFragment StoreEntitySet="ELTahiPerantPost">
+          <ScalarProperty Name="ELTahiPostType" ColumnName="ELTahiPostType" />
+          <ScalarProperty Name="ElTahiPostRegDT" ColumnName="ElTahiPostRegDT" />
+          <ScalarProperty Name="ElTahiPostUserID" ColumnName="ElTahiPostUserID" />
+          <ScalarProperty Name="ELTahiPostPerantID" ColumnName="ELTahiPostPerantID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiOtherPosts">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiOtherPost">
+        <MappingFragment StoreEntitySet="ElTahiOtherPosts">
+          <ScalarProperty Name="ElTahiOtherPostRegDT" ColumnName="ElTahiOtherPostRegDT" />
+          <ScalarProperty Name="ElTahiProvideAdvice" ColumnName="ElTahiProvideAdvice" />
+          <ScalarProperty Name="ElTahiOtherPostType" ColumnName="ElTahiOtherPostType" />
+          <ScalarProperty Name="ElTahiOtherPostImageURL" ColumnName="ElTahiOtherPostImageURL" />
+          <ScalarProperty Name="ElTahiotherPostDetail" ColumnName="ElTahiotherPostDetail" />
+          <ScalarProperty Name="ElTahiOtherPostTitle" ColumnName="ElTahiOtherPostTitle" />
+          <ScalarProperty Name="ElTahiPerantPostID" ColumnName="ElTahiPerantPostID" />
+          <ScalarProperty Name="ElTahiPostUser" ColumnName="ElTahiPostUser" />
+          <ScalarProperty Name="ElTahiOtherPostsID" ColumnName="ElTahiOtherPostsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TahiSupInformations">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.TahiSupInformation">
+        <MappingFragment StoreEntitySet="TahiSupInformation">
+          <ScalarProperty Name="TahiSupInfoUpdateDT" ColumnName="TahiSupInfoUpdateDT" />
+          <ScalarProperty Name="tahiSupInfoRegDT" ColumnName="tahiSupInfoRegDT" />
+          <ScalarProperty Name="tahiSupUserID" ColumnName="tahiSupUserID" />
+          <ScalarProperty Name="tahisupAddress" ColumnName="tahisupAddress" />
+          <ScalarProperty Name="tahisupSpecialities" ColumnName="tahisupSpecialities" />
+          <ScalarProperty Name="tahisupyearfounder" ColumnName="tahisupyearfounder" />
+          <ScalarProperty Name="tahicomptype" ColumnName="tahicomptype" />
+          <ScalarProperty Name="tahisupcompsize" ColumnName="tahisupcompsize" />
+          <ScalarProperty Name="tahisupindustry" ColumnName="tahisupindustry" />
+          <ScalarProperty Name="tahisupdescription" ColumnName="tahisupdescription" />
+          <ScalarProperty Name="tahiwebsiteurl" ColumnName="tahiwebsiteurl" />
+          <ScalarProperty Name="tahitagline" ColumnName="tahitagline" />
+          <ScalarProperty Name="tahisupPhone" ColumnName="tahisupPhone" />
+          <ScalarProperty Name="tahiSupName" ColumnName="tahiSupName" />
+          <ScalarProperty Name="tahiinfootherID" ColumnName="tahiinfootherID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiPostComments">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostComment">
+        <MappingFragment StoreEntitySet="ElTahiPostComment">
+          <ScalarProperty Name="ELTahiComRegDT" ColumnName="ELTahiComRegDT" />
+          <ScalarProperty Name="ELTahiUserID" ColumnName="ELTahiUserID" />
+          <ScalarProperty Name="ElTahiComment" ColumnName="ElTahiComment" />
+          <ScalarProperty Name="ELTahiPerentPostID" ColumnName="ELTahiPerentPostID" />
+          <ScalarProperty Name="ELTahiPostCommentID" ColumnName="ELTahiPostCommentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElTahiPostScores">
+      <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostScore">
+        <MappingFragment StoreEntitySet="ElTahiPostScore">
+          <ScalarProperty Name="ElTahiScoreRegDT" ColumnName="ElTahiScoreRegDT" />
+          <ScalarProperty Name="ElTahiScore" ColumnName="ElTahiScore" />
+          <ScalarProperty Name="ElTahiUserID" ColumnName="ElTahiUserID" />
+          <ScalarProperty Name="ElTahiPostID" ColumnName="ElTahiPostID" />
+          <ScalarProperty Name="ELTahiScoreID" ColumnName="ELTahiScoreID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8c47e883f40248fc9c1f0310573ad51a" Name="Diagram1" ZoomLevel="89">
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.Country" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiAdmin" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiCategory" Width="1.5" PointX="7.5" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiPostComponent" Width="1.5" PointX="15.5" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiPostComponentRelation" Width="1.5" PointX="17.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiPostImage" Width="2.5" PointX="10.5" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiPostImagesRelation" Width="3.375" PointX="14.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiPost" Width="1.5" PointX="12.5" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiPostVideo" Width="1.5" PointX="7.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiPostVideosRelation" Width="1.5" PointX="14.75" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiProfileImage" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiRole" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiStatu" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiSupplier" Width="1.5" PointX="7.5" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ELTahiTopSupplier" Width="1.5" PointX="9.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ELTahiTopUser" Width="1.5" PointX="14.75" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiType" Width="1.5" PointX="5.25" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiUser" Width="1.5" PointX="12.5" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.sysdiagram" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiAdmins_ElTahiRole" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiCategory_ElTahiAdmins" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiStatus_ElTahiAdmins" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiStatus_ElTahiAdmins1" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiType_ElTahiAdmins" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiCategory_ElTahiStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ELTahiTopUser_ElTahiCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiPostComponentRelations_ElTahiPostComponent" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiPostComponentRelations_ElTahiPosts" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiPostComponentRelations_ElTahiUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiPostImages_ElTahiStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiPostImages_ElTahiUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiPostImagesRelations_ElTahiPostImages" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiPostImagesRelations_ElTahiPosts" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiPostImagesRelations_ElTahiUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiPostVideosRelations_ElTahiPosts" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiPostVideos_ElTahiStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiPostVideos_ElTahiUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ELTahiTopSupplier_ElTahiStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ELTahiTopUser_ElTahiStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiUsers_ElTahiStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiSupplier_ElTahiType" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ELTahiTopSupplier_ElTahiSupplier" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ELTahiTopUser_ElTahiUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiUsers_ElTahiType" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ELTahiIngredient" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiPostRecipIngradient" Width="2" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiRecipeRelation" Width="1.5" PointX="4.75" PointY="6" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiRescipePost" Width="1.5" PointX="7.75" PointY="5.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiSubRecipePostIngradient" Width="1.5" PointX="4.75" PointY="8.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiSupRescipePost" Width="1.875" PointX="7.625" PointY="0.5" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ELTahiMeasuringUnit" Width="1.5" PointX="10.375" PointY="4.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.CookingMethod" Width="1.5" PointX="10.375" PointY="7.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiRecipePostMethod" Width="2.125" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.EltahiRecipeType" Width="1.5" PointX="10.375" PointY="10.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.TahiCuisine" Width="1.5" PointX="12.375" PointY="4.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiRecipePostImagesRelation" Width="1.5" PointX="12.375" PointY="7.75" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiRecipePostMethod_CookingMethod" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiRecipePostMethod_EltahiRecipeType" />
+        <AssociationConnector Association="db_a8d12b_amahmyModel.FK_ElTahiRecipePostMethod_TahiCuisine" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiRestuarantType" Width="1.5" PointX="12.375" PointY="10.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ELTahiJobPost" Width="1.5" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ELTahiPerantPost" Width="1.5" PointX="14.375" PointY="10.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiOtherPost" Width="1.5" PointX="14.375" PointY="5.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.TahiSupInformation" Width="1.5" PointX="16.375" PointY="0.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiPostComment" Width="1.875" PointX="14" PointY="13.75" />
+        <EntityTypeShape EntityType="db_a8d12b_amahmyModel.ElTahiPostScore" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

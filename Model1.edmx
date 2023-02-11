@@ -1,0 +1,2508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="db_a8d12b_amahmyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CookingMethod">
+          <Key>
+            <PropertyRef Name="CookmethodID" />
+          </Key>
+          <Property Name="CookmethodID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CookMedthodName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="ContID" />
+          </Key>
+          <Property Name="ContID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="country_code" Type="nvarchar" MaxLength="3" />
+          <Property Name="country_enName" Type="nvarchar" MaxLength="100" />
+          <Property Name="country_arName" Type="nvarchar" MaxLength="100" />
+          <Property Name="country_enNationality" Type="nvarchar" MaxLength="100" />
+          <Property Name="country_arNationality" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ElTahiAdmins">
+          <Key>
+            <PropertyRef Name="EltahiAdminID" />
+          </Key>
+          <Property Name="EltahiAdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EltahiAdUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EltahiAdUserPassWord" Type="nvarchar" MaxLength="150" />
+          <Property Name="EltahiAdRegdateTime" Type="datetime" />
+          <Property Name="EltahiAdRoleID" Type="int" />
+          <Property Name="EltahiAdStatusID" Type="int" />
+        </EntityType>
+        <EntityType Name="ElTahiCategory">
+          <Key>
+            <PropertyRef Name="ElTahiCategoryID" />
+          </Key>
+          <Property Name="ElTahiCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="ElTahiCategoryRegDT" Type="datetime" />
+          <Property Name="ElTahiCategoryRegUserID" Type="int" />
+          <Property Name="ElTahiCategoryStatusID" Type="int" />
+          <Property Name="ElTahiCategoryActivationFlag" Type="bit" />
+        </EntityType>
+        <EntityType Name="ELTahiIngredient">
+          <Key>
+            <PropertyRef Name="IngredientID" />
+          </Key>
+          <Property Name="IngredientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IngredientName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ELTahiJobPosts">
+          <Key>
+            <PropertyRef Name="TahiJobPostID" />
+          </Key>
+          <Property Name="TahiJobPostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TahiJobUserID" Type="int" />
+          <Property Name="TahiJobTitle" Type="nvarchar" MaxLength="250" />
+          <Property Name="TahiJobComp" Type="nvarchar" MaxLength="200" />
+          <Property Name="TahiJobLocation" Type="nvarchar(max)" />
+          <Property Name="TahiJobType" Type="nvarchar" MaxLength="150" />
+          <Property Name="TahiJobWorkplace" Type="nvarchar" MaxLength="250" />
+          <Property Name="TahiJobDescraption" Type="nvarchar(max)" />
+          <Property Name="TahiJobEndDate" Type="datetime" />
+          <Property Name="TahiJobFlag" Type="bit" />
+          <Property Name="TahiJobRegesterDateT" Type="datetime" />
+          <Property Name="ElTahiPerantPostID" Type="int" />
+        </EntityType>
+        <EntityType Name="ELTahiMeasuringUnit">
+          <Key>
+            <PropertyRef Name="ElTahiMeasuringUnitID" />
+          </Key>
+          <Property Name="ElTahiMeasuringUnitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TahiMeasuringUnitSmall" Type="nvarchar" MaxLength="10" />
+          <Property Name="TahiMeasuringUnitCapital" Type="nvarchar" MaxLength="50" />
+          <Property Name="TahiMeasuringUnitRegDT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ElTahiOtherPosts">
+          <Key>
+            <PropertyRef Name="ElTahiOtherPostsID" />
+          </Key>
+          <Property Name="ElTahiOtherPostsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiPostUser" Type="int" />
+          <Property Name="ElTahiPerantPostID" Type="int" />
+          <Property Name="ElTahiOtherPostTitle" Type="nvarchar(max)" />
+          <Property Name="ElTahiotherPostDetail" Type="nvarchar(max)" />
+          <Property Name="ElTahiOtherPostImageURL" Type="nvarchar(max)" />
+          <Property Name="ElTahiOtherPostType" Type="nvarchar" MaxLength="3" />
+          <Property Name="ElTahiProvideAdvice" Type="nvarchar" MaxLength="50" />
+          <Property Name="ElTahiOtherPostRegDT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ELTahiPerantPost">
+          <Key>
+            <PropertyRef Name="ELTahiPostPerantID" />
+          </Key>
+          <Property Name="ELTahiPostPerantID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiPostUserID" Type="int" />
+          <Property Name="ElTahiPostRegDT" Type="datetime" />
+          <Property Name="ELTahiPostType" Type="int" />
+        </EntityType>
+        <EntityType Name="ElTahiPostComment">
+          <Key>
+            <PropertyRef Name="ELTahiPostCommentID" />
+          </Key>
+          <Property Name="ELTahiPostCommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ELTahiPerentPostID" Type="int" />
+          <Property Name="ElTahiComment" Type="nvarchar(max)" />
+          <Property Name="ELTahiUserID" Type="int" />
+          <Property Name="ELTahiComRegDT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ElTahiPostComponent">
+          <Key>
+            <PropertyRef Name="ElTahiPostComponentsID" />
+          </Key>
+          <Property Name="ElTahiPostComponentsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiPostComponents" Type="nvarchar" MaxLength="150" />
+          <Property Name="ElTahiPostComponentsUserID" Type="int" />
+          <Property Name="ElTahiPostComRegDT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ElTahiPostComponentRelations">
+          <Key>
+            <PropertyRef Name="ElTahiPostComponentRelationID" />
+          </Key>
+          <Property Name="ElTahiPostComponentRelationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiPostID" Type="int" />
+          <Property Name="ElTahiComponentID" Type="int" />
+          <Property Name="ElTahiPostComRelationUserID" Type="int" />
+          <Property Name="ElTahiPostComRelationRegDT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ElTahiPostImages">
+          <Key>
+            <PropertyRef Name="ElTahiPostImageID" />
+          </Key>
+          <Property Name="ElTahiPostImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiPostImageURL" Type="nvarchar(max)" />
+          <Property Name="ElTahiPostImageUserID" Type="int" />
+          <Property Name="ElTahiPostImageStatusID" Type="int" />
+          <Property Name="ElTahiPostImageRegDT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ElTahiPostImagesRelations">
+          <Key>
+            <PropertyRef Name="ElTahiPostImageRelationID" />
+          </Key>
+          <Property Name="ElTahiPostImageRelationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiPostID" Type="int" />
+          <Property Name="ElTahiPostImageID" Type="int" />
+          <Property Name="ElTahiRelationRegUserID" Type="int" />
+          <Property Name="ElTahiRelationRegDT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ElTahiPostRecipIngradient">
+          <Key>
+            <PropertyRef Name="ELTahiRecipIngerPostID" />
+          </Key>
+          <Property Name="ELTahiRecipIngerPostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiPostingradientID" Type="int" />
+          <Property Name="ElTahiPostRecipIngrName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ElTahiPostRecipWight" Type="nvarchar" MaxLength="50" />
+          <Property Name="ElTahiRecipePostID" Type="int" />
+          <Property Name="ELTahiPostUserID" Type="int" />
+          <Property Name="ELTahiPostWightUnit" Type="nvarchar" MaxLength="20" />
+          <Property Name="ElTahiRecipeIngDetails" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="ElTahiPosts">
+          <Key>
+            <PropertyRef Name="ElTahiPostID" />
+          </Key>
+          <Property Name="ElTahiPostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiPostHeader" Type="nvarchar" MaxLength="150" />
+          <Property Name="ElTahiPostBody" Type="nvarchar(max)" />
+          <Property Name="ElTahiPostUserID" Type="int" />
+          <Property Name="ElTahiPostStatusID" Type="int" />
+          <Property Name="ELTahiPostRegDT" Type="datetime" />
+          <Property Name="ElTahiPostUpdateDT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ElTahiPostScore">
+          <Key>
+            <PropertyRef Name="ELTahiScoreID" />
+          </Key>
+          <Property Name="ELTahiScoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiPostID" Type="int" />
+          <Property Name="ElTahiUserID" Type="int" />
+          <Property Name="ElTahiScore" Type="int" />
+          <Property Name="ElTahiScoreRegDT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ElTahiPostVideos">
+          <Key>
+            <PropertyRef Name="ElTahiPostVideosID" />
+          </Key>
+          <Property Name="ElTahiPostVideosID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiPostVideosURL" Type="nvarchar(max)" />
+          <Property Name="ElTahiPostVideosUserID" Type="int" />
+          <Property Name="ElTahiPostVideosStatusID" Type="int" />
+          <Property Name="ElTahiPostVideosRegDT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ElTahiPostVideosRelations">
+          <Key>
+            <PropertyRef Name="ElTahiPostVideosRelationID" />
+          </Key>
+          <Property Name="ElTahiPostVideosRelationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiPostID" Type="int" />
+          <Property Name="ElTahiPostVideosID" Type="int" />
+          <Property Name="ElTahiVidRelationRegUserID" Type="int" />
+          <Property Name="ElTahiVidRelationRegDT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ElTahiProfileImage">
+          <Key>
+            <PropertyRef Name="ElTahiProfileImageID" />
+          </Key>
+          <Property Name="ElTahiProfileImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiProfileImageURL" Type="nvarchar(max)" />
+          <Property Name="ElTahiProfileImageName" Type="nvarchar(max)" />
+          <Property Name="ElTahiProfileImageUserID" Type="int" />
+          <Property Name="UploadDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ElTahiRecipePostImagesRelations">
+          <Key>
+            <PropertyRef Name="ElTahiPostImageRelationID" />
+          </Key>
+          <Property Name="ElTahiPostImageRelationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiRecipePostID" Type="int" />
+          <Property Name="ElTahiPostImageID" Type="int" />
+          <Property Name="ElTahiRelationRegUserID" Type="int" />
+          <Property Name="ElTahiRelationRegDT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ElTahiRecipePostMethod">
+          <Key>
+            <PropertyRef Name="ElTahiRecipePostMethodID" />
+          </Key>
+          <Property Name="ElTahiRecipePostMethodID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiRecipePostID" Type="int" />
+          <Property Name="ElTahiRecipeTypeID" Type="int" />
+          <Property Name="ElTahiCookingMethodID" Type="int" />
+          <Property Name="ElTahiCuisineID" Type="int" />
+          <Property Name="ElTahiUserReg" Type="int" />
+          <Property Name="ElTahiRMethodUpdateDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ElTahiRecipeRelation">
+          <Key>
+            <PropertyRef Name="TahiRecipeRelationID" />
+          </Key>
+          <Property Name="TahiRecipeRelationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TahiRecipeParentID" Type="int" />
+          <Property Name="TahiRecipeChild" Type="int" />
+          <Property Name="TahiUserID" Type="int" />
+          <Property Name="TahiRecipeRelationRegDT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EltahiRecipeType">
+          <Key>
+            <PropertyRef Name="RecipeTypeID" />
+          </Key>
+          <Property Name="RecipeTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RecipeTypeName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ElTahiRescipePosts">
+          <Key>
+            <PropertyRef Name="ElTahiRecipePostID" />
+          </Key>
+          <Property Name="ElTahiRecipePostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiRecipePostHeader" Type="nvarchar" MaxLength="150" />
+          <Property Name="ElTahiRecipePostBody" Type="nvarchar(max)" />
+          <Property Name="ElTahiRecipePostUserID" Type="int" />
+          <Property Name="ElTahiRecipePostStatusID" Type="int" />
+          <Property Name="ELTahiRecipePostRegDT" Type="datetime" />
+          <Property Name="ElTahiRecipePostUpdateDT" Type="datetime" />
+          <Property Name="ElTahiPerentPostID" Type="int" />
+        </EntityType>
+        <EntityType Name="ElTahiRestuarantType">
+          <Key>
+            <PropertyRef Name="ELTahiRestTypeID" />
+          </Key>
+          <Property Name="ELTahiRestTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiRestType" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ElTahiRole">
+          <Key>
+            <PropertyRef Name="ElTahiRoleID" />
+          </Key>
+          <Property Name="ElTahiRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiRole" Type="nvarchar" MaxLength="50" />
+          <Property Name="ElTahiRoleDesc" Type="nvarchar(max)" />
+          <Property Name="ElTahiRoleUserID" Type="int" />
+          <Property Name="ElTahiRegDT" Type="datetime" />
+          <Property Name="RoleActivavtionFlag" Type="bit" />
+        </EntityType>
+        <EntityType Name="ElTahiStatus">
+          <Key>
+            <PropertyRef Name="ElTahiStatusID" />
+          </Key>
+          <Property Name="ElTahiStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="ElTahiStatusRegAdminID" Type="int" />
+          <Property Name="ElTahiStatusRegDT" Type="datetime" />
+          <Property Name="ElTahiStatusUpdateAdminID" Type="int" />
+          <Property Name="ElTahiStatusUpdateDT" Type="datetime" />
+          <Property Name="ActivationFlag" Type="bit" />
+        </EntityType>
+        <EntityType Name="ElTahiSubRecipePostIngradient">
+          <Key>
+            <PropertyRef Name="ELTahiSubRecipPostID" />
+          </Key>
+          <Property Name="ELTahiSubRecipPostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiRecipePostID" Type="int" />
+          <Property Name="ElTahiSubRecipePostID" Type="int" />
+          <Property Name="ElTahiPostingradientID" Type="int" />
+          <Property Name="ElTahiPostRecipIngrName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ElTahiPostRecipWight" Type="nvarchar" MaxLength="50" />
+          <Property Name="ElTahiPostID" Type="int" />
+          <Property Name="ELTahiPostUserID" Type="int" />
+          <Property Name="ELTahiPostWightUnit" Type="nvarchar" MaxLength="20" />
+          <Property Name="ElTahSubResIngDetails" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="ElTahiSupplier">
+          <Key>
+            <PropertyRef Name="ElTahiSupplierID" />
+          </Key>
+          <Property Name="ElTahiSupplierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiSupplierCompName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ElTahiFirstName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ELTahiSecondName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ElTahiLastName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ElTahiSupplierBirthdate" Type="date" />
+          <Property Name="ElTahiSupplierEmail" Type="nvarchar" MaxLength="250" />
+          <Property Name="ElTahiSupplierMobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="ElTahiSupplierTypeID" Type="int" />
+          <Property Name="ElTahiSupplierBio" Type="nvarchar(max)" />
+          <Property Name="ElTahiRegDateTime" Type="datetime" />
+          <Property Name="ElTahiUpdateDT" Type="datetime" />
+          <Property Name="ElTahiLastLoginDT" Type="datetime" />
+          <Property Name="ELTahiSupplierStatusID" Type="int" />
+          <Property Name="ELTahiSupplierName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ElTahiSupplierPassWord" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="ElTahiSupRescipePosts">
+          <Key>
+            <PropertyRef Name="ElTahiSubRecipePostID" />
+          </Key>
+          <Property Name="ElTahiSubRecipePostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiRecipePostID" Type="int" />
+          <Property Name="ElTahiRecipePostHeader" Type="nvarchar" MaxLength="150" />
+          <Property Name="ElTahiRecipePostBody" Type="nvarchar(max)" />
+          <Property Name="ElTahiRecipePostUserID" Type="int" />
+          <Property Name="ElTahiRecipePostStatusID" Type="int" />
+          <Property Name="ELTahiRecipePostRegDT" Type="datetime" />
+          <Property Name="ElTahiRecipePostUpdateDT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ELTahiTopSupplier">
+          <Key>
+            <PropertyRef Name="ElTahiTopSupplierID" />
+          </Key>
+          <Property Name="ElTahiTopSupplierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiSupplierID" Type="int" />
+          <Property Name="ElTahiSupplierStatusID" Type="int" />
+          <Property Name="ELTahiTopSupplierRegDt" Type="datetime" />
+          <Property Name="ElTahiTopSupplierCategoryID" Type="int" />
+        </EntityType>
+        <EntityType Name="ELTahiTopUser">
+          <Key>
+            <PropertyRef Name="ElTahiTopUserID" />
+          </Key>
+          <Property Name="ElTahiTopUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiUserID" Type="int" />
+          <Property Name="ElTahiUserStatusID" Type="int" />
+          <Property Name="ELTahiTopUserRegDt" Type="datetime" />
+          <Property Name="ElTahiTopUserCategoryID" Type="int" />
+        </EntityType>
+        <EntityType Name="ElTahiType">
+          <Key>
+            <PropertyRef Name="ElTahiTypesID" />
+          </Key>
+          <Property Name="ElTahiTypesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiType" Type="nvarchar" MaxLength="50" />
+          <Property Name="ElTahiTypeRegDT" Type="datetime" />
+          <Property Name="ElTahiTypeRegUserID" Type="int" />
+          <Property Name="ElTahiTypeStatusID" Type="int" />
+          <Property Name="ElTahiTypeActivationFlag" Type="bit" />
+        </EntityType>
+        <EntityType Name="ElTahiUsers">
+          <Key>
+            <PropertyRef Name="ElTahiUserID" />
+          </Key>
+          <Property Name="ElTahiUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiFirstName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ELTahiSecondName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ElTahiLastName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ElTahiUserBirthdate" Type="date" />
+          <Property Name="ElTahiUserEmail" Type="nvarchar" MaxLength="250" />
+          <Property Name="ElTahiUserMobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="ElTahiUserTypeID" Type="int" />
+          <Property Name="ElTahiUserBio" Type="nvarchar(max)" />
+          <Property Name="ElTahiRegDateTime" Type="datetime" />
+          <Property Name="ElTahiUpdateDT" Type="datetime" />
+          <Property Name="ElTahiLastLoginDT" Type="datetime" />
+          <Property Name="ELTahiUserStatusID" Type="int" />
+          <Property Name="ELTahiUserName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ElTahiUserPassWord" Type="nvarchar" MaxLength="150" />
+          <Property Name="ELTahiUserCountryID" Type="int" />
+          <Property Name="ELTahiNationalID" Type="int" />
+          <Property Name="ElTahiComAddress" Type="nvarchar" MaxLength="250" />
+          <Property Name="ElTahiComName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ElTahiRestTypeID" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TahiCuisine">
+          <Key>
+            <PropertyRef Name="ElTahiCuisineID" />
+          </Key>
+          <Property Name="ElTahiCuisineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ElTahiCuisineName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TahiSupInformation">
+          <Key>
+            <PropertyRef Name="tahiinfootherID" />
+          </Key>
+          <Property Name="tahiinfootherID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tahiSupName" Type="nvarchar" MaxLength="200" />
+          <Property Name="tahisupPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="tahitagline" Type="nvarchar" MaxLength="350" />
+          <Property Name="tahiwebsiteurl" Type="nvarchar" MaxLength="150" />
+          <Property Name="tahisupdescription" Type="nvarchar(max)" />
+          <Property Name="tahisupindustry" Type="nvarchar" MaxLength="50" />
+          <Property Name="tahisupcompsize" Type="nvarchar" MaxLength="100" />
+          <Property Name="tahicomptype" Type="nvarchar" MaxLength="50" />
+          <Property Name="tahisupyearfounder" Type="datetime" />
+          <Property Name="tahisupSpecialities" Type="nvarchar(max)" />
+          <Property Name="tahisupAddress" Type="nvarchar" MaxLength="250" />
+          <Property Name="tahiSupUserID" Type="int" />
+          <Property Name="tahiSupInfoRegDT" Type="datetime" />
+          <Property Name="TahiSupInfoUpdateDT" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_ElTahiAdmins_ElTahiRole">
+          <End Role="ElTahiRole" Type="Self.ElTahiRole" Multiplicity="0..1" />
+          <End Role="ElTahiAdmins" Type="Self.ElTahiAdmins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiRole">
+              <PropertyRef Name="ElTahiRoleID" />
+            </Principal>
+            <Dependent Role="ElTahiAdmins">
+              <PropertyRef Name="EltahiAdRoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiCategory_ElTahiAdmins">
+          <End Role="ElTahiAdmins" Type="Self.ElTahiAdmins" Multiplicity="0..1" />
+          <End Role="ElTahiCategory" Type="Self.ElTahiCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiAdmins">
+              <PropertyRef Name="EltahiAdminID" />
+            </Principal>
+            <Dependent Role="ElTahiCategory">
+              <PropertyRef Name="ElTahiCategoryRegUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiCategory_ElTahiStatus">
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatus" Multiplicity="0..1" />
+          <End Role="ElTahiCategory" Type="Self.ElTahiCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusID" />
+            </Principal>
+            <Dependent Role="ElTahiCategory">
+              <PropertyRef Name="ElTahiCategoryStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostComponentRelations_ElTahiPostComponent">
+          <End Role="ElTahiPostComponent" Type="Self.ElTahiPostComponent" Multiplicity="0..1" />
+          <End Role="ElTahiPostComponentRelations" Type="Self.ElTahiPostComponentRelations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiPostComponent">
+              <PropertyRef Name="ElTahiPostComponentsID" />
+            </Principal>
+            <Dependent Role="ElTahiPostComponentRelations">
+              <PropertyRef Name="ElTahiComponentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostComponentRelations_ElTahiPosts">
+          <End Role="ElTahiPosts" Type="Self.ElTahiPosts" Multiplicity="0..1" />
+          <End Role="ElTahiPostComponentRelations" Type="Self.ElTahiPostComponentRelations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiPosts">
+              <PropertyRef Name="ElTahiPostID" />
+            </Principal>
+            <Dependent Role="ElTahiPostComponentRelations">
+              <PropertyRef Name="ElTahiPostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostComponentRelations_ElTahiUsers">
+          <End Role="ElTahiUsers" Type="Self.ElTahiUsers" Multiplicity="0..1" />
+          <End Role="ElTahiPostComponentRelations" Type="Self.ElTahiPostComponentRelations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiUsers">
+              <PropertyRef Name="ElTahiUserID" />
+            </Principal>
+            <Dependent Role="ElTahiPostComponentRelations">
+              <PropertyRef Name="ElTahiPostComRelationUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostImages_ElTahiStatus">
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatus" Multiplicity="0..1" />
+          <End Role="ElTahiPostImages" Type="Self.ElTahiPostImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusID" />
+            </Principal>
+            <Dependent Role="ElTahiPostImages">
+              <PropertyRef Name="ElTahiPostImageStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostImages_ElTahiUsers">
+          <End Role="ElTahiUsers" Type="Self.ElTahiUsers" Multiplicity="0..1" />
+          <End Role="ElTahiPostImages" Type="Self.ElTahiPostImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiUsers">
+              <PropertyRef Name="ElTahiUserID" />
+            </Principal>
+            <Dependent Role="ElTahiPostImages">
+              <PropertyRef Name="ElTahiPostImageUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostImagesRelations_ElTahiPostImages">
+          <End Role="ElTahiPostImages" Type="Self.ElTahiPostImages" Multiplicity="0..1" />
+          <End Role="ElTahiPostImagesRelations" Type="Self.ElTahiPostImagesRelations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiPostImages">
+              <PropertyRef Name="ElTahiPostImageID" />
+            </Principal>
+            <Dependent Role="ElTahiPostImagesRelations">
+              <PropertyRef Name="ElTahiPostImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostImagesRelations_ElTahiPosts">
+          <End Role="ElTahiPosts" Type="Self.ElTahiPosts" Multiplicity="0..1" />
+          <End Role="ElTahiPostImagesRelations" Type="Self.ElTahiPostImagesRelations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiPosts">
+              <PropertyRef Name="ElTahiPostID" />
+            </Principal>
+            <Dependent Role="ElTahiPostImagesRelations">
+              <PropertyRef Name="ElTahiPostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostImagesRelations_ElTahiUsers">
+          <End Role="ElTahiUsers" Type="Self.ElTahiUsers" Multiplicity="0..1" />
+          <End Role="ElTahiPostImagesRelations" Type="Self.ElTahiPostImagesRelations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiUsers">
+              <PropertyRef Name="ElTahiUserID" />
+            </Principal>
+            <Dependent Role="ElTahiPostImagesRelations">
+              <PropertyRef Name="ElTahiRelationRegUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostVideos_ElTahiStatus">
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatus" Multiplicity="0..1" />
+          <End Role="ElTahiPostVideos" Type="Self.ElTahiPostVideos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusID" />
+            </Principal>
+            <Dependent Role="ElTahiPostVideos">
+              <PropertyRef Name="ElTahiPostVideosStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostVideos_ElTahiUsers">
+          <End Role="ElTahiUsers" Type="Self.ElTahiUsers" Multiplicity="0..1" />
+          <End Role="ElTahiPostVideos" Type="Self.ElTahiPostVideos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiUsers">
+              <PropertyRef Name="ElTahiUserID" />
+            </Principal>
+            <Dependent Role="ElTahiPostVideos">
+              <PropertyRef Name="ElTahiPostVideosUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostVideosRelations_ElTahiPosts">
+          <End Role="ElTahiPosts" Type="Self.ElTahiPosts" Multiplicity="0..1" />
+          <End Role="ElTahiPostVideosRelations" Type="Self.ElTahiPostVideosRelations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiPosts">
+              <PropertyRef Name="ElTahiPostID" />
+            </Principal>
+            <Dependent Role="ElTahiPostVideosRelations">
+              <PropertyRef Name="ElTahiPostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiRecipePostMethod_CookingMethod">
+          <End Role="CookingMethod" Type="Self.CookingMethod" Multiplicity="0..1" />
+          <End Role="ElTahiRecipePostMethod" Type="Self.ElTahiRecipePostMethod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CookingMethod">
+              <PropertyRef Name="CookmethodID" />
+            </Principal>
+            <Dependent Role="ElTahiRecipePostMethod">
+              <PropertyRef Name="ElTahiCookingMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiRecipePostMethod_EltahiRecipeType">
+          <End Role="EltahiRecipeType" Type="Self.EltahiRecipeType" Multiplicity="0..1" />
+          <End Role="ElTahiRecipePostMethod" Type="Self.ElTahiRecipePostMethod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EltahiRecipeType">
+              <PropertyRef Name="RecipeTypeID" />
+            </Principal>
+            <Dependent Role="ElTahiRecipePostMethod">
+              <PropertyRef Name="ElTahiRecipeTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiRecipePostMethod_TahiCuisine">
+          <End Role="TahiCuisine" Type="Self.TahiCuisine" Multiplicity="0..1" />
+          <End Role="ElTahiRecipePostMethod" Type="Self.ElTahiRecipePostMethod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TahiCuisine">
+              <PropertyRef Name="ElTahiCuisineID" />
+            </Principal>
+            <Dependent Role="ElTahiRecipePostMethod">
+              <PropertyRef Name="ElTahiCuisineID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiStatus_ElTahiAdmins">
+          <End Role="ElTahiAdmins" Type="Self.ElTahiAdmins" Multiplicity="0..1" />
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiAdmins">
+              <PropertyRef Name="EltahiAdminID" />
+            </Principal>
+            <Dependent Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusRegAdminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiStatus_ElTahiAdmins1">
+          <End Role="ElTahiAdmins" Type="Self.ElTahiAdmins" Multiplicity="0..1" />
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiAdmins">
+              <PropertyRef Name="EltahiAdminID" />
+            </Principal>
+            <Dependent Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusUpdateAdminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiSupplier_ElTahiType">
+          <End Role="ElTahiType" Type="Self.ElTahiType" Multiplicity="0..1" />
+          <End Role="ElTahiSupplier" Type="Self.ElTahiSupplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiType">
+              <PropertyRef Name="ElTahiTypesID" />
+            </Principal>
+            <Dependent Role="ElTahiSupplier">
+              <PropertyRef Name="ElTahiSupplierTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ELTahiTopSupplier_ElTahiStatus">
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatus" Multiplicity="0..1" />
+          <End Role="ELTahiTopSupplier" Type="Self.ELTahiTopSupplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusID" />
+            </Principal>
+            <Dependent Role="ELTahiTopSupplier">
+              <PropertyRef Name="ElTahiSupplierStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ELTahiTopSupplier_ElTahiSupplier">
+          <End Role="ElTahiSupplier" Type="Self.ElTahiSupplier" Multiplicity="0..1" />
+          <End Role="ELTahiTopSupplier" Type="Self.ELTahiTopSupplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiSupplier">
+              <PropertyRef Name="ElTahiSupplierID" />
+            </Principal>
+            <Dependent Role="ELTahiTopSupplier">
+              <PropertyRef Name="ElTahiSupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ELTahiTopUser_ElTahiCategory">
+          <End Role="ElTahiCategory" Type="Self.ElTahiCategory" Multiplicity="0..1" />
+          <End Role="ELTahiTopUser" Type="Self.ELTahiTopUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiCategory">
+              <PropertyRef Name="ElTahiCategoryID" />
+            </Principal>
+            <Dependent Role="ELTahiTopUser">
+              <PropertyRef Name="ElTahiTopUserCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ELTahiTopUser_ElTahiStatus">
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatus" Multiplicity="0..1" />
+          <End Role="ELTahiTopUser" Type="Self.ELTahiTopUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusID" />
+            </Principal>
+            <Dependent Role="ELTahiTopUser">
+              <PropertyRef Name="ElTahiUserStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ELTahiTopUser_ElTahiUsers">
+          <End Role="ElTahiUsers" Type="Self.ElTahiUsers" Multiplicity="0..1" />
+          <End Role="ELTahiTopUser" Type="Self.ELTahiTopUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiUsers">
+              <PropertyRef Name="ElTahiUserID" />
+            </Principal>
+            <Dependent Role="ELTahiTopUser">
+              <PropertyRef Name="ElTahiUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiType_ElTahiAdmins">
+          <End Role="ElTahiAdmins" Type="Self.ElTahiAdmins" Multiplicity="0..1" />
+          <End Role="ElTahiType" Type="Self.ElTahiType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiAdmins">
+              <PropertyRef Name="EltahiAdminID" />
+            </Principal>
+            <Dependent Role="ElTahiType">
+              <PropertyRef Name="ElTahiTypeRegUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiUsers_ElTahiStatus">
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatus" Multiplicity="0..1" />
+          <End Role="ElTahiUsers" Type="Self.ElTahiUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusID" />
+            </Principal>
+            <Dependent Role="ElTahiUsers">
+              <PropertyRef Name="ELTahiUserStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiUsers_ElTahiType">
+          <End Role="ElTahiType" Type="Self.ElTahiType" Multiplicity="0..1" />
+          <End Role="ElTahiUsers" Type="Self.ElTahiUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiType">
+              <PropertyRef Name="ElTahiTypesID" />
+            </Principal>
+            <Dependent Role="ElTahiUsers">
+              <PropertyRef Name="ElTahiUserTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="db_a8d12b_amahmyModelStoreContainer">
+          <EntitySet Name="CookingMethod" EntityType="Self.CookingMethod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiAdmins" EntityType="Self.ElTahiAdmins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiCategory" EntityType="Self.ElTahiCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ELTahiIngredient" EntityType="Self.ELTahiIngredient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ELTahiJobPosts" EntityType="Self.ELTahiJobPosts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ELTahiMeasuringUnit" EntityType="Self.ELTahiMeasuringUnit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiOtherPosts" EntityType="Self.ElTahiOtherPosts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ELTahiPerantPost" EntityType="Self.ELTahiPerantPost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiPostComment" EntityType="Self.ElTahiPostComment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiPostComponent" EntityType="Self.ElTahiPostComponent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiPostComponentRelations" EntityType="Self.ElTahiPostComponentRelations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiPostImages" EntityType="Self.ElTahiPostImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiPostImagesRelations" EntityType="Self.ElTahiPostImagesRelations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiPostRecipIngradient" EntityType="Self.ElTahiPostRecipIngradient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiPosts" EntityType="Self.ElTahiPosts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiPostScore" EntityType="Self.ElTahiPostScore" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiPostVideos" EntityType="Self.ElTahiPostVideos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiPostVideosRelations" EntityType="Self.ElTahiPostVideosRelations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiProfileImage" EntityType="Self.ElTahiProfileImage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiRecipePostImagesRelations" EntityType="Self.ElTahiRecipePostImagesRelations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiRecipePostMethod" EntityType="Self.ElTahiRecipePostMethod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiRecipeRelation" EntityType="Self.ElTahiRecipeRelation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EltahiRecipeType" EntityType="Self.EltahiRecipeType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiRescipePosts" EntityType="Self.ElTahiRescipePosts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiRestuarantType" EntityType="Self.ElTahiRestuarantType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiRole" EntityType="Self.ElTahiRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiStatus" EntityType="Self.ElTahiStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiSubRecipePostIngradient" EntityType="Self.ElTahiSubRecipePostIngradient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiSupplier" EntityType="Self.ElTahiSupplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiSupRescipePosts" EntityType="Self.ElTahiSupRescipePosts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ELTahiTopSupplier" EntityType="Self.ELTahiTopSupplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ELTahiTopUser" EntityType="Self.ELTahiTopUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiType" EntityType="Self.ElTahiType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElTahiUsers" EntityType="Self.ElTahiUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TahiCuisine" EntityType="Self.TahiCuisine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TahiSupInformation" EntityType="Self.TahiSupInformation" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ElTahiAdmins_ElTahiRole" Association="Self.FK_ElTahiAdmins_ElTahiRole">
+            <End Role="ElTahiRole" EntitySet="ElTahiRole" />
+            <End Role="ElTahiAdmins" EntitySet="ElTahiAdmins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiCategory_ElTahiAdmins" Association="Self.FK_ElTahiCategory_ElTahiAdmins">
+            <End Role="ElTahiAdmins" EntitySet="ElTahiAdmins" />
+            <End Role="ElTahiCategory" EntitySet="ElTahiCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiCategory_ElTahiStatus" Association="Self.FK_ElTahiCategory_ElTahiStatus">
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+            <End Role="ElTahiCategory" EntitySet="ElTahiCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostComponentRelations_ElTahiPostComponent" Association="Self.FK_ElTahiPostComponentRelations_ElTahiPostComponent">
+            <End Role="ElTahiPostComponent" EntitySet="ElTahiPostComponent" />
+            <End Role="ElTahiPostComponentRelations" EntitySet="ElTahiPostComponentRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostComponentRelations_ElTahiPosts" Association="Self.FK_ElTahiPostComponentRelations_ElTahiPosts">
+            <End Role="ElTahiPosts" EntitySet="ElTahiPosts" />
+            <End Role="ElTahiPostComponentRelations" EntitySet="ElTahiPostComponentRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostComponentRelations_ElTahiUsers" Association="Self.FK_ElTahiPostComponentRelations_ElTahiUsers">
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+            <End Role="ElTahiPostComponentRelations" EntitySet="ElTahiPostComponentRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostImages_ElTahiStatus" Association="Self.FK_ElTahiPostImages_ElTahiStatus">
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+            <End Role="ElTahiPostImages" EntitySet="ElTahiPostImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostImages_ElTahiUsers" Association="Self.FK_ElTahiPostImages_ElTahiUsers">
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+            <End Role="ElTahiPostImages" EntitySet="ElTahiPostImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostImagesRelations_ElTahiPostImages" Association="Self.FK_ElTahiPostImagesRelations_ElTahiPostImages">
+            <End Role="ElTahiPostImages" EntitySet="ElTahiPostImages" />
+            <End Role="ElTahiPostImagesRelations" EntitySet="ElTahiPostImagesRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostImagesRelations_ElTahiPosts" Association="Self.FK_ElTahiPostImagesRelations_ElTahiPosts">
+            <End Role="ElTahiPosts" EntitySet="ElTahiPosts" />
+            <End Role="ElTahiPostImagesRelations" EntitySet="ElTahiPostImagesRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostImagesRelations_ElTahiUsers" Association="Self.FK_ElTahiPostImagesRelations_ElTahiUsers">
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+            <End Role="ElTahiPostImagesRelations" EntitySet="ElTahiPostImagesRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostVideos_ElTahiStatus" Association="Self.FK_ElTahiPostVideos_ElTahiStatus">
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+            <End Role="ElTahiPostVideos" EntitySet="ElTahiPostVideos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostVideos_ElTahiUsers" Association="Self.FK_ElTahiPostVideos_ElTahiUsers">
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+            <End Role="ElTahiPostVideos" EntitySet="ElTahiPostVideos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostVideosRelations_ElTahiPosts" Association="Self.FK_ElTahiPostVideosRelations_ElTahiPosts">
+            <End Role="ElTahiPosts" EntitySet="ElTahiPosts" />
+            <End Role="ElTahiPostVideosRelations" EntitySet="ElTahiPostVideosRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiRecipePostMethod_CookingMethod" Association="Self.FK_ElTahiRecipePostMethod_CookingMethod">
+            <End Role="CookingMethod" EntitySet="CookingMethod" />
+            <End Role="ElTahiRecipePostMethod" EntitySet="ElTahiRecipePostMethod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiRecipePostMethod_EltahiRecipeType" Association="Self.FK_ElTahiRecipePostMethod_EltahiRecipeType">
+            <End Role="EltahiRecipeType" EntitySet="EltahiRecipeType" />
+            <End Role="ElTahiRecipePostMethod" EntitySet="ElTahiRecipePostMethod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiRecipePostMethod_TahiCuisine" Association="Self.FK_ElTahiRecipePostMethod_TahiCuisine">
+            <End Role="TahiCuisine" EntitySet="TahiCuisine" />
+            <End Role="ElTahiRecipePostMethod" EntitySet="ElTahiRecipePostMethod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiStatus_ElTahiAdmins" Association="Self.FK_ElTahiStatus_ElTahiAdmins">
+            <End Role="ElTahiAdmins" EntitySet="ElTahiAdmins" />
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiStatus_ElTahiAdmins1" Association="Self.FK_ElTahiStatus_ElTahiAdmins1">
+            <End Role="ElTahiAdmins" EntitySet="ElTahiAdmins" />
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiSupplier_ElTahiType" Association="Self.FK_ElTahiSupplier_ElTahiType">
+            <End Role="ElTahiType" EntitySet="ElTahiType" />
+            <End Role="ElTahiSupplier" EntitySet="ElTahiSupplier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ELTahiTopSupplier_ElTahiStatus" Association="Self.FK_ELTahiTopSupplier_ElTahiStatus">
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+            <End Role="ELTahiTopSupplier" EntitySet="ELTahiTopSupplier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ELTahiTopSupplier_ElTahiSupplier" Association="Self.FK_ELTahiTopSupplier_ElTahiSupplier">
+            <End Role="ElTahiSupplier" EntitySet="ElTahiSupplier" />
+            <End Role="ELTahiTopSupplier" EntitySet="ELTahiTopSupplier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ELTahiTopUser_ElTahiCategory" Association="Self.FK_ELTahiTopUser_ElTahiCategory">
+            <End Role="ElTahiCategory" EntitySet="ElTahiCategory" />
+            <End Role="ELTahiTopUser" EntitySet="ELTahiTopUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ELTahiTopUser_ElTahiStatus" Association="Self.FK_ELTahiTopUser_ElTahiStatus">
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+            <End Role="ELTahiTopUser" EntitySet="ELTahiTopUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ELTahiTopUser_ElTahiUsers" Association="Self.FK_ELTahiTopUser_ElTahiUsers">
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+            <End Role="ELTahiTopUser" EntitySet="ELTahiTopUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiType_ElTahiAdmins" Association="Self.FK_ElTahiType_ElTahiAdmins">
+            <End Role="ElTahiAdmins" EntitySet="ElTahiAdmins" />
+            <End Role="ElTahiType" EntitySet="ElTahiType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiUsers_ElTahiStatus" Association="Self.FK_ElTahiUsers_ElTahiStatus">
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiUsers_ElTahiType" Association="Self.FK_ElTahiUsers_ElTahiType">
+            <End Role="ElTahiType" EntitySet="ElTahiType" />
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_a8d12b_amahmyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="ContID" />
+          </Key>
+          <Property Name="ContID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="country_code" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="country_enName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="country_arName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="country_enNationality" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="country_arNationality" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ElTahiAdmin">
+          <Key>
+            <PropertyRef Name="EltahiAdminID" />
+          </Key>
+          <Property Name="EltahiAdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EltahiAdUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EltahiAdUserPassWord" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="EltahiAdRegdateTime" Type="DateTime" Precision="3" />
+          <Property Name="EltahiAdRoleID" Type="Int32" />
+          <Property Name="EltahiAdStatusID" Type="Int32" />
+          <NavigationProperty Name="ElTahiRole" Relationship="Self.FK_ElTahiAdmins_ElTahiRole" FromRole="ElTahiAdmins" ToRole="ElTahiRole" />
+          <NavigationProperty Name="ElTahiCategories" Relationship="Self.FK_ElTahiCategory_ElTahiAdmins" FromRole="ElTahiAdmins" ToRole="ElTahiCategory" />
+          <NavigationProperty Name="ElTahiStatus" Relationship="Self.FK_ElTahiStatus_ElTahiAdmins" FromRole="ElTahiAdmins" ToRole="ElTahiStatus" />
+          <NavigationProperty Name="ElTahiStatus1" Relationship="Self.FK_ElTahiStatus_ElTahiAdmins1" FromRole="ElTahiAdmins" ToRole="ElTahiStatus" />
+          <NavigationProperty Name="ElTahiTypes" Relationship="Self.FK_ElTahiType_ElTahiAdmins" FromRole="ElTahiAdmins" ToRole="ElTahiType" />
+        </EntityType>
+        <EntityType Name="ElTahiCategory">
+          <Key>
+            <PropertyRef Name="ElTahiCategoryID" />
+          </Key>
+          <Property Name="ElTahiCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiCategory1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiCategoryRegDT" Type="DateTime" Precision="3" />
+          <Property Name="ElTahiCategoryRegUserID" Type="Int32" />
+          <Property Name="ElTahiCategoryStatusID" Type="Int32" />
+          <Property Name="ElTahiCategoryActivationFlag" Type="Boolean" />
+          <NavigationProperty Name="ElTahiAdmin" Relationship="Self.FK_ElTahiCategory_ElTahiAdmins" FromRole="ElTahiCategory" ToRole="ElTahiAdmins" />
+          <NavigationProperty Name="ElTahiStatu" Relationship="Self.FK_ElTahiCategory_ElTahiStatus" FromRole="ElTahiCategory" ToRole="ElTahiStatus" />
+          <NavigationProperty Name="ELTahiTopUsers" Relationship="Self.FK_ELTahiTopUser_ElTahiCategory" FromRole="ElTahiCategory" ToRole="ELTahiTopUser" />
+        </EntityType>
+        <EntityType Name="ElTahiPostComponent">
+          <Key>
+            <PropertyRef Name="ElTahiPostComponentsID" />
+          </Key>
+          <Property Name="ElTahiPostComponentsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiPostComponents" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiPostComponentsUserID" Type="Int32" />
+          <Property Name="ElTahiPostComRegDT" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ElTahiPostComponentRelations" Relationship="Self.FK_ElTahiPostComponentRelations_ElTahiPostComponent" FromRole="ElTahiPostComponent" ToRole="ElTahiPostComponentRelations" />
+        </EntityType>
+        <EntityType Name="ElTahiPostComponentRelation">
+          <Key>
+            <PropertyRef Name="ElTahiPostComponentRelationID" />
+          </Key>
+          <Property Name="ElTahiPostComponentRelationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiPostID" Type="Int32" />
+          <Property Name="ElTahiComponentID" Type="Int32" />
+          <Property Name="ElTahiPostComRelationUserID" Type="Int32" />
+          <Property Name="ElTahiPostComRelationRegDT" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ElTahiPostComponent" Relationship="Self.FK_ElTahiPostComponentRelations_ElTahiPostComponent" FromRole="ElTahiPostComponentRelations" ToRole="ElTahiPostComponent" />
+          <NavigationProperty Name="ElTahiPost" Relationship="Self.FK_ElTahiPostComponentRelations_ElTahiPosts" FromRole="ElTahiPostComponentRelations" ToRole="ElTahiPosts" />
+          <NavigationProperty Name="ElTahiUser" Relationship="Self.FK_ElTahiPostComponentRelations_ElTahiUsers" FromRole="ElTahiPostComponentRelations" ToRole="ElTahiUsers" />
+        </EntityType>
+        <EntityType Name="ElTahiPostImage">
+          <Key>
+            <PropertyRef Name="ElTahiPostImageID" />
+          </Key>
+          <Property Name="ElTahiPostImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiPostImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiPostImageUserID" Type="Int32" />
+          <Property Name="ElTahiPostImageStatusID" Type="Int32" />
+          <Property Name="ElTahiPostImageRegDT" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ElTahiStatu" Relationship="Self.FK_ElTahiPostImages_ElTahiStatus" FromRole="ElTahiPostImages" ToRole="ElTahiStatus" />
+          <NavigationProperty Name="ElTahiUser" Relationship="Self.FK_ElTahiPostImages_ElTahiUsers" FromRole="ElTahiPostImages" ToRole="ElTahiUsers" />
+          <NavigationProperty Name="ElTahiPostImagesRelations" Relationship="Self.FK_ElTahiPostImagesRelations_ElTahiPostImages" FromRole="ElTahiPostImages" ToRole="ElTahiPostImagesRelations" />
+        </EntityType>
+        <EntityType Name="ElTahiPostImagesRelation">
+          <Key>
+            <PropertyRef Name="ElTahiPostImageRelationID" />
+          </Key>
+          <Property Name="ElTahiPostImageRelationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiPostID" Type="Int32" />
+          <Property Name="ElTahiPostImageID" Type="Int32" />
+          <Property Name="ElTahiRelationRegUserID" Type="Int32" />
+          <Property Name="ElTahiRelationRegDT" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ElTahiPostImage" Relationship="Self.FK_ElTahiPostImagesRelations_ElTahiPostImages" FromRole="ElTahiPostImagesRelations" ToRole="ElTahiPostImages" />
+          <NavigationProperty Name="ElTahiUser" Relationship="Self.FK_ElTahiPostImagesRelations_ElTahiUsers" FromRole="ElTahiPostImagesRelations" ToRole="ElTahiUsers" />
+        </EntityType>
+        <EntityType Name="ElTahiPost">
+          <Key>
+            <PropertyRef Name="ElTahiPostID" />
+          </Key>
+          <Property Name="ElTahiPostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiPostHeader" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiPostBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiPostUserID" Type="Int32" />
+          <Property Name="ElTahiPostStatusID" Type="Int32" />
+          <Property Name="ELTahiPostRegDT" Type="DateTime" Precision="3" />
+          <Property Name="ElTahiPostUpdateDT" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ElTahiPostComponentRelations" Relationship="Self.FK_ElTahiPostComponentRelations_ElTahiPosts" FromRole="ElTahiPosts" ToRole="ElTahiPostComponentRelations" />
+          <NavigationProperty Name="ElTahiPostImagesRelations" Relationship="Self.FK_ElTahiPostImagesRelations_ElTahiPosts" FromRole="ElTahiPosts" ToRole="ElTahiPostImagesRelations" />
+          <NavigationProperty Name="ElTahiPostVideosRelations" Relationship="Self.FK_ElTahiPostVideosRelations_ElTahiPosts" FromRole="ElTahiPosts" ToRole="ElTahiPostVideosRelations" />
+        </EntityType>
+        <EntityType Name="ElTahiPostVideo">
+          <Key>
+            <PropertyRef Name="ElTahiPostVideosID" />
+          </Key>
+          <Property Name="ElTahiPostVideosID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiPostVideosURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiPostVideosUserID" Type="Int32" />
+          <Property Name="ElTahiPostVideosStatusID" Type="Int32" />
+          <Property Name="ElTahiPostVideosRegDT" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ElTahiStatu" Relationship="Self.FK_ElTahiPostVideos_ElTahiStatus" FromRole="ElTahiPostVideos" ToRole="ElTahiStatus" />
+          <NavigationProperty Name="ElTahiUser" Relationship="Self.FK_ElTahiPostVideos_ElTahiUsers" FromRole="ElTahiPostVideos" ToRole="ElTahiUsers" />
+        </EntityType>
+        <EntityType Name="ElTahiPostVideosRelation">
+          <Key>
+            <PropertyRef Name="ElTahiPostVideosRelationID" />
+          </Key>
+          <Property Name="ElTahiPostVideosRelationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiPostID" Type="Int32" />
+          <Property Name="ElTahiPostVideosID" Type="Int32" />
+          <Property Name="ElTahiVidRelationRegUserID" Type="Int32" />
+          <Property Name="ElTahiVidRelationRegDT" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ElTahiPost" Relationship="Self.FK_ElTahiPostVideosRelations_ElTahiPosts" FromRole="ElTahiPostVideosRelations" ToRole="ElTahiPosts" />
+        </EntityType>
+        <EntityType Name="ElTahiProfileImage">
+          <Key>
+            <PropertyRef Name="ElTahiProfileImageID" />
+          </Key>
+          <Property Name="ElTahiProfileImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiProfileImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiProfileImageName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiProfileImageUserID" Type="Int32" />
+          <Property Name="UploadDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ElTahiRole">
+          <Key>
+            <PropertyRef Name="ElTahiRoleID" />
+          </Key>
+          <Property Name="ElTahiRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiRole1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiRoleDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiRoleUserID" Type="Int32" />
+          <Property Name="ElTahiRegDT" Type="DateTime" Precision="3" />
+          <Property Name="RoleActivavtionFlag" Type="Boolean" />
+          <NavigationProperty Name="ElTahiAdmins" Relationship="Self.FK_ElTahiAdmins_ElTahiRole" FromRole="ElTahiRole" ToRole="ElTahiAdmins" />
+        </EntityType>
+        <EntityType Name="ElTahiStatu">
+          <Key>
+            <PropertyRef Name="ElTahiStatusID" />
+          </Key>
+          <Property Name="ElTahiStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiStatusRegAdminID" Type="Int32" />
+          <Property Name="ElTahiStatusRegDT" Type="DateTime" Precision="3" />
+          <Property Name="ElTahiStatusUpdateAdminID" Type="Int32" />
+          <Property Name="ElTahiStatusUpdateDT" Type="DateTime" Precision="3" />
+          <Property Name="ActivationFlag" Type="Boolean" />
+          <NavigationProperty Name="ElTahiAdmin" Relationship="Self.FK_ElTahiStatus_ElTahiAdmins" FromRole="ElTahiStatus" ToRole="ElTahiAdmins" />
+          <NavigationProperty Name="ElTahiAdmin1" Relationship="Self.FK_ElTahiStatus_ElTahiAdmins1" FromRole="ElTahiStatus" ToRole="ElTahiAdmins" />
+          <NavigationProperty Name="ElTahiCategories" Relationship="Self.FK_ElTahiCategory_ElTahiStatus" FromRole="ElTahiStatus" ToRole="ElTahiCategory" />
+          <NavigationProperty Name="ElTahiPostImages" Relationship="Self.FK_ElTahiPostImages_ElTahiStatus" FromRole="ElTahiStatus" ToRole="ElTahiPostImages" />
+          <NavigationProperty Name="ElTahiPostVideos" Relationship="Self.FK_ElTahiPostVideos_ElTahiStatus" FromRole="ElTahiStatus" ToRole="ElTahiPostVideos" />
+          <NavigationProperty Name="ELTahiTopSuppliers" Relationship="Self.FK_ELTahiTopSupplier_ElTahiStatus" FromRole="ElTahiStatus" ToRole="ELTahiTopSupplier" />
+          <NavigationProperty Name="ELTahiTopUsers" Relationship="Self.FK_ELTahiTopUser_ElTahiStatus" FromRole="ElTahiStatus" ToRole="ELTahiTopUser" />
+          <NavigationProperty Name="ElTahiUsers" Relationship="Self.FK_ElTahiUsers_ElTahiStatus" FromRole="ElTahiStatus" ToRole="ElTahiUsers" />
+        </EntityType>
+        <EntityType Name="ElTahiSupplier">
+          <Key>
+            <PropertyRef Name="ElTahiSupplierID" />
+          </Key>
+          <Property Name="ElTahiSupplierID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiSupplierCompName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiFirstName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ELTahiSecondName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiLastName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiSupplierBirthdate" Type="DateTime" Precision="0" />
+          <Property Name="ElTahiSupplierEmail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiSupplierMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiSupplierTypeID" Type="Int32" />
+          <Property Name="ElTahiSupplierBio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiRegDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ElTahiUpdateDT" Type="DateTime" Precision="3" />
+          <Property Name="ElTahiLastLoginDT" Type="DateTime" Precision="3" />
+          <Property Name="ELTahiSupplierStatusID" Type="Int32" />
+          <Property Name="ELTahiSupplierName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiSupplierPassWord" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ElTahiType" Relationship="Self.FK_ElTahiSupplier_ElTahiType" FromRole="ElTahiSupplier" ToRole="ElTahiType" />
+          <NavigationProperty Name="ELTahiTopSuppliers" Relationship="Self.FK_ELTahiTopSupplier_ElTahiSupplier" FromRole="ElTahiSupplier" ToRole="ELTahiTopSupplier" />
+        </EntityType>
+        <EntityType Name="ELTahiTopSupplier">
+          <Key>
+            <PropertyRef Name="ElTahiTopSupplierID" />
+          </Key>
+          <Property Name="ElTahiTopSupplierID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiSupplierID" Type="Int32" />
+          <Property Name="ElTahiSupplierStatusID" Type="Int32" />
+          <Property Name="ELTahiTopSupplierRegDt" Type="DateTime" Precision="3" />
+          <Property Name="ElTahiTopSupplierCategoryID" Type="Int32" />
+          <NavigationProperty Name="ElTahiStatu" Relationship="Self.FK_ELTahiTopSupplier_ElTahiStatus" FromRole="ELTahiTopSupplier" ToRole="ElTahiStatus" />
+          <NavigationProperty Name="ElTahiSupplier" Relationship="Self.FK_ELTahiTopSupplier_ElTahiSupplier" FromRole="ELTahiTopSupplier" ToRole="ElTahiSupplier" />
+        </EntityType>
+        <EntityType Name="ELTahiTopUser">
+          <Key>
+            <PropertyRef Name="ElTahiTopUserID" />
+          </Key>
+          <Property Name="ElTahiTopUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiUserID" Type="Int32" />
+          <Property Name="ElTahiUserStatusID" Type="Int32" />
+          <Property Name="ELTahiTopUserRegDt" Type="DateTime" Precision="3" />
+          <Property Name="ElTahiTopUserCategoryID" Type="Int32" />
+          <NavigationProperty Name="ElTahiCategory" Relationship="Self.FK_ELTahiTopUser_ElTahiCategory" FromRole="ELTahiTopUser" ToRole="ElTahiCategory" />
+          <NavigationProperty Name="ElTahiStatu" Relationship="Self.FK_ELTahiTopUser_ElTahiStatus" FromRole="ELTahiTopUser" ToRole="ElTahiStatus" />
+          <NavigationProperty Name="ElTahiUser" Relationship="Self.FK_ELTahiTopUser_ElTahiUsers" FromRole="ELTahiTopUser" ToRole="ElTahiUsers" />
+        </EntityType>
+        <EntityType Name="ElTahiType">
+          <Key>
+            <PropertyRef Name="ElTahiTypesID" />
+          </Key>
+          <Property Name="ElTahiTypesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiType1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiTypeRegDT" Type="DateTime" Precision="3" />
+          <Property Name="ElTahiTypeRegUserID" Type="Int32" />
+          <Property Name="ElTahiTypeStatusID" Type="Int32" />
+          <Property Name="ElTahiTypeActivationFlag" Type="Boolean" />
+          <NavigationProperty Name="ElTahiAdmin" Relationship="Self.FK_ElTahiType_ElTahiAdmins" FromRole="ElTahiType" ToRole="ElTahiAdmins" />
+          <NavigationProperty Name="ElTahiSuppliers" Relationship="Self.FK_ElTahiSupplier_ElTahiType" FromRole="ElTahiType" ToRole="ElTahiSupplier" />
+          <NavigationProperty Name="ElTahiUsers" Relationship="Self.FK_ElTahiUsers_ElTahiType" FromRole="ElTahiType" ToRole="ElTahiUsers" />
+        </EntityType>
+        <EntityType Name="ElTahiUser">
+          <Key>
+            <PropertyRef Name="ElTahiUserID" />
+          </Key>
+          <Property Name="ElTahiUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiFirstName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ELTahiSecondName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiLastName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiUserBirthdate" Type="DateTime" Precision="0" />
+          <Property Name="ElTahiUserEmail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiUserMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiUserTypeID" Type="Int32" />
+          <Property Name="ElTahiUserBio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiRegDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ElTahiUpdateDT" Type="DateTime" Precision="3" />
+          <Property Name="ElTahiLastLoginDT" Type="DateTime" Precision="3" />
+          <Property Name="ELTahiUserStatusID" Type="Int32" />
+          <Property Name="ELTahiUserName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiUserPassWord" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ELTahiUserCountryID" Type="Int32" />
+          <Property Name="ELTahiNationalID" Type="Int32" />
+          <NavigationProperty Name="ElTahiPostComponentRelations" Relationship="Self.FK_ElTahiPostComponentRelations_ElTahiUsers" FromRole="ElTahiUsers" ToRole="ElTahiPostComponentRelations" />
+          <NavigationProperty Name="ElTahiPostImages" Relationship="Self.FK_ElTahiPostImages_ElTahiUsers" FromRole="ElTahiUsers" ToRole="ElTahiPostImages" />
+          <NavigationProperty Name="ElTahiPostImagesRelations" Relationship="Self.FK_ElTahiPostImagesRelations_ElTahiUsers" FromRole="ElTahiUsers" ToRole="ElTahiPostImagesRelations" />
+          <NavigationProperty Name="ElTahiPostVideos" Relationship="Self.FK_ElTahiPostVideos_ElTahiUsers" FromRole="ElTahiUsers" ToRole="ElTahiPostVideos" />
+          <NavigationProperty Name="ElTahiStatu" Relationship="Self.FK_ElTahiUsers_ElTahiStatus" FromRole="ElTahiUsers" ToRole="ElTahiStatus" />
+          <NavigationProperty Name="ELTahiTopUsers" Relationship="Self.FK_ELTahiTopUser_ElTahiUsers" FromRole="ElTahiUsers" ToRole="ELTahiTopUser" />
+          <NavigationProperty Name="ElTahiType" Relationship="Self.FK_ElTahiUsers_ElTahiType" FromRole="ElTahiUsers" ToRole="ElTahiType" />
+          <Property Name="ElTahiComAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiComName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiRestTypeID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_ElTahiAdmins_ElTahiRole">
+          <End Role="ElTahiRole" Type="Self.ElTahiRole" Multiplicity="0..1" />
+          <End Role="ElTahiAdmins" Type="Self.ElTahiAdmin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiRole">
+              <PropertyRef Name="ElTahiRoleID" />
+            </Principal>
+            <Dependent Role="ElTahiAdmins">
+              <PropertyRef Name="EltahiAdRoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiCategory_ElTahiAdmins">
+          <End Role="ElTahiAdmins" Type="Self.ElTahiAdmin" Multiplicity="0..1" />
+          <End Role="ElTahiCategory" Type="Self.ElTahiCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiAdmins">
+              <PropertyRef Name="EltahiAdminID" />
+            </Principal>
+            <Dependent Role="ElTahiCategory">
+              <PropertyRef Name="ElTahiCategoryRegUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiStatus_ElTahiAdmins">
+          <End Role="ElTahiAdmins" Type="Self.ElTahiAdmin" Multiplicity="0..1" />
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiAdmins">
+              <PropertyRef Name="EltahiAdminID" />
+            </Principal>
+            <Dependent Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusRegAdminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiStatus_ElTahiAdmins1">
+          <End Role="ElTahiAdmins" Type="Self.ElTahiAdmin" Multiplicity="0..1" />
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiAdmins">
+              <PropertyRef Name="EltahiAdminID" />
+            </Principal>
+            <Dependent Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusUpdateAdminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiType_ElTahiAdmins">
+          <End Role="ElTahiAdmins" Type="Self.ElTahiAdmin" Multiplicity="0..1" />
+          <End Role="ElTahiType" Type="Self.ElTahiType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiAdmins">
+              <PropertyRef Name="EltahiAdminID" />
+            </Principal>
+            <Dependent Role="ElTahiType">
+              <PropertyRef Name="ElTahiTypeRegUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiCategory_ElTahiStatus">
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatu" Multiplicity="0..1" />
+          <End Role="ElTahiCategory" Type="Self.ElTahiCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusID" />
+            </Principal>
+            <Dependent Role="ElTahiCategory">
+              <PropertyRef Name="ElTahiCategoryStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ELTahiTopUser_ElTahiCategory">
+          <End Role="ElTahiCategory" Type="Self.ElTahiCategory" Multiplicity="0..1" />
+          <End Role="ELTahiTopUser" Type="Self.ELTahiTopUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiCategory">
+              <PropertyRef Name="ElTahiCategoryID" />
+            </Principal>
+            <Dependent Role="ELTahiTopUser">
+              <PropertyRef Name="ElTahiTopUserCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostComponentRelations_ElTahiPostComponent">
+          <End Role="ElTahiPostComponent" Type="Self.ElTahiPostComponent" Multiplicity="0..1" />
+          <End Role="ElTahiPostComponentRelations" Type="Self.ElTahiPostComponentRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiPostComponent">
+              <PropertyRef Name="ElTahiPostComponentsID" />
+            </Principal>
+            <Dependent Role="ElTahiPostComponentRelations">
+              <PropertyRef Name="ElTahiComponentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostComponentRelations_ElTahiPosts">
+          <End Role="ElTahiPosts" Type="Self.ElTahiPost" Multiplicity="0..1" />
+          <End Role="ElTahiPostComponentRelations" Type="Self.ElTahiPostComponentRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiPosts">
+              <PropertyRef Name="ElTahiPostID" />
+            </Principal>
+            <Dependent Role="ElTahiPostComponentRelations">
+              <PropertyRef Name="ElTahiPostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostComponentRelations_ElTahiUsers">
+          <End Role="ElTahiUsers" Type="Self.ElTahiUser" Multiplicity="0..1" />
+          <End Role="ElTahiPostComponentRelations" Type="Self.ElTahiPostComponentRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiUsers">
+              <PropertyRef Name="ElTahiUserID" />
+            </Principal>
+            <Dependent Role="ElTahiPostComponentRelations">
+              <PropertyRef Name="ElTahiPostComRelationUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostImages_ElTahiStatus">
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatu" Multiplicity="0..1" />
+          <End Role="ElTahiPostImages" Type="Self.ElTahiPostImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusID" />
+            </Principal>
+            <Dependent Role="ElTahiPostImages">
+              <PropertyRef Name="ElTahiPostImageStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostImages_ElTahiUsers">
+          <End Role="ElTahiUsers" Type="Self.ElTahiUser" Multiplicity="0..1" />
+          <End Role="ElTahiPostImages" Type="Self.ElTahiPostImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiUsers">
+              <PropertyRef Name="ElTahiUserID" />
+            </Principal>
+            <Dependent Role="ElTahiPostImages">
+              <PropertyRef Name="ElTahiPostImageUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostImagesRelations_ElTahiPostImages">
+          <End Role="ElTahiPostImages" Type="Self.ElTahiPostImage" Multiplicity="0..1" />
+          <End Role="ElTahiPostImagesRelations" Type="Self.ElTahiPostImagesRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiPostImages">
+              <PropertyRef Name="ElTahiPostImageID" />
+            </Principal>
+            <Dependent Role="ElTahiPostImagesRelations">
+              <PropertyRef Name="ElTahiPostImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostImagesRelations_ElTahiPosts">
+          <End Role="ElTahiPosts" Type="Self.ElTahiPost" Multiplicity="0..1" />
+          <End Role="ElTahiPostImagesRelations" Type="Self.ElTahiPostImagesRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiPosts">
+              <PropertyRef Name="ElTahiPostID" />
+            </Principal>
+            <Dependent Role="ElTahiPostImagesRelations">
+              <PropertyRef Name="ElTahiPostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostImagesRelations_ElTahiUsers">
+          <End Role="ElTahiUsers" Type="Self.ElTahiUser" Multiplicity="0..1" />
+          <End Role="ElTahiPostImagesRelations" Type="Self.ElTahiPostImagesRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiUsers">
+              <PropertyRef Name="ElTahiUserID" />
+            </Principal>
+            <Dependent Role="ElTahiPostImagesRelations">
+              <PropertyRef Name="ElTahiRelationRegUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostVideosRelations_ElTahiPosts">
+          <End Role="ElTahiPosts" Type="Self.ElTahiPost" Multiplicity="0..1" />
+          <End Role="ElTahiPostVideosRelations" Type="Self.ElTahiPostVideosRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiPosts">
+              <PropertyRef Name="ElTahiPostID" />
+            </Principal>
+            <Dependent Role="ElTahiPostVideosRelations">
+              <PropertyRef Name="ElTahiPostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostVideos_ElTahiStatus">
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatu" Multiplicity="0..1" />
+          <End Role="ElTahiPostVideos" Type="Self.ElTahiPostVideo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusID" />
+            </Principal>
+            <Dependent Role="ElTahiPostVideos">
+              <PropertyRef Name="ElTahiPostVideosStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiPostVideos_ElTahiUsers">
+          <End Role="ElTahiUsers" Type="Self.ElTahiUser" Multiplicity="0..1" />
+          <End Role="ElTahiPostVideos" Type="Self.ElTahiPostVideo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiUsers">
+              <PropertyRef Name="ElTahiUserID" />
+            </Principal>
+            <Dependent Role="ElTahiPostVideos">
+              <PropertyRef Name="ElTahiPostVideosUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ELTahiTopSupplier_ElTahiStatus">
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatu" Multiplicity="0..1" />
+          <End Role="ELTahiTopSupplier" Type="Self.ELTahiTopSupplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusID" />
+            </Principal>
+            <Dependent Role="ELTahiTopSupplier">
+              <PropertyRef Name="ElTahiSupplierStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ELTahiTopUser_ElTahiStatus">
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatu" Multiplicity="0..1" />
+          <End Role="ELTahiTopUser" Type="Self.ELTahiTopUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusID" />
+            </Principal>
+            <Dependent Role="ELTahiTopUser">
+              <PropertyRef Name="ElTahiUserStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiUsers_ElTahiStatus">
+          <End Role="ElTahiStatus" Type="Self.ElTahiStatu" Multiplicity="0..1" />
+          <End Role="ElTahiUsers" Type="Self.ElTahiUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiStatus">
+              <PropertyRef Name="ElTahiStatusID" />
+            </Principal>
+            <Dependent Role="ElTahiUsers">
+              <PropertyRef Name="ELTahiUserStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiSupplier_ElTahiType">
+          <End Role="ElTahiType" Type="Self.ElTahiType" Multiplicity="0..1" />
+          <End Role="ElTahiSupplier" Type="Self.ElTahiSupplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiType">
+              <PropertyRef Name="ElTahiTypesID" />
+            </Principal>
+            <Dependent Role="ElTahiSupplier">
+              <PropertyRef Name="ElTahiSupplierTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ELTahiTopSupplier_ElTahiSupplier">
+          <End Role="ElTahiSupplier" Type="Self.ElTahiSupplier" Multiplicity="0..1" />
+          <End Role="ELTahiTopSupplier" Type="Self.ELTahiTopSupplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiSupplier">
+              <PropertyRef Name="ElTahiSupplierID" />
+            </Principal>
+            <Dependent Role="ELTahiTopSupplier">
+              <PropertyRef Name="ElTahiSupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ELTahiTopUser_ElTahiUsers">
+          <End Role="ElTahiUsers" Type="Self.ElTahiUser" Multiplicity="0..1" />
+          <End Role="ELTahiTopUser" Type="Self.ELTahiTopUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiUsers">
+              <PropertyRef Name="ElTahiUserID" />
+            </Principal>
+            <Dependent Role="ELTahiTopUser">
+              <PropertyRef Name="ElTahiUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiUsers_ElTahiType">
+          <End Role="ElTahiType" Type="Self.ElTahiType" Multiplicity="0..1" />
+          <End Role="ElTahiUsers" Type="Self.ElTahiUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiType">
+              <PropertyRef Name="ElTahiTypesID" />
+            </Principal>
+            <Dependent Role="ElTahiUsers">
+              <PropertyRef Name="ElTahiUserTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_a8d12b_amahmyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="ElTahiAdmins" EntityType="Self.ElTahiAdmin" />
+          <EntitySet Name="ElTahiCategories" EntityType="Self.ElTahiCategory" />
+          <EntitySet Name="ElTahiPostComponents" EntityType="Self.ElTahiPostComponent" />
+          <EntitySet Name="ElTahiPostComponentRelations" EntityType="Self.ElTahiPostComponentRelation" />
+          <EntitySet Name="ElTahiPostImages" EntityType="Self.ElTahiPostImage" />
+          <EntitySet Name="ElTahiPostImagesRelations" EntityType="Self.ElTahiPostImagesRelation" />
+          <EntitySet Name="ElTahiPosts" EntityType="Self.ElTahiPost" />
+          <EntitySet Name="ElTahiPostVideos" EntityType="Self.ElTahiPostVideo" />
+          <EntitySet Name="ElTahiPostVideosRelations" EntityType="Self.ElTahiPostVideosRelation" />
+          <EntitySet Name="ElTahiProfileImages" EntityType="Self.ElTahiProfileImage" />
+          <EntitySet Name="ElTahiRoles" EntityType="Self.ElTahiRole" />
+          <EntitySet Name="ElTahiStatus" EntityType="Self.ElTahiStatu" />
+          <EntitySet Name="ElTahiSuppliers" EntityType="Self.ElTahiSupplier" />
+          <EntitySet Name="ELTahiTopSuppliers" EntityType="Self.ELTahiTopSupplier" />
+          <EntitySet Name="ELTahiTopUsers" EntityType="Self.ELTahiTopUser" />
+          <EntitySet Name="ElTahiTypes" EntityType="Self.ElTahiType" />
+          <EntitySet Name="ElTahiUsers" EntityType="Self.ElTahiUser" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_ElTahiAdmins_ElTahiRole" Association="Self.FK_ElTahiAdmins_ElTahiRole">
+            <End Role="ElTahiRole" EntitySet="ElTahiRoles" />
+            <End Role="ElTahiAdmins" EntitySet="ElTahiAdmins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiCategory_ElTahiAdmins" Association="Self.FK_ElTahiCategory_ElTahiAdmins">
+            <End Role="ElTahiAdmins" EntitySet="ElTahiAdmins" />
+            <End Role="ElTahiCategory" EntitySet="ElTahiCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiStatus_ElTahiAdmins" Association="Self.FK_ElTahiStatus_ElTahiAdmins">
+            <End Role="ElTahiAdmins" EntitySet="ElTahiAdmins" />
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiStatus_ElTahiAdmins1" Association="Self.FK_ElTahiStatus_ElTahiAdmins1">
+            <End Role="ElTahiAdmins" EntitySet="ElTahiAdmins" />
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiType_ElTahiAdmins" Association="Self.FK_ElTahiType_ElTahiAdmins">
+            <End Role="ElTahiAdmins" EntitySet="ElTahiAdmins" />
+            <End Role="ElTahiType" EntitySet="ElTahiTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiCategory_ElTahiStatus" Association="Self.FK_ElTahiCategory_ElTahiStatus">
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+            <End Role="ElTahiCategory" EntitySet="ElTahiCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ELTahiTopUser_ElTahiCategory" Association="Self.FK_ELTahiTopUser_ElTahiCategory">
+            <End Role="ElTahiCategory" EntitySet="ElTahiCategories" />
+            <End Role="ELTahiTopUser" EntitySet="ELTahiTopUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostComponentRelations_ElTahiPostComponent" Association="Self.FK_ElTahiPostComponentRelations_ElTahiPostComponent">
+            <End Role="ElTahiPostComponent" EntitySet="ElTahiPostComponents" />
+            <End Role="ElTahiPostComponentRelations" EntitySet="ElTahiPostComponentRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostComponentRelations_ElTahiPosts" Association="Self.FK_ElTahiPostComponentRelations_ElTahiPosts">
+            <End Role="ElTahiPosts" EntitySet="ElTahiPosts" />
+            <End Role="ElTahiPostComponentRelations" EntitySet="ElTahiPostComponentRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostComponentRelations_ElTahiUsers" Association="Self.FK_ElTahiPostComponentRelations_ElTahiUsers">
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+            <End Role="ElTahiPostComponentRelations" EntitySet="ElTahiPostComponentRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostImages_ElTahiStatus" Association="Self.FK_ElTahiPostImages_ElTahiStatus">
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+            <End Role="ElTahiPostImages" EntitySet="ElTahiPostImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostImages_ElTahiUsers" Association="Self.FK_ElTahiPostImages_ElTahiUsers">
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+            <End Role="ElTahiPostImages" EntitySet="ElTahiPostImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostImagesRelations_ElTahiPostImages" Association="Self.FK_ElTahiPostImagesRelations_ElTahiPostImages">
+            <End Role="ElTahiPostImages" EntitySet="ElTahiPostImages" />
+            <End Role="ElTahiPostImagesRelations" EntitySet="ElTahiPostImagesRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostImagesRelations_ElTahiPosts" Association="Self.FK_ElTahiPostImagesRelations_ElTahiPosts">
+            <End Role="ElTahiPosts" EntitySet="ElTahiPosts" />
+            <End Role="ElTahiPostImagesRelations" EntitySet="ElTahiPostImagesRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostImagesRelations_ElTahiUsers" Association="Self.FK_ElTahiPostImagesRelations_ElTahiUsers">
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+            <End Role="ElTahiPostImagesRelations" EntitySet="ElTahiPostImagesRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostVideosRelations_ElTahiPosts" Association="Self.FK_ElTahiPostVideosRelations_ElTahiPosts">
+            <End Role="ElTahiPosts" EntitySet="ElTahiPosts" />
+            <End Role="ElTahiPostVideosRelations" EntitySet="ElTahiPostVideosRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostVideos_ElTahiStatus" Association="Self.FK_ElTahiPostVideos_ElTahiStatus">
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+            <End Role="ElTahiPostVideos" EntitySet="ElTahiPostVideos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiPostVideos_ElTahiUsers" Association="Self.FK_ElTahiPostVideos_ElTahiUsers">
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+            <End Role="ElTahiPostVideos" EntitySet="ElTahiPostVideos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ELTahiTopSupplier_ElTahiStatus" Association="Self.FK_ELTahiTopSupplier_ElTahiStatus">
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+            <End Role="ELTahiTopSupplier" EntitySet="ELTahiTopSuppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ELTahiTopUser_ElTahiStatus" Association="Self.FK_ELTahiTopUser_ElTahiStatus">
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+            <End Role="ELTahiTopUser" EntitySet="ELTahiTopUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiUsers_ElTahiStatus" Association="Self.FK_ElTahiUsers_ElTahiStatus">
+            <End Role="ElTahiStatus" EntitySet="ElTahiStatus" />
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiSupplier_ElTahiType" Association="Self.FK_ElTahiSupplier_ElTahiType">
+            <End Role="ElTahiType" EntitySet="ElTahiTypes" />
+            <End Role="ElTahiSupplier" EntitySet="ElTahiSuppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ELTahiTopSupplier_ElTahiSupplier" Association="Self.FK_ELTahiTopSupplier_ElTahiSupplier">
+            <End Role="ElTahiSupplier" EntitySet="ElTahiSuppliers" />
+            <End Role="ELTahiTopSupplier" EntitySet="ELTahiTopSuppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ELTahiTopUser_ElTahiUsers" Association="Self.FK_ELTahiTopUser_ElTahiUsers">
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+            <End Role="ELTahiTopUser" EntitySet="ELTahiTopUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiUsers_ElTahiType" Association="Self.FK_ElTahiUsers_ElTahiType">
+            <End Role="ElTahiType" EntitySet="ElTahiTypes" />
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(db_a8d12b_amahmyModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(db_a8d12b_amahmyModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="ELTahiIngredients" EntityType="db_a8d12b_amahmyModel.ELTahiIngredient" />
+          <EntitySet Name="ElTahiPostRecipIngradients" EntityType="db_a8d12b_amahmyModel.ElTahiPostRecipIngradient" />
+          <EntitySet Name="ElTahiRecipeRelations" EntityType="db_a8d12b_amahmyModel.ElTahiRecipeRelation" />
+          <EntitySet Name="ElTahiRescipePosts" EntityType="db_a8d12b_amahmyModel.ElTahiRescipePost" />
+          <EntitySet Name="ElTahiSubRecipePostIngradients" EntityType="db_a8d12b_amahmyModel.ElTahiSubRecipePostIngradient" />
+          <EntitySet Name="ElTahiSupRescipePosts" EntityType="db_a8d12b_amahmyModel.ElTahiSupRescipePost" />
+          <EntitySet Name="ELTahiMeasuringUnits" EntityType="db_a8d12b_amahmyModel.ELTahiMeasuringUnit" />
+          <EntitySet Name="CookingMethods" EntityType="db_a8d12b_amahmyModel.CookingMethod" />
+          <EntitySet Name="ElTahiRecipePostMethods" EntityType="db_a8d12b_amahmyModel.ElTahiRecipePostMethod" />
+          <EntitySet Name="EltahiRecipeTypes" EntityType="db_a8d12b_amahmyModel.EltahiRecipeType" />
+          <EntitySet Name="TahiCuisines" EntityType="db_a8d12b_amahmyModel.TahiCuisine" />
+          <EntitySet Name="ElTahiRecipePostImagesRelations" EntityType="db_a8d12b_amahmyModel.ElTahiRecipePostImagesRelation" />
+          <AssociationSet Name="FK_ElTahiRecipePostMethod_CookingMethod" Association="db_a8d12b_amahmyModel.FK_ElTahiRecipePostMethod_CookingMethod">
+            <End Role="CookingMethod" EntitySet="CookingMethods" />
+            <End Role="ElTahiRecipePostMethod" EntitySet="ElTahiRecipePostMethods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiRecipePostMethod_EltahiRecipeType" Association="db_a8d12b_amahmyModel.FK_ElTahiRecipePostMethod_EltahiRecipeType">
+            <End Role="EltahiRecipeType" EntitySet="EltahiRecipeTypes" />
+            <End Role="ElTahiRecipePostMethod" EntitySet="ElTahiRecipePostMethods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ElTahiRecipePostMethod_TahiCuisine" Association="db_a8d12b_amahmyModel.FK_ElTahiRecipePostMethod_TahiCuisine">
+            <End Role="TahiCuisine" EntitySet="TahiCuisines" />
+            <End Role="ElTahiRecipePostMethod" EntitySet="ElTahiRecipePostMethods" />
+          </AssociationSet>
+          <EntitySet Name="ElTahiRestuarantTypes" EntityType="db_a8d12b_amahmyModel.ElTahiRestuarantType" />
+          <EntitySet Name="ELTahiJobPosts" EntityType="db_a8d12b_amahmyModel.ELTahiJobPost" />
+          <EntitySet Name="ELTahiPerantPosts" EntityType="db_a8d12b_amahmyModel.ELTahiPerantPost" />
+          <EntitySet Name="ElTahiOtherPosts" EntityType="db_a8d12b_amahmyModel.ElTahiOtherPost" />
+          <EntitySet Name="TahiSupInformations" EntityType="db_a8d12b_amahmyModel.TahiSupInformation" />
+          <EntitySet Name="ElTahiPostComments" EntityType="db_a8d12b_amahmyModel.ElTahiPostComment" />
+          <EntitySet Name="ElTahiPostScores" EntityType="db_a8d12b_amahmyModel.ElTahiPostScore" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="ELTahiIngredient">
+          <Key>
+            <PropertyRef Name="IngredientID" />
+          </Key>
+          <Property Name="IngredientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IngredientName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ElTahiPostRecipIngradient">
+          <Key>
+            <PropertyRef Name="ELTahiRecipIngerPostID" />
+          </Key>
+          <Property Name="ELTahiRecipIngerPostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiPostingradientID" Type="Int32" />
+          <Property Name="ElTahiPostRecipIngrName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiPostRecipWight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiRecipePostID" Type="Int32" />
+          <Property Name="ELTahiPostUserID" Type="Int32" />
+          <Property Name="ELTahiPostWightUnit" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiRecipeIngDetails" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ElTahiRecipeRelation">
+          <Key>
+            <PropertyRef Name="TahiRecipeRelationID" />
+          </Key>
+          <Property Name="TahiRecipeRelationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TahiRecipeParentID" Type="Int32" />
+          <Property Name="TahiRecipeChild" Type="Int32" />
+          <Property Name="TahiUserID" Type="Int32" />
+          <Property Name="TahiRecipeRelationRegDT" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ElTahiRescipePost">
+          <Key>
+            <PropertyRef Name="ElTahiRecipePostID" />
+          </Key>
+          <Property Name="ElTahiRecipePostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiRecipePostHeader" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiRecipePostBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiRecipePostUserID" Type="Int32" />
+          <Property Name="ElTahiRecipePostStatusID" Type="Int32" />
+          <Property Name="ELTahiRecipePostRegDT" Type="DateTime" Precision="3" />
+          <Property Name="ElTahiRecipePostUpdateDT" Type="DateTime" Precision="3" />
+          <Property Name="ElTahiPerentPostID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ElTahiSubRecipePostIngradient">
+          <Key>
+            <PropertyRef Name="ELTahiSubRecipPostID" />
+          </Key>
+          <Property Name="ELTahiSubRecipPostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiRecipePostID" Type="Int32" />
+          <Property Name="ElTahiSubRecipePostID" Type="Int32" />
+          <Property Name="ElTahiPostingradientID" Type="Int32" />
+          <Property Name="ElTahiPostRecipIngrName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiPostRecipWight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiPostID" Type="Int32" />
+          <Property Name="ELTahiPostUserID" Type="Int32" />
+          <Property Name="ELTahiPostWightUnit" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahSubResIngDetails" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ElTahiSupRescipePost">
+          <Key>
+            <PropertyRef Name="ElTahiSubRecipePostID" />
+          </Key>
+          <Property Name="ElTahiSubRecipePostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiRecipePostID" Type="Int32" />
+          <Property Name="ElTahiRecipePostHeader" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiRecipePostBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiRecipePostUserID" Type="Int32" />
+          <Property Name="ElTahiRecipePostStatusID" Type="Int32" />
+          <Property Name="ELTahiRecipePostRegDT" Type="DateTime" Precision="3" />
+          <Property Name="ElTahiRecipePostUpdateDT" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ELTahiMeasuringUnit">
+          <Key>
+            <PropertyRef Name="ElTahiMeasuringUnitID" />
+          </Key>
+          <Property Name="ElTahiMeasuringUnitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TahiMeasuringUnitSmall" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TahiMeasuringUnitCapital" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TahiMeasuringUnitRegDT" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CookingMethod">
+          <Key>
+            <PropertyRef Name="CookmethodID" />
+          </Key>
+          <Property Name="CookmethodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CookMedthodName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ElTahiRecipePostMethods" Relationship="db_a8d12b_amahmyModel.FK_ElTahiRecipePostMethod_CookingMethod" FromRole="CookingMethod" ToRole="ElTahiRecipePostMethod" />
+        </EntityType>
+        <EntityType Name="ElTahiRecipePostMethod">
+          <Key>
+            <PropertyRef Name="ElTahiRecipePostMethodID" />
+          </Key>
+          <Property Name="ElTahiRecipePostMethodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiRecipePostID" Type="Int32" />
+          <Property Name="ElTahiRecipeTypeID" Type="Int32" />
+          <Property Name="ElTahiCookingMethodID" Type="Int32" />
+          <Property Name="ElTahiCuisineID" Type="Int32" />
+          <Property Name="ElTahiUserReg" Type="Int32" />
+          <Property Name="ElTahiRMethodUpdateDt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CookingMethod" Relationship="db_a8d12b_amahmyModel.FK_ElTahiRecipePostMethod_CookingMethod" FromRole="ElTahiRecipePostMethod" ToRole="CookingMethod" />
+          <NavigationProperty Name="EltahiRecipeType" Relationship="db_a8d12b_amahmyModel.FK_ElTahiRecipePostMethod_EltahiRecipeType" FromRole="ElTahiRecipePostMethod" ToRole="EltahiRecipeType" />
+          <NavigationProperty Name="TahiCuisine" Relationship="db_a8d12b_amahmyModel.FK_ElTahiRecipePostMethod_TahiCuisine" FromRole="ElTahiRecipePostMethod" ToRole="TahiCuisine" />
+        </EntityType>
+        <EntityType Name="EltahiRecipeType">
+          <Key>
+            <PropertyRef Name="RecipeTypeID" />
+          </Key>
+          <Property Name="RecipeTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecipeTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ElTahiRecipePostMethods" Relationship="db_a8d12b_amahmyModel.FK_ElTahiRecipePostMethod_EltahiRecipeType" FromRole="EltahiRecipeType" ToRole="ElTahiRecipePostMethod" />
+        </EntityType>
+        <EntityType Name="TahiCuisine">
+          <Key>
+            <PropertyRef Name="ElTahiCuisineID" />
+          </Key>
+          <Property Name="ElTahiCuisineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiCuisineName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ElTahiRecipePostMethods" Relationship="db_a8d12b_amahmyModel.FK_ElTahiRecipePostMethod_TahiCuisine" FromRole="TahiCuisine" ToRole="ElTahiRecipePostMethod" />
+        </EntityType>
+        <EntityType Name="ElTahiRecipePostImagesRelation">
+          <Key>
+            <PropertyRef Name="ElTahiPostImageRelationID" />
+          </Key>
+          <Property Name="ElTahiPostImageRelationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiRecipePostID" Type="Int32" />
+          <Property Name="ElTahiPostImageID" Type="Int32" />
+          <Property Name="ElTahiRelationRegUserID" Type="Int32" />
+          <Property Name="ElTahiRelationRegDT" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_ElTahiRecipePostMethod_CookingMethod">
+          <End Type="db_a8d12b_amahmyModel.CookingMethod" Role="CookingMethod" Multiplicity="0..1" />
+          <End Type="db_a8d12b_amahmyModel.ElTahiRecipePostMethod" Role="ElTahiRecipePostMethod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CookingMethod">
+              <PropertyRef Name="CookmethodID" />
+            </Principal>
+            <Dependent Role="ElTahiRecipePostMethod">
+              <PropertyRef Name="ElTahiCookingMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiRecipePostMethod_EltahiRecipeType">
+          <End Type="db_a8d12b_amahmyModel.EltahiRecipeType" Role="EltahiRecipeType" Multiplicity="0..1" />
+          <End Type="db_a8d12b_amahmyModel.ElTahiRecipePostMethod" Role="ElTahiRecipePostMethod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EltahiRecipeType">
+              <PropertyRef Name="RecipeTypeID" />
+            </Principal>
+            <Dependent Role="ElTahiRecipePostMethod">
+              <PropertyRef Name="ElTahiRecipeTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ElTahiRecipePostMethod_TahiCuisine">
+          <End Type="db_a8d12b_amahmyModel.TahiCuisine" Role="TahiCuisine" Multiplicity="0..1" />
+          <End Type="db_a8d12b_amahmyModel.ElTahiRecipePostMethod" Role="ElTahiRecipePostMethod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TahiCuisine">
+              <PropertyRef Name="ElTahiCuisineID" />
+            </Principal>
+            <Dependent Role="ElTahiRecipePostMethod">
+              <PropertyRef Name="ElTahiCuisineID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ElTahiRestuarantType">
+          <Key>
+            <PropertyRef Name="ELTahiRestTypeID" />
+          </Key>
+          <Property Name="ELTahiRestTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiRestType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ELTahiJobPost">
+          <Key>
+            <PropertyRef Name="TahiJobPostID" />
+          </Key>
+          <Property Name="TahiJobPostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TahiJobUserID" Type="Int32" />
+          <Property Name="TahiJobTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TahiJobComp" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TahiJobLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TahiJobType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TahiJobWorkplace" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TahiJobDescraption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TahiJobEndDate" Type="DateTime" Precision="3" />
+          <Property Name="TahiJobFlag" Type="Boolean" />
+          <Property Name="TahiJobRegesterDateT" Type="DateTime" Precision="3" />
+          <Property Name="ElTahiPerantPostID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ELTahiPerantPost">
+          <Key>
+            <PropertyRef Name="ELTahiPostPerantID" />
+          </Key>
+          <Property Name="ELTahiPostPerantID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiPostUserID" Type="Int32" />
+          <Property Name="ElTahiPostRegDT" Type="DateTime" Precision="3" />
+          <Property Name="ELTahiPostType" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ElTahiOtherPost">
+          <Key>
+            <PropertyRef Name="ElTahiOtherPostsID" />
+          </Key>
+          <Property Name="ElTahiOtherPostsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiPostUser" Type="Int32" />
+          <Property Name="ElTahiPerantPostID" Type="Int32" />
+          <Property Name="ElTahiOtherPostTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiotherPostDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiOtherPostImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiOtherPostType" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiProvideAdvice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ElTahiOtherPostRegDT" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TahiSupInformation">
+          <Key>
+            <PropertyRef Name="tahiinfootherID" />
+          </Key>
+          <Property Name="tahiinfootherID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tahiSupName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="tahisupPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tahitagline" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="tahiwebsiteurl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="tahisupdescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="tahisupindustry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tahisupcompsize" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tahicomptype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tahisupyearfounder" Type="DateTime" Precision="3" />
+          <Property Name="tahisupSpecialities" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="tahisupAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="tahiSupUserID" Type="Int32" />
+          <Property Name="tahiSupInfoRegDT" Type="DateTime" Precision="3" />
+          <Property Name="TahiSupInfoUpdateDT" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ElTahiPostComment">
+          <Key>
+            <PropertyRef Name="ELTahiPostCommentID" />
+          </Key>
+          <Property Name="ELTahiPostCommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ELTahiPerentPostID" Type="Int32" />
+          <Property Name="ElTahiComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ELTahiUserID" Type="Int32" />
+          <Property Name="ELTahiComRegDT" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ElTahiPostScore">
+          <Key>
+            <PropertyRef Name="ELTahiScoreID" />
+          </Key>
+          <Property Name="ELTahiScoreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElTahiPostID" Type="Int32" />
+          <Property Name="ElTahiUserID" Type="Int32" />
+          <Property Name="ElTahiScore" Type="Int32" />
+          <Property Name="ElTahiScoreRegDT" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_a8d12b_amahmyModelStoreContainer" CdmEntityContainer="db_a8d12b_amahmyEntities">
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.Country">
+              <MappingFragment StoreEntitySet="Countries">
+                <ScalarProperty Name="ContID" ColumnName="ContID" />
+                <ScalarProperty Name="country_code" ColumnName="country_code" />
+                <ScalarProperty Name="country_enName" ColumnName="country_enName" />
+                <ScalarProperty Name="country_arName" ColumnName="country_arName" />
+                <ScalarProperty Name="country_enNationality" ColumnName="country_enNationality" />
+                <ScalarProperty Name="country_arNationality" ColumnName="country_arNationality" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiAdmins">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiAdmin">
+              <MappingFragment StoreEntitySet="ElTahiAdmins">
+                <ScalarProperty Name="EltahiAdminID" ColumnName="EltahiAdminID" />
+                <ScalarProperty Name="EltahiAdUserName" ColumnName="EltahiAdUserName" />
+                <ScalarProperty Name="EltahiAdUserPassWord" ColumnName="EltahiAdUserPassWord" />
+                <ScalarProperty Name="EltahiAdRegdateTime" ColumnName="EltahiAdRegdateTime" />
+                <ScalarProperty Name="EltahiAdRoleID" ColumnName="EltahiAdRoleID" />
+                <ScalarProperty Name="EltahiAdStatusID" ColumnName="EltahiAdStatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiCategories">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiCategory">
+              <MappingFragment StoreEntitySet="ElTahiCategory">
+                <ScalarProperty Name="ElTahiCategoryID" ColumnName="ElTahiCategoryID" />
+                <ScalarProperty Name="ElTahiCategory1" ColumnName="ElTahiCategory" />
+                <ScalarProperty Name="ElTahiCategoryRegDT" ColumnName="ElTahiCategoryRegDT" />
+                <ScalarProperty Name="ElTahiCategoryRegUserID" ColumnName="ElTahiCategoryRegUserID" />
+                <ScalarProperty Name="ElTahiCategoryStatusID" ColumnName="ElTahiCategoryStatusID" />
+                <ScalarProperty Name="ElTahiCategoryActivationFlag" ColumnName="ElTahiCategoryActivationFlag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiPostComponents">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostComponent">
+              <MappingFragment StoreEntitySet="ElTahiPostComponent">
+                <ScalarProperty Name="ElTahiPostComponentsID" ColumnName="ElTahiPostComponentsID" />
+                <ScalarProperty Name="ElTahiPostComponents" ColumnName="ElTahiPostComponents" />
+                <ScalarProperty Name="ElTahiPostComponentsUserID" ColumnName="ElTahiPostComponentsUserID" />
+                <ScalarProperty Name="ElTahiPostComRegDT" ColumnName="ElTahiPostComRegDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiPostComponentRelations">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostComponentRelation">
+              <MappingFragment StoreEntitySet="ElTahiPostComponentRelations">
+                <ScalarProperty Name="ElTahiPostComponentRelationID" ColumnName="ElTahiPostComponentRelationID" />
+                <ScalarProperty Name="ElTahiPostID" ColumnName="ElTahiPostID" />
+                <ScalarProperty Name="ElTahiComponentID" ColumnName="ElTahiComponentID" />
+                <ScalarProperty Name="ElTahiPostComRelationUserID" ColumnName="ElTahiPostComRelationUserID" />
+                <ScalarProperty Name="ElTahiPostComRelationRegDT" ColumnName="ElTahiPostComRelationRegDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiPostImages">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostImage">
+              <MappingFragment StoreEntitySet="ElTahiPostImages">
+                <ScalarProperty Name="ElTahiPostImageID" ColumnName="ElTahiPostImageID" />
+                <ScalarProperty Name="ElTahiPostImageURL" ColumnName="ElTahiPostImageURL" />
+                <ScalarProperty Name="ElTahiPostImageUserID" ColumnName="ElTahiPostImageUserID" />
+                <ScalarProperty Name="ElTahiPostImageStatusID" ColumnName="ElTahiPostImageStatusID" />
+                <ScalarProperty Name="ElTahiPostImageRegDT" ColumnName="ElTahiPostImageRegDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiPostImagesRelations">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostImagesRelation">
+              <MappingFragment StoreEntitySet="ElTahiPostImagesRelations">
+                <ScalarProperty Name="ElTahiPostImageRelationID" ColumnName="ElTahiPostImageRelationID" />
+                <ScalarProperty Name="ElTahiPostID" ColumnName="ElTahiPostID" />
+                <ScalarProperty Name="ElTahiPostImageID" ColumnName="ElTahiPostImageID" />
+                <ScalarProperty Name="ElTahiRelationRegUserID" ColumnName="ElTahiRelationRegUserID" />
+                <ScalarProperty Name="ElTahiRelationRegDT" ColumnName="ElTahiRelationRegDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiPosts">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPost">
+              <MappingFragment StoreEntitySet="ElTahiPosts">
+                <ScalarProperty Name="ElTahiPostID" ColumnName="ElTahiPostID" />
+                <ScalarProperty Name="ElTahiPostHeader" ColumnName="ElTahiPostHeader" />
+                <ScalarProperty Name="ElTahiPostBody" ColumnName="ElTahiPostBody" />
+                <ScalarProperty Name="ElTahiPostUserID" ColumnName="ElTahiPostUserID" />
+                <ScalarProperty Name="ElTahiPostStatusID" ColumnName="ElTahiPostStatusID" />
+                <ScalarProperty Name="ELTahiPostRegDT" ColumnName="ELTahiPostRegDT" />
+                <ScalarProperty Name="ElTahiPostUpdateDT" ColumnName="ElTahiPostUpdateDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiPostVideos">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostVideo">
+              <MappingFragment StoreEntitySet="ElTahiPostVideos">
+                <ScalarProperty Name="ElTahiPostVideosID" ColumnName="ElTahiPostVideosID" />
+                <ScalarProperty Name="ElTahiPostVideosURL" ColumnName="ElTahiPostVideosURL" />
+                <ScalarProperty Name="ElTahiPostVideosUserID" ColumnName="ElTahiPostVideosUserID" />
+                <ScalarProperty Name="ElTahiPostVideosStatusID" ColumnName="ElTahiPostVideosStatusID" />
+                <ScalarProperty Name="ElTahiPostVideosRegDT" ColumnName="ElTahiPostVideosRegDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiPostVideosRelations">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostVideosRelation">
+              <MappingFragment StoreEntitySet="ElTahiPostVideosRelations">
+                <ScalarProperty Name="ElTahiPostVideosRelationID" ColumnName="ElTahiPostVideosRelationID" />
+                <ScalarProperty Name="ElTahiPostID" ColumnName="ElTahiPostID" />
+                <ScalarProperty Name="ElTahiPostVideosID" ColumnName="ElTahiPostVideosID" />
+                <ScalarProperty Name="ElTahiVidRelationRegUserID" ColumnName="ElTahiVidRelationRegUserID" />
+                <ScalarProperty Name="ElTahiVidRelationRegDT" ColumnName="ElTahiVidRelationRegDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiProfileImages">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiProfileImage">
+              <MappingFragment StoreEntitySet="ElTahiProfileImage">
+                <ScalarProperty Name="ElTahiProfileImageID" ColumnName="ElTahiProfileImageID" />
+                <ScalarProperty Name="ElTahiProfileImageURL" ColumnName="ElTahiProfileImageURL" />
+                <ScalarProperty Name="ElTahiProfileImageName" ColumnName="ElTahiProfileImageName" />
+                <ScalarProperty Name="ElTahiProfileImageUserID" ColumnName="ElTahiProfileImageUserID" />
+                <ScalarProperty Name="UploadDateTime" ColumnName="UploadDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiRoles">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiRole">
+              <MappingFragment StoreEntitySet="ElTahiRole">
+                <ScalarProperty Name="ElTahiRoleID" ColumnName="ElTahiRoleID" />
+                <ScalarProperty Name="ElTahiRole1" ColumnName="ElTahiRole" />
+                <ScalarProperty Name="ElTahiRoleDesc" ColumnName="ElTahiRoleDesc" />
+                <ScalarProperty Name="ElTahiRoleUserID" ColumnName="ElTahiRoleUserID" />
+                <ScalarProperty Name="ElTahiRegDT" ColumnName="ElTahiRegDT" />
+                <ScalarProperty Name="RoleActivavtionFlag" ColumnName="RoleActivavtionFlag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiStatus">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiStatu">
+              <MappingFragment StoreEntitySet="ElTahiStatus">
+                <ScalarProperty Name="ElTahiStatusID" ColumnName="ElTahiStatusID" />
+                <ScalarProperty Name="ElTahiStatus" ColumnName="ElTahiStatus" />
+                <ScalarProperty Name="ElTahiStatusRegAdminID" ColumnName="ElTahiStatusRegAdminID" />
+                <ScalarProperty Name="ElTahiStatusRegDT" ColumnName="ElTahiStatusRegDT" />
+                <ScalarProperty Name="ElTahiStatusUpdateAdminID" ColumnName="ElTahiStatusUpdateAdminID" />
+                <ScalarProperty Name="ElTahiStatusUpdateDT" ColumnName="ElTahiStatusUpdateDT" />
+                <ScalarProperty Name="ActivationFlag" ColumnName="ActivationFlag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiSuppliers">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiSupplier">
+              <MappingFragment StoreEntitySet="ElTahiSupplier">
+                <ScalarProperty Name="ElTahiSupplierID" ColumnName="ElTahiSupplierID" />
+                <ScalarProperty Name="ElTahiSupplierCompName" ColumnName="ElTahiSupplierCompName" />
+                <ScalarProperty Name="ElTahiFirstName" ColumnName="ElTahiFirstName" />
+                <ScalarProperty Name="ELTahiSecondName" ColumnName="ELTahiSecondName" />
+                <ScalarProperty Name="ElTahiLastName" ColumnName="ElTahiLastName" />
+                <ScalarProperty Name="ElTahiSupplierBirthdate" ColumnName="ElTahiSupplierBirthdate" />
+                <ScalarProperty Name="ElTahiSupplierEmail" ColumnName="ElTahiSupplierEmail" />
+                <ScalarProperty Name="ElTahiSupplierMobile" ColumnName="ElTahiSupplierMobile" />
+                <ScalarProperty Name="ElTahiSupplierTypeID" ColumnName="ElTahiSupplierTypeID" />
+                <ScalarProperty Name="ElTahiSupplierBio" ColumnName="ElTahiSupplierBio" />
+                <ScalarProperty Name="ElTahiRegDateTime" ColumnName="ElTahiRegDateTime" />
+                <ScalarProperty Name="ElTahiUpdateDT" ColumnName="ElTahiUpdateDT" />
+                <ScalarProperty Name="ElTahiLastLoginDT" ColumnName="ElTahiLastLoginDT" />
+                <ScalarProperty Name="ELTahiSupplierStatusID" ColumnName="ELTahiSupplierStatusID" />
+                <ScalarProperty Name="ELTahiSupplierName" ColumnName="ELTahiSupplierName" />
+                <ScalarProperty Name="ElTahiSupplierPassWord" ColumnName="ElTahiSupplierPassWord" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ELTahiTopSuppliers">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ELTahiTopSupplier">
+              <MappingFragment StoreEntitySet="ELTahiTopSupplier">
+                <ScalarProperty Name="ElTahiTopSupplierID" ColumnName="ElTahiTopSupplierID" />
+                <ScalarProperty Name="ElTahiSupplierID" ColumnName="ElTahiSupplierID" />
+                <ScalarProperty Name="ElTahiSupplierStatusID" ColumnName="ElTahiSupplierStatusID" />
+                <ScalarProperty Name="ELTahiTopSupplierRegDt" ColumnName="ELTahiTopSupplierRegDt" />
+                <ScalarProperty Name="ElTahiTopSupplierCategoryID" ColumnName="ElTahiTopSupplierCategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ELTahiTopUsers">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ELTahiTopUser">
+              <MappingFragment StoreEntitySet="ELTahiTopUser">
+                <ScalarProperty Name="ElTahiTopUserID" ColumnName="ElTahiTopUserID" />
+                <ScalarProperty Name="ElTahiUserID" ColumnName="ElTahiUserID" />
+                <ScalarProperty Name="ElTahiUserStatusID" ColumnName="ElTahiUserStatusID" />
+                <ScalarProperty Name="ELTahiTopUserRegDt" ColumnName="ELTahiTopUserRegDt" />
+                <ScalarProperty Name="ElTahiTopUserCategoryID" ColumnName="ElTahiTopUserCategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiTypes">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiType">
+              <MappingFragment StoreEntitySet="ElTahiType">
+                <ScalarProperty Name="ElTahiTypesID" ColumnName="ElTahiTypesID" />
+                <ScalarProperty Name="ElTahiType1" ColumnName="ElTahiType" />
+                <ScalarProperty Name="ElTahiTypeRegDT" ColumnName="ElTahiTypeRegDT" />
+                <ScalarProperty Name="ElTahiTypeRegUserID" ColumnName="ElTahiTypeRegUserID" />
+                <ScalarProperty Name="ElTahiTypeStatusID" ColumnName="ElTahiTypeStatusID" />
+                <ScalarProperty Name="ElTahiTypeActivationFlag" ColumnName="ElTahiTypeActivationFlag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiUsers">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiUser">
+              <MappingFragment StoreEntitySet="ElTahiUsers">
+                <ScalarProperty Name="ElTahiRestTypeID" ColumnName="ElTahiRestTypeID" />
+                <ScalarProperty Name="ElTahiComName" ColumnName="ElTahiComName" />
+                <ScalarProperty Name="ElTahiComAddress" ColumnName="ElTahiComAddress" />
+                <ScalarProperty Name="ElTahiUserID" ColumnName="ElTahiUserID" />
+                <ScalarProperty Name="ElTahiFirstName" ColumnName="ElTahiFirstName" />
+                <ScalarProperty Name="ELTahiSecondName" ColumnName="ELTahiSecondName" />
+                <ScalarProperty Name="ElTahiLastName" ColumnName="ElTahiLastName" />
+                <ScalarProperty Name="ElTahiUserBirthdate" ColumnName="ElTahiUserBirthdate" />
+                <ScalarProperty Name="ElTahiUserEmail" ColumnName="ElTahiUserEmail" />
+                <ScalarProperty Name="ElTahiUserMobile" ColumnName="ElTahiUserMobile" />
+                <ScalarProperty Name="ElTahiUserTypeID" ColumnName="ElTahiUserTypeID" />
+                <ScalarProperty Name="ElTahiUserBio" ColumnName="ElTahiUserBio" />
+                <ScalarProperty Name="ElTahiRegDateTime" ColumnName="ElTahiRegDateTime" />
+                <ScalarProperty Name="ElTahiUpdateDT" ColumnName="ElTahiUpdateDT" />
+                <ScalarProperty Name="ElTahiLastLoginDT" ColumnName="ElTahiLastLoginDT" />
+                <ScalarProperty Name="ELTahiUserStatusID" ColumnName="ELTahiUserStatusID" />
+                <ScalarProperty Name="ELTahiUserName" ColumnName="ELTahiUserName" />
+                <ScalarProperty Name="ElTahiUserPassWord" ColumnName="ElTahiUserPassWord" />
+                <ScalarProperty Name="ELTahiUserCountryID" ColumnName="ELTahiUserCountryID" />
+                <ScalarProperty Name="ELTahiNationalID" ColumnName="ELTahiNationalID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="db_a8d12b_amahmyModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="db_a8d12b_amahmyModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="db_a8d12b_amahmyModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="db_a8d12b_amahmyModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_a8d12b_amahmyModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="db_a8d12b_amahmyModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="db_a8d12b_amahmyModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="db_a8d12b_amahmyModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="db_a8d12b_amahmyModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="ELTahiIngredients">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ELTahiIngredient">
+              <MappingFragment StoreEntitySet="ELTahiIngredient">
+                <ScalarProperty Name="IngredientName" ColumnName="IngredientName" />
+                <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiPostRecipIngradients">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostRecipIngradient">
+              <MappingFragment StoreEntitySet="ElTahiPostRecipIngradient">
+                <ScalarProperty Name="ElTahiRecipeIngDetails" ColumnName="ElTahiRecipeIngDetails" />
+                <ScalarProperty Name="ELTahiPostWightUnit" ColumnName="ELTahiPostWightUnit" />
+                <ScalarProperty Name="ELTahiPostUserID" ColumnName="ELTahiPostUserID" />
+                <ScalarProperty Name="ElTahiRecipePostID" ColumnName="ElTahiRecipePostID" />
+                <ScalarProperty Name="ElTahiPostRecipWight" ColumnName="ElTahiPostRecipWight" />
+                <ScalarProperty Name="ElTahiPostRecipIngrName" ColumnName="ElTahiPostRecipIngrName" />
+                <ScalarProperty Name="ElTahiPostingradientID" ColumnName="ElTahiPostingradientID" />
+                <ScalarProperty Name="ELTahiRecipIngerPostID" ColumnName="ELTahiRecipIngerPostID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiRecipeRelations">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiRecipeRelation">
+              <MappingFragment StoreEntitySet="ElTahiRecipeRelation">
+                <ScalarProperty Name="TahiRecipeRelationRegDT" ColumnName="TahiRecipeRelationRegDT" />
+                <ScalarProperty Name="TahiUserID" ColumnName="TahiUserID" />
+                <ScalarProperty Name="TahiRecipeChild" ColumnName="TahiRecipeChild" />
+                <ScalarProperty Name="TahiRecipeParentID" ColumnName="TahiRecipeParentID" />
+                <ScalarProperty Name="TahiRecipeRelationID" ColumnName="TahiRecipeRelationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiRescipePosts">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiRescipePost">
+              <MappingFragment StoreEntitySet="ElTahiRescipePosts">
+                <ScalarProperty Name="ElTahiPerentPostID" ColumnName="ElTahiPerentPostID" />
+                <ScalarProperty Name="ElTahiRecipePostUpdateDT" ColumnName="ElTahiRecipePostUpdateDT" />
+                <ScalarProperty Name="ELTahiRecipePostRegDT" ColumnName="ELTahiRecipePostRegDT" />
+                <ScalarProperty Name="ElTahiRecipePostStatusID" ColumnName="ElTahiRecipePostStatusID" />
+                <ScalarProperty Name="ElTahiRecipePostUserID" ColumnName="ElTahiRecipePostUserID" />
+                <ScalarProperty Name="ElTahiRecipePostBody" ColumnName="ElTahiRecipePostBody" />
+                <ScalarProperty Name="ElTahiRecipePostHeader" ColumnName="ElTahiRecipePostHeader" />
+                <ScalarProperty Name="ElTahiRecipePostID" ColumnName="ElTahiRecipePostID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiSubRecipePostIngradients">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiSubRecipePostIngradient">
+              <MappingFragment StoreEntitySet="ElTahiSubRecipePostIngradient">
+                <ScalarProperty Name="ElTahSubResIngDetails" ColumnName="ElTahSubResIngDetails" />
+                <ScalarProperty Name="ELTahiPostWightUnit" ColumnName="ELTahiPostWightUnit" />
+                <ScalarProperty Name="ELTahiPostUserID" ColumnName="ELTahiPostUserID" />
+                <ScalarProperty Name="ElTahiPostID" ColumnName="ElTahiPostID" />
+                <ScalarProperty Name="ElTahiPostRecipWight" ColumnName="ElTahiPostRecipWight" />
+                <ScalarProperty Name="ElTahiPostRecipIngrName" ColumnName="ElTahiPostRecipIngrName" />
+                <ScalarProperty Name="ElTahiPostingradientID" ColumnName="ElTahiPostingradientID" />
+                <ScalarProperty Name="ElTahiSubRecipePostID" ColumnName="ElTahiSubRecipePostID" />
+                <ScalarProperty Name="ElTahiRecipePostID" ColumnName="ElTahiRecipePostID" />
+                <ScalarProperty Name="ELTahiSubRecipPostID" ColumnName="ELTahiSubRecipPostID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiSupRescipePosts">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiSupRescipePost">
+              <MappingFragment StoreEntitySet="ElTahiSupRescipePosts">
+                <ScalarProperty Name="ElTahiRecipePostUpdateDT" ColumnName="ElTahiRecipePostUpdateDT" />
+                <ScalarProperty Name="ELTahiRecipePostRegDT" ColumnName="ELTahiRecipePostRegDT" />
+                <ScalarProperty Name="ElTahiRecipePostStatusID" ColumnName="ElTahiRecipePostStatusID" />
+                <ScalarProperty Name="ElTahiRecipePostUserID" ColumnName="ElTahiRecipePostUserID" />
+                <ScalarProperty Name="ElTahiRecipePostBody" ColumnName="ElTahiRecipePostBody" />
+                <ScalarProperty Name="ElTahiRecipePostHeader" ColumnName="ElTahiRecipePostHeader" />
+                <ScalarProperty Name="ElTahiRecipePostID" ColumnName="ElTahiRecipePostID" />
+                <ScalarProperty Name="ElTahiSubRecipePostID" ColumnName="ElTahiSubRecipePostID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ELTahiMeasuringUnits">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ELTahiMeasuringUnit">
+              <MappingFragment StoreEntitySet="ELTahiMeasuringUnit">
+                <ScalarProperty Name="TahiMeasuringUnitRegDT" ColumnName="TahiMeasuringUnitRegDT" />
+                <ScalarProperty Name="TahiMeasuringUnitCapital" ColumnName="TahiMeasuringUnitCapital" />
+                <ScalarProperty Name="TahiMeasuringUnitSmall" ColumnName="TahiMeasuringUnitSmall" />
+                <ScalarProperty Name="ElTahiMeasuringUnitID" ColumnName="ElTahiMeasuringUnitID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CookingMethods">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.CookingMethod">
+              <MappingFragment StoreEntitySet="CookingMethod">
+                <ScalarProperty Name="CookMedthodName" ColumnName="CookMedthodName" />
+                <ScalarProperty Name="CookmethodID" ColumnName="CookmethodID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiRecipePostMethods">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiRecipePostMethod">
+              <MappingFragment StoreEntitySet="ElTahiRecipePostMethod">
+                <ScalarProperty Name="ElTahiRMethodUpdateDt" ColumnName="ElTahiRMethodUpdateDt" />
+                <ScalarProperty Name="ElTahiUserReg" ColumnName="ElTahiUserReg" />
+                <ScalarProperty Name="ElTahiCuisineID" ColumnName="ElTahiCuisineID" />
+                <ScalarProperty Name="ElTahiCookingMethodID" ColumnName="ElTahiCookingMethodID" />
+                <ScalarProperty Name="ElTahiRecipeTypeID" ColumnName="ElTahiRecipeTypeID" />
+                <ScalarProperty Name="ElTahiRecipePostID" ColumnName="ElTahiRecipePostID" />
+                <ScalarProperty Name="ElTahiRecipePostMethodID" ColumnName="ElTahiRecipePostMethodID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EltahiRecipeTypes">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.EltahiRecipeType">
+              <MappingFragment StoreEntitySet="EltahiRecipeType">
+                <ScalarProperty Name="RecipeTypeName" ColumnName="RecipeTypeName" />
+                <ScalarProperty Name="RecipeTypeID" ColumnName="RecipeTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TahiCuisines">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.TahiCuisine">
+              <MappingFragment StoreEntitySet="TahiCuisine">
+                <ScalarProperty Name="ElTahiCuisineName" ColumnName="ElTahiCuisineName" />
+                <ScalarProperty Name="ElTahiCuisineID" ColumnName="ElTahiCuisineID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiRecipePostImagesRelations">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiRecipePostImagesRelation">
+              <MappingFragment StoreEntitySet="ElTahiRecipePostImagesRelations">
+                <ScalarProperty Name="ElTahiRelationRegDT" ColumnName="ElTahiRelationRegDT" />
+                <ScalarProperty Name="ElTahiRelationRegUserID" ColumnName="ElTahiRelationRegUserID" />
+                <ScalarProperty Name="ElTahiPostImageID" ColumnName="ElTahiPostImageID" />
+                <ScalarProperty Name="ElTahiRecipePostID" ColumnName="ElTahiRecipePostID" />
+                <ScalarProperty Name="ElTahiPostImageRelationID" ColumnName="ElTahiPostImageRelationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiRestuarantTypes">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiRestuarantType">
+              <MappingFragment StoreEntitySet="ElTahiRestuarantType">
+                <ScalarProperty Name="ElTahiRestType" ColumnName="ElTahiRestType" />
+                <ScalarProperty Name="ELTahiRestTypeID" ColumnName="ELTahiRestTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ELTahiJobPosts">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ELTahiJobPost">
+              <MappingFragment StoreEntitySet="ELTahiJobPosts">
+                <ScalarProperty Name="ElTahiPerantPostID" ColumnName="ElTahiPerantPostID" />
+                <ScalarProperty Name="TahiJobRegesterDateT" ColumnName="TahiJobRegesterDateT" />
+                <ScalarProperty Name="TahiJobFlag" ColumnName="TahiJobFlag" />
+                <ScalarProperty Name="TahiJobEndDate" ColumnName="TahiJobEndDate" />
+                <ScalarProperty Name="TahiJobDescraption" ColumnName="TahiJobDescraption" />
+                <ScalarProperty Name="TahiJobWorkplace" ColumnName="TahiJobWorkplace" />
+                <ScalarProperty Name="TahiJobType" ColumnName="TahiJobType" />
+                <ScalarProperty Name="TahiJobLocation" ColumnName="TahiJobLocation" />
+                <ScalarProperty Name="TahiJobComp" ColumnName="TahiJobComp" />
+                <ScalarProperty Name="TahiJobTitle" ColumnName="TahiJobTitle" />
+                <ScalarProperty Name="TahiJobUserID" ColumnName="TahiJobUserID" />
+                <ScalarProperty Name="TahiJobPostID" ColumnName="TahiJobPostID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ELTahiPerantPosts">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ELTahiPerantPost">
+              <MappingFragment StoreEntitySet="ELTahiPerantPost">
+                <ScalarProperty Name="ELTahiPostType" ColumnName="ELTahiPostType" />
+                <ScalarProperty Name="ElTahiPostRegDT" ColumnName="ElTahiPostRegDT" />
+                <ScalarProperty Name="ElTahiPostUserID" ColumnName="ElTahiPostUserID" />
+                <ScalarProperty Name="ELTahiPostPerantID" ColumnName="ELTahiPostPerantID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiOtherPosts">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiOtherPost">
+              <MappingFragment StoreEntitySet="ElTahiOtherPosts">
+                <ScalarProperty Name="ElTahiOtherPostRegDT" ColumnName="ElTahiOtherPostRegDT" />
+                <ScalarProperty Name="ElTahiProvideAdvice" ColumnName="ElTahiProvideAdvice" />
+                <ScalarProperty Name="ElTahiOtherPostType" ColumnName="ElTahiOtherPostType" />
+                <ScalarProperty Name="ElTahiOtherPostImageURL" ColumnName="ElTahiOtherPostImageURL" />
+                <ScalarProperty Name="ElTahiotherPostDetail" ColumnName="ElTahiotherPostDetail" />
+                <ScalarProperty Name="ElTahiOtherPostTitle" ColumnName="ElTahiOtherPostTitle" />
+                <ScalarProperty Name="ElTahiPerantPostID" ColumnName="ElTahiPerantPostID" />
+                <ScalarProperty Name="ElTahiPostUser" ColumnName="ElTahiPostUser" />
+                <ScalarProperty Name="ElTahiOtherPostsID" ColumnName="ElTahiOtherPostsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TahiSupInformations">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.TahiSupInformation">
+              <MappingFragment StoreEntitySet="TahiSupInformation">
+                <ScalarProperty Name="TahiSupInfoUpdateDT" ColumnName="TahiSupInfoUpdateDT" />
+                <ScalarProperty Name="tahiSupInfoRegDT" ColumnName="tahiSupInfoRegDT" />
+                <ScalarProperty Name="tahiSupUserID" ColumnName="tahiSupUserID" />
+                <ScalarProperty Name="tahisupAddress" ColumnName="tahisupAddress" />
+                <ScalarProperty Name="tahisupSpecialities" ColumnName="tahisupSpecialities" />
+                <ScalarProperty Name="tahisupyearfounder" ColumnName="tahisupyearfounder" />
+                <ScalarProperty Name="tahicomptype" ColumnName="tahicomptype" />
+                <ScalarProperty Name="tahisupcompsize" ColumnName="tahisupcompsize" />
+                <ScalarProperty Name="tahisupindustry" ColumnName="tahisupindustry" />
+                <ScalarProperty Name="tahisupdescription" ColumnName="tahisupdescription" />
+                <ScalarProperty Name="tahiwebsiteurl" ColumnName="tahiwebsiteurl" />
+                <ScalarProperty Name="tahitagline" ColumnName="tahitagline" />
+                <ScalarProperty Name="tahisupPhone" ColumnName="tahisupPhone" />
+                <ScalarProperty Name="tahiSupName" ColumnName="tahiSupName" />
+                <ScalarProperty Name="tahiinfootherID" ColumnName="tahiinfootherID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiPostComments">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostComment">
+              <MappingFragment StoreEntitySet="ElTahiPostComment">
+                <ScalarProperty Name="ELTahiComRegDT" ColumnName="ELTahiComRegDT" />
+                <ScalarProperty Name="ELTahiUserID" ColumnName="ELTahiUserID" />
+                <ScalarProperty Name="ElTahiComment" ColumnName="ElTahiComment" />
+                <ScalarProperty Name="ELTahiPerentPostID" ColumnName="ELTahiPerentPostID" />
+                <ScalarProperty Name="ELTahiPostCommentID" ColumnName="ELTahiPostCommentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElTahiPostScores">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.ElTahiPostScore">
+              <MappingFragment StoreEntitySet="ElTahiPostScore">
+                <ScalarProperty Name="ElTahiScoreRegDT" ColumnName="ElTahiScoreRegDT" />
+                <ScalarProperty Name="ElTahiScore" ColumnName="ElTahiScore" />
+                <ScalarProperty Name="ElTahiUserID" ColumnName="ElTahiUserID" />
+                <ScalarProperty Name="ElTahiPostID" ColumnName="ElTahiPostID" />
+                <ScalarProperty Name="ELTahiScoreID" ColumnName="ELTahiScoreID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
