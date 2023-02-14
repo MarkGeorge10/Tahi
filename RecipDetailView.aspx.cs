@@ -22,6 +22,7 @@ namespace Tahi
         {
             string QS = Request.QueryString["RecID"];
             int recid = int.Parse(QS);
+
             if (Session["UserID"] != null && Session["CompID"] != null && QS != null)
             {
                 personalUserid = Session["UserID"].ToString();
@@ -53,7 +54,7 @@ namespace Tahi
                     {
                         foreach (var pimg in DB.ElTahiPostImages.Where(p => p.ElTahiPostImageID == posimg.ElTahiPostImageID))
                         {
-                            prof.InnerHtml += " <div class='card'><div class='post-title d-flex align-items-center'><div class='profile-thumb'> <a href = '#' ><figure class='profile-thumb-middle'> <img src ='assets/images/profile/" + Url + "' alt='profile picture'> </figure> </a></div><div class='posted-author'> <h6 class='author'><a href = '' > " + Name + "</a></h6><span class='post-time'>20 min ago</span></div><div class='post-settings-bar'><span></span><span></span><span></span><div class='post-settings arrow-shape'><ul><li><button>copy link to adda</button></li> <li><button>edit post</button></li> <li><button>embed adda</button></li> </ul></div></div></div>";
+                            prof.InnerHtml = " <div class='card'><div class='post-title d-flex align-items-center'><div class='profile-thumb'> <a href = '#' ><figure class='profile-thumb-middle'> <img src ='assets/images/profile/" + Url + "' alt='profile picture'> </figure> </a></div><div class='posted-author'> <h6 class='author'><a href = '' > " + Name + "</a></h6><span class='post-time'>20 min ago</span></div><div class='post-settings-bar'><span></span><span></span><span></span><div class='post-settings arrow-shape'><ul><li><button>copy link to adda</button></li> <li><button>edit post</button></li> <li><button>embed adda</button></li> </ul></div></div></div>";
                             detail.InnerHtml+= "<div class='post -content'><div class='post-thumb-gallery'><figure class='post-thumb img-popup'><a href ='Files/" + pimg.ElTahiPostImageURL + "'><img src ='Files/" + pimg.ElTahiPostImageURL + "' alt ='post image'></a> </figure></div><h5 style='font-weight: bold;'>" + pos.ElTahiRecipePostHeader + "</h5><br><h7 style='font-weight: bold;'>" + method + "</h7><p class='post-desc'>" + pos.ElTahiRecipePostBody + "</p></div></div>";
 
                         }
@@ -98,7 +99,9 @@ namespace Tahi
                 }
 
                 int useridInteger = int.Parse(personalUserid);
-                var ratingData = DB.ElTahiPostScores.Where(r=>r.ElTahiUserID == useridInteger).FirstOrDefault();
+                
+                var ratingData = DB.ElTahiPostScores.Where(r=>   r.ElTahiPostID == recid && r.ElTahiUserID == useridInteger ).FirstOrDefault();
+
 
                 if (ratingData !=null){
                     ratebtn.Visible = false;
@@ -184,7 +187,7 @@ namespace Tahi
             {
 
 
-                ElTahiPostID = Convert.ToInt32(perPos),
+                ElTahiPostID = recid,
                 ElTahiUserID = Convert.ToInt32(personalUserid),
                 ElTahiScore = Convert.ToInt32(rateValue),
                 ElTahiScoreRegDT = DateTime.Now

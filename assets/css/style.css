@@ -1584,9 +1584,10 @@ textarea:focus {
 }
 
 .post-settings-bar {
-  margin-left: auto;
-  position: relative;
-  cursor: pointer;
+    margin-left: auto;
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
 }
 
 .post-settings-bar span {
@@ -1619,6 +1620,7 @@ textarea:focus {
 .post-settings {
   right: 0;
   top: 100%;
+ 
   width: 200px;
   background-color: #fff;
   position: absolute;
@@ -1709,8 +1711,11 @@ textarea:focus {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 12px;
   margin-top: 20px;
+  margin-bottom:20px;
+}
+.yellow-color {
+    color: yellow;
 }
 
 @media only screen and (max-width: 479.98px) {
@@ -1723,6 +1728,7 @@ textarea:focus {
   display: none;
   font-size: 14px;
   font-weight: 400;
+ 
   padding-left: 8px;
   color: #666666;
 }
@@ -1750,6 +1756,7 @@ textarea:focus {
 .post-comment i,
 .post-share i {
   font-size: 20px;
+
   color: #333333;
   vertical-align: middle;
 }
@@ -1757,9 +1764,10 @@ textarea:focus {
 .post-meta-like span,
 .post-comment span,
 .post-share span {
-  color: #666666;
-  vertical-align: text-bottom;
-  padding-left: 8px;
+    color: #666666;
+    vertical-align: text-bottom;
+    padding-right: 15px;
+   
 }
 
 .post-meta-like:hover i,

@@ -20,7 +20,6 @@
     
     <!-- Main Style CSS -->
     <link href="assets/css/authStyles.css" rel="stylesheet" />
-    <link href="assets/css/authStyles.css" rel="stylesheet" />
       <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
 </head>

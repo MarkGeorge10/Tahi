@@ -30,3 +30,13 @@ D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi10-2\obj\Debug\Tahi.csproj.Copy
 D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi10-2\obj\Debug\Tahi.dll
 D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi10-2\obj\Debug\Tahi.pdb
 D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi10-2\obj\Debug\Tahi.csproj.AssemblyReference.cache
+D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\bin\Tahi.dll.config
+D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\bin\Tahi.dll
+D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\bin\Tahi.pdb
+D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\bin\EntityFramework.dll
+D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\bin\EntityFramework.xml
+D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\obj\Debug\Tahi.csproj.CoreCompileInputs.cache
+D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\obj\Debug\Tahi.csproj.CopyComplete
+D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\obj\Debug\Tahi.dll
+D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\obj\Debug\Tahi.pdb
+D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\obj\Debug\Tahi.csproj.AssemblyReference.cache

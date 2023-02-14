@@ -77,6 +77,7 @@
     <Content Include="addother.aspx" />
     <Content Include="assets\css\authStyles.css" />
     <Content Include="assets\css\ratingStyle.css" />
+    <Content Include="assets\css\wall\cardstyle.css" />
     <Content Include="assets\images\upimage.png" />
     <Content Include="Files\searchjob.jpg" />
     <Content Include="index.aspx" />
