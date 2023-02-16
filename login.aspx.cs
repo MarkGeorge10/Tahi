@@ -7,9 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace Tahi
 {
-    public partial class index : System.Web.UI.Page
+    public partial class login : System.Web.UI.Page
     {
-        db_a8d12b_amahmyEntities DB = new db_a8d12b_amahmyEntities();
+         db_a8d12b_amahmyEntities DB = new  db_a8d12b_amahmyEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -17,24 +17,23 @@ namespace Tahi
 
         protected void BtnCrtacc_Click(object sender, EventArgs e)
         {
-            DB.ElTahiUsers.Add(new ElTahiUser
-            {
-                ElTahiFirstName = TxtFName.Text,
-                ELTahiSecondName = TextSName.Text,
-                ElTahiLastName = TxtLName.Text,
-                ElTahiUserEmail = TxtEmal.Text,
-                ElTahiUserMobile = TxtMobile.Text,
-                ElTahiUserBio = TxtBio.Text,
-                ElTahiUserBirthdate = DateTime.Parse(TxtBdate.Text),
-                ELTahiUserName = TxtUserName.Text,
-                ElTahiUserPassWord = TxtPassword.Text,
-                ElTahiUserTypeID = int.Parse(DdlTyp.SelectedValue),
-                ELTahiNationalID = int.Parse(DdlNationalty.SelectedValue),
-                ELTahiUserCountryID = int.Parse(DDlCountry.SelectedValue)
+            //DB.ElTahiUsers.Add(new ElTahiUser {
+            //    ElTahiFirstName = TxtFName.Text,
+            //    ELTahiSecondName = TextSName.Text,
+            //    ElTahiLastName = TxtLName.Text,
+            //    ElTahiUserEmail = TxtEmal.Text,
+            //    ElTahiUserMobile = TxtMobile.Text,
+            //    ElTahiUserBio = TxtBio.Text,
+            //    ElTahiUserBirthdate = DateTime.Parse(TxtBdate.Text),
+            //    ELTahiUserName = TxtUserName.Text,
+            //    ElTahiUserPassWord = TxtPassword.Text,
+            //    ElTahiUserTypeID = int.Parse(DdlTyp.SelectedValue),
+            //    ELTahiNationalID = int.Parse(DdlNationalty.SelectedValue),
+            //    ELTahiUserCountryID = int.Parse(DDlCountry.SelectedValue)
 
-            });
-            DB.SaveChanges();
-            Response.Redirect("~/Home.aspx");
+            //});
+            //DB.SaveChanges();
+            //Response.Redirect("~/Home.aspx");
 
         }
 
@@ -79,29 +78,29 @@ namespace Tahi
 
 
         }
-
+    
 
         protected void DdlTyp_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (DdlTyp.SelectedIndex == 0)
-            {
-                Rusttyp.Visible = false;
-                Rstsuplname.Visible = false;
-                address.Visible = false;
-            }
-            else if (DdlTyp.SelectedIndex == 1)
-            {
-                Rusttyp.Visible = false;
-                Rstsuplname.Visible = true;
-                address.Visible = true;
+            //if (DdlTyp.SelectedIndex == 0)
+            //{
+            //    Rusttyp.Visible = false;
+            //        Rstsuplname.Visible = false;
+            //    address.Visible = false;
+            //}
+            //else if (DdlTyp.SelectedIndex == 1)
+            //{
+            //    Rusttyp.Visible = false;
+            //    Rstsuplname.Visible = true;
+            //    address.Visible = true;
 
-            }
-            else if (DdlTyp.SelectedIndex == 2)
-            {
-                Rusttyp.Visible = true;
-                Rstsuplname.Visible = true;
-                address.Visible = true;
-            }
+            //}
+            //else if (DdlTyp.SelectedIndex == 2)
+            //{
+            //    Rusttyp.Visible = true;
+            //    Rstsuplname.Visible = true;
+            //    address.Visible = true;
+            //}
         }
     }
 }

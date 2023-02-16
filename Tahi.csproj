@@ -81,6 +81,7 @@
     <Content Include="assets\images\upimage.png" />
     <Content Include="Files\searchjob.jpg" />
     <Content Include="index.aspx" />
+    <Content Include="login.aspx" />
     <Content Include="jobdetail.aspx" />
     <Content Include="packages.config" />
     <EntityDeploy Include="Model1.edmx">
@@ -490,6 +491,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="signup.aspx.cs">
       <DependentUpon>signup.aspx</DependentUpon>
