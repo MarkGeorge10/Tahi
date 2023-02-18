@@ -76,6 +76,7 @@
   <ItemGroup>
     <Content Include="addother.aspx" />
     <Content Include="assets\css\authStyles.css" />
+    <Content Include="assets\css\components\buttonStyle.css" />
     <Content Include="assets\css\ratingStyle.css" />
     <Content Include="assets\css\wall\cardstyle.css" />
     <Content Include="assets\images\upimage.png" />
@@ -91,6 +92,7 @@
     <Content Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="ProfileOtherUser.aspx" />
     <Content Include="ProfileX.aspx" />
     <Content Include="RecipDetailView.aspx" />
     <Content Include="Restaurant.aspx" />
@@ -475,6 +477,9 @@
     <Compile Include="ElTahiUser.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Friendship.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -498,6 +503,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileOtherUser.aspx.cs">
+      <DependentUpon>ProfileOtherUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfileOtherUser.aspx.designer.cs">
+      <DependentUpon>ProfileOtherUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="signup.aspx.cs">
       <DependentUpon>signup.aspx</DependentUpon>

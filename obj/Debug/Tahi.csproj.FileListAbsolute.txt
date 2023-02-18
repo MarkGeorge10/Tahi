@@ -40,3 +40,4 @@ D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\obj\Debug\Tahi.csproj.CopyComp
 D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\obj\Debug\Tahi.dll
 D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\obj\Debug\Tahi.pdb
 D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\obj\Debug\Tahi.csproj.AssemblyReference.cache
+D:\Work\PersonalWork\Freelancer Projects\ASP\Tahi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml

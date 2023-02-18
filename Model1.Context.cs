@@ -66,6 +66,7 @@ namespace Tahi
         public DbSet<TahiSupInformation> TahiSupInformations { get; set; }
         public DbSet<ElTahiPostComment> ElTahiPostComments { get; set; }
         public DbSet<ElTahiPostScore> ElTahiPostScores { get; set; }
+        public DbSet<Friendship> Friendships { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

@@ -402,6 +402,15 @@
           <Property Name="ElTahiComName" Type="nvarchar" MaxLength="150" />
           <Property Name="ElTahiRestTypeID" Type="int" />
         </EntityType>
+        <EntityType Name="Friendship">
+          <Key>
+            <PropertyRef Name="ElTahiRequesterUserId" />
+            <PropertyRef Name="ElTahiFriendUserId" />
+          </Key>
+          <Property Name="ElTahiRequesterUserId" Type="int" Nullable="false" />
+          <Property Name="ElTahiFriendUserId" Type="int" Nullable="false" />
+          <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -775,6 +784,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FriendshipToAddressee_FK">
+          <End Role="ElTahiUsers" Type="Self.ElTahiUsers" Multiplicity="1" />
+          <End Role="Friendship" Type="Self.Friendship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiUsers">
+              <PropertyRef Name="ElTahiUserID" />
+            </Principal>
+            <Dependent Role="Friendship">
+              <PropertyRef Name="ElTahiFriendUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FriendshipToRequester_FK">
+          <End Role="ElTahiUsers" Type="Self.ElTahiUsers" Multiplicity="1" />
+          <End Role="Friendship" Type="Self.Friendship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiUsers">
+              <PropertyRef Name="ElTahiUserID" />
+            </Principal>
+            <Dependent Role="Friendship">
+              <PropertyRef Name="ElTahiRequesterUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -842,6 +875,7 @@
           <EntitySet Name="ELTahiTopUser" EntityType="Self.ELTahiTopUser" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ElTahiType" EntityType="Self.ElTahiType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ElTahiUsers" EntityType="Self.ElTahiUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Friendship" EntityType="Self.Friendship" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TahiCuisine" EntityType="Self.TahiCuisine" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TahiSupInformation" EntityType="Self.TahiSupInformation" Schema="dbo" store:Type="Tables" />
@@ -956,6 +990,14 @@
           <AssociationSet Name="FK_ElTahiUsers_ElTahiType" Association="Self.FK_ElTahiUsers_ElTahiType">
             <End Role="ElTahiType" EntitySet="ElTahiType" />
             <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FriendshipToAddressee_FK" Association="Self.FriendshipToAddressee_FK">
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+            <End Role="Friendship" EntitySet="Friendship" />
+          </AssociationSet>
+          <AssociationSet Name="FriendshipToRequester_FK" Association="Self.FriendshipToRequester_FK">
+            <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+            <End Role="Friendship" EntitySet="Friendship" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -1224,6 +1266,8 @@
           <Property Name="ElTahiComAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="ElTahiComName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="ElTahiRestTypeID" Type="Int32" />
+          <NavigationProperty Name="Friendships" Relationship="db_a8d12b_amahmyModel.FriendshipToAddressee_FK" FromRole="ElTahiUser" ToRole="Friendship" />
+          <NavigationProperty Name="Friendships1" Relationship="db_a8d12b_amahmyModel.FriendshipToRequester_FK" FromRole="ElTahiUser" ToRole="Friendship" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1716,6 +1760,15 @@
           <EntitySet Name="TahiSupInformations" EntityType="db_a8d12b_amahmyModel.TahiSupInformation" />
           <EntitySet Name="ElTahiPostComments" EntityType="db_a8d12b_amahmyModel.ElTahiPostComment" />
           <EntitySet Name="ElTahiPostScores" EntityType="db_a8d12b_amahmyModel.ElTahiPostScore" />
+          <EntitySet Name="Friendships" EntityType="db_a8d12b_amahmyModel.Friendship" />
+          <AssociationSet Name="FriendshipToAddressee_FK" Association="db_a8d12b_amahmyModel.FriendshipToAddressee_FK">
+            <End Role="ElTahiUser" EntitySet="ElTahiUsers" />
+            <End Role="Friendship" EntitySet="Friendships" />
+          </AssociationSet>
+          <AssociationSet Name="FriendshipToRequester_FK" Association="db_a8d12b_amahmyModel.FriendshipToRequester_FK">
+            <End Role="ElTahiUser" EntitySet="ElTahiUsers" />
+            <End Role="Friendship" EntitySet="Friendships" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1980,6 +2033,41 @@
           <Property Name="ElTahiScore" Type="Int32" />
           <Property Name="ElTahiScoreRegDT" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="Friendship">
+          <Key>
+            <PropertyRef Name="ElTahiRequesterUserId" />
+            <PropertyRef Name="ElTahiFriendUserId" />
+          </Key>
+          <Property Name="ElTahiRequesterUserId" Type="Int32" Nullable="false" />
+          <Property Name="ElTahiFriendUserId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ElTahiFriendUser" Relationship="db_a8d12b_amahmyModel.FriendshipToAddressee_FK" FromRole="Friendship" ToRole="ElTahiUser" />
+          <NavigationProperty Name="ElTahiRequestorUser" Relationship="db_a8d12b_amahmyModel.FriendshipToRequester_FK" FromRole="Friendship" ToRole="ElTahiUser" />
+        </EntityType>
+        <Association Name="FriendshipToAddressee_FK">
+          <End Type="db_a8d12b_amahmyModel.ElTahiUser" Role="ElTahiUser" Multiplicity="1" />
+          <End Type="db_a8d12b_amahmyModel.Friendship" Role="Friendship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiUser">
+              <PropertyRef Name="ElTahiUserID" />
+            </Principal>
+            <Dependent Role="Friendship">
+              <PropertyRef Name="ElTahiFriendUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FriendshipToRequester_FK">
+          <End Type="db_a8d12b_amahmyModel.ElTahiUser" Role="ElTahiUser" Multiplicity="1" />
+          <End Type="db_a8d12b_amahmyModel.Friendship" Role="Friendship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElTahiUser">
+              <PropertyRef Name="ElTahiUserID" />
+            </Principal>
+            <Dependent Role="Friendship">
+              <PropertyRef Name="ElTahiRequesterUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2479,6 +2567,15 @@
                 <ScalarProperty Name="ElTahiUserID" ColumnName="ElTahiUserID" />
                 <ScalarProperty Name="ElTahiPostID" ColumnName="ElTahiPostID" />
                 <ScalarProperty Name="ELTahiScoreID" ColumnName="ELTahiScoreID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Friendships">
+            <EntityTypeMapping TypeName="db_a8d12b_amahmyModel.Friendship">
+              <MappingFragment StoreEntitySet="Friendship">
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="ElTahiFriendUserId" ColumnName="ElTahiFriendUserId" />
+                <ScalarProperty Name="ElTahiRequesterUserId" ColumnName="ElTahiRequesterUserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

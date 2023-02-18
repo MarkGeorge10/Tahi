@@ -397,6 +397,15 @@
     <Property Name="ElTahiComName" Type="nvarchar" MaxLength="150" />
     <Property Name="ElTahiRestTypeID" Type="int" />
   </EntityType>
+  <EntityType Name="Friendship">
+    <Key>
+      <PropertyRef Name="ElTahiRequesterUserId" />
+      <PropertyRef Name="ElTahiFriendUserId" />
+    </Key>
+    <Property Name="ElTahiRequesterUserId" Type="int" Nullable="false" />
+    <Property Name="ElTahiFriendUserId" Type="int" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -770,6 +779,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FriendshipToAddressee_FK">
+    <End Role="ElTahiUsers" Type="Self.ElTahiUsers" Multiplicity="1" />
+    <End Role="Friendship" Type="Self.Friendship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElTahiUsers">
+        <PropertyRef Name="ElTahiUserID" />
+      </Principal>
+      <Dependent Role="Friendship">
+        <PropertyRef Name="ElTahiFriendUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FriendshipToRequester_FK">
+    <End Role="ElTahiUsers" Type="Self.ElTahiUsers" Multiplicity="1" />
+    <End Role="Friendship" Type="Self.Friendship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElTahiUsers">
+        <PropertyRef Name="ElTahiUserID" />
+      </Principal>
+      <Dependent Role="Friendship">
+        <PropertyRef Name="ElTahiRequesterUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -837,6 +870,7 @@
     <EntitySet Name="ELTahiTopUser" EntityType="Self.ELTahiTopUser" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ElTahiType" EntityType="Self.ElTahiType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ElTahiUsers" EntityType="Self.ElTahiUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Friendship" EntityType="Self.Friendship" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TahiCuisine" EntityType="Self.TahiCuisine" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TahiSupInformation" EntityType="Self.TahiSupInformation" Schema="dbo" store:Type="Tables" />
@@ -951,6 +985,14 @@
     <AssociationSet Name="FK_ElTahiUsers_ElTahiType" Association="Self.FK_ElTahiUsers_ElTahiType">
       <End Role="ElTahiType" EntitySet="ElTahiType" />
       <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FriendshipToAddressee_FK" Association="Self.FriendshipToAddressee_FK">
+      <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+      <End Role="Friendship" EntitySet="Friendship" />
+    </AssociationSet>
+    <AssociationSet Name="FriendshipToRequester_FK" Association="Self.FriendshipToRequester_FK">
+      <End Role="ElTahiUsers" EntitySet="ElTahiUsers" />
+      <End Role="Friendship" EntitySet="Friendship" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

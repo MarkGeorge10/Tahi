@@ -21,6 +21,8 @@ namespace Tahi
             this.ElTahiPostImagesRelations = new HashSet<ElTahiPostImagesRelation>();
             this.ElTahiPostVideos = new HashSet<ElTahiPostVideo>();
             this.ELTahiTopUsers = new HashSet<ELTahiTopUser>();
+            this.Friendships = new HashSet<Friendship>();
+            this.Friendships1 = new HashSet<Friendship>();
         }
     
         public int ElTahiUserID { get; set; }
@@ -51,5 +53,7 @@ namespace Tahi
         public virtual ElTahiStatu ElTahiStatu { get; set; }
         public virtual ICollection<ELTahiTopUser> ELTahiTopUsers { get; set; }
         public virtual ElTahiType ElTahiType { get; set; }
+        public virtual ICollection<Friendship> Friendships { get; set; }
+        public virtual ICollection<Friendship> Friendships1 { get; set; }
     }
 }
