@@ -268,7 +268,7 @@
                                             </ul>
                                             <ul>
                                                
-                                                <li><a href="index.aspx"><i class="flaticon-unlock"></i>Sing out</a></li>
+                                                <li><a href="index.aspx"><i class="flaticon-unlock"></i>Sign out</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -481,15 +481,12 @@
                         <div class="col-lg-3 col-md-3" style="border: 1px solid #DDDDDD;  position: relative;">
                         
                             <%--<div class="containerimg" style="border: 1px solid #DDDDDD; width: 200px; height: 200px; position: relative;transform: translateY(calc(-50% - 10px));" >--%>
-       <div class="profile-picturebtn" style="z-index: 2;background-color: #92AD40;padding: 9px;color: #FFFFFF;font-weight: bold;">
-           <asp:Label ID="Label2" runat="server" Text="Edit" data-toggle="modal" data-target="#textbox"></asp:Label>
+                           <div class="profile-picturebtn" style="z-index: 2;background-color: #92AD40;padding: 9px;color: #FFFFFF;font-weight: bold;">
+                               <asp:Label ID="Label2" runat="server" Text="Edit" data-toggle="modal" data-target="#textbox"></asp:Label>
 
-       </div>
-                                                   <div class="profile-picture-box" runat="server" id="proimge" >
-                              
-                                
-                         
-         </div>
+                           </div>
+                           <div class="profile-picture-box" runat="server" id="proimge" >
+                           </div>
          <%-- </div>--%>
 
                                 
@@ -524,7 +521,7 @@
                                         <ul class="main-menu">
                                             <%--<li><a href="wall.aspx">timeline</a></li>--%>
                                             <li><a href="profile.aspx">Profile</a></li>
-                                            <li><a href="friends.html">Follower</a></li>
+                                            <li><a href="FriendsPage.aspx">Follower</a></li>
                                             <li><a href="Restaurant.aspx">Restaurant</a></li>
                                             <li><a href="about.html">Supplier</a></li>
                                             <!-- <li class="d-inline-block d-md-none"><a href="profile.html">edit profile</a></li> -->

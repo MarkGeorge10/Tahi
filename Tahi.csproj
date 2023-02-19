@@ -81,6 +81,7 @@
     <Content Include="assets\css\wall\cardstyle.css" />
     <Content Include="assets\images\upimage.png" />
     <Content Include="Files\searchjob.jpg" />
+    <Content Include="FollowerProfilePage.aspx" />
     <Content Include="index.aspx" />
     <Content Include="login.aspx" />
     <Content Include="jobdetail.aspx" />
@@ -310,6 +311,7 @@
     <Content Include="supinfo.aspx" />
     <Content Include="supplierinfo.aspx" />
     <Content Include="Timeline.aspx" />
+    <Content Include="FriendsPage.aspx" />
     <Content Include="wall.aspx" />
     <Content Include="WallX.aspx" />
     <Content Include="Web.config" />
@@ -477,6 +479,13 @@
     <Compile Include="ElTahiUser.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="FollowerProfilePage.aspx.cs">
+      <DependentUpon>FollowerProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FollowerProfilePage.aspx.designer.cs">
+      <DependentUpon>FollowerProfilePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Friendship.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -625,6 +634,13 @@
     </Compile>
     <Compile Include="Timeline.aspx.designer.cs">
       <DependentUpon>Timeline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FriendsPage.aspx.cs">
+      <DependentUpon>FriendsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FriendsPage.aspx.designer.cs">
+      <DependentUpon>FriendsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="wall.aspx.cs">
       <DependentUpon>wall.aspx</DependentUpon>

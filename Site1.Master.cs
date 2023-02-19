@@ -35,7 +35,7 @@ namespace Tahi
 
 
 
-                            proimge.InnerHtml = "<figure class='profile-picture'><a href = 'profile.aspx'> <img src = 'assets/images/profile/" + persimg.ElTahiProfileImageName + "' alt = 'profile picture' style='max-width: 270px; max-height: 270px;'></a></figure>";
+                            proimge.InnerHtml = "<figure class='profile-picture'><a href = 'profile.aspx'> <img src = 'assets/images/profile/" + persimg.ElTahiProfileImageName + "' alt = 'profile picture' style='width: 170px; height: auto;'></a></figure>";
 
                       
                     }

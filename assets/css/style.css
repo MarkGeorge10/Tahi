@@ -2088,6 +2088,12 @@ textarea:focus {
   }
 }
 
+@media only screen and (max-width: 375px) {
+    .profile-picture {
+        width: 100px;
+    }
+}
+
 .profile-picture:before {
   top: 0;
   left: 0;
