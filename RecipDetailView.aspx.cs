@@ -61,7 +61,7 @@ namespace Tahi
                     }
                     foreach (var sup in DB.ElTahiSupRescipePosts.Where(p => p.ElTahiRecipePostID == pos.ElTahiRecipePostID))
                     {
-                        detail1.InnerHtml += "<div class='post -content'><h5 style='font-weight: bold;'>" + sup.ElTahiRecipePostHeader + "</h5><br><p class='post-desc'>" + sup.ElTahiRecipePostBody + "</p></div></div>";
+                        detail1.InnerHtml += "<div class='post-content'><h5 style='font-weight: bold;'>" + sup.ElTahiRecipePostHeader + "</h5><br><p class='post-desc'>" + sup.ElTahiRecipePostBody + "</p></div></div>";
 
                         foreach (var inv in DB.ElTahiSubRecipePostIngradients.Where(l => l.ElTahiSubRecipePostID == sup.ElTahiSubRecipePostID))
                         {
@@ -195,7 +195,7 @@ namespace Tahi
 
             });
             DB.SaveChanges();
-
+            Response.Redirect("~/RecipDetailView.aspx?ResID=" + recid + "");
         }
     }
 }

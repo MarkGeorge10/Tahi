@@ -2052,6 +2052,7 @@ textarea:focus {
     padding: 9px;
     color: #FFFFFF;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
@@ -2059,6 +2060,7 @@ textarea:focus {
     -webkit-transform: translateY(calc(60% - 10px));
         -ms-transform: translateY(calc(60% - 10px));
             transform: translateY(calc(60% - 10px));
+
   }
 }
 
@@ -2067,8 +2069,29 @@ textarea:focus {
     left: 0;
     right: 0;
     margin: auto;
+    margin-top:10px;
     width: 100px;
   }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .profile-picturebtn {
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-top: 10px;
+        width: 100px;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .profile-picturebtn {
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-top: 40px;
+        width: 100px;
+    }
 }
 
 .secondary-navigation-style .profile-picturebtn  {

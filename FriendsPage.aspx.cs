@@ -42,7 +42,7 @@ namespace Tahi
                             Name = per.ElTahiFirstName + " " + per.ELTahiSecondName + " " + per.ElTahiLastName;
                             Console.WriteLine(Name);
 
-                            postview.InnerHtml += "<div class='card'><div class='post-meta'><div class='post-title d-flex align-items-center'><div class='profile-thumb'><a href = 'ProfileOtherUser.aspx?uid=" + friend.ElTahiFriendUserId + "'><figure class='profile-thumb-middle'><img src = 'assets/images/profile/" + Url + "' alt='profile picture'/></figure></a></div><div class='posted-author'><h6 class='author'><a href = 'ProfileOtherUser.aspx?uid=" + friend.ElTahiFriendUserId + "'> " + Name + " </a></h6 ></div></div></div>";
+                            postview.InnerHtml += "<div class='card'><div class='post-meta'><div class='post-title d-flex align-items-center'><div class='profile-thumb'><a href = 'FollowerProfilePage.aspx?uid=" + friend.ElTahiFriendUserId + "'><figure class='profile-thumb-middle'><img src = 'assets/images/profile/" + Url + "' alt='profile picture'/></figure></a></div><div class='posted-author'><h6 class='author'><a href = 'FollowerProfilePage.aspx?uid=" + friend.ElTahiFriendUserId + "'> " + Name + " </a></h6 ></div></div></div> </div>";
 
                         }
 

@@ -7,11 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tahi {
-    
-    
-    public partial class wall {
-        
+namespace Tahi
+{
+
+
+    public partial class wall
+    {
+
+        /// <summary>
+        /// suggestionItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl suggestionItem;
+
         /// <summary>
         /// postview control.
         /// </summary>

@@ -440,7 +440,7 @@ flex: 0 1 calc(100% - 308px);
                                 <br />
                                 <br />
                             </div>
-                      <div id="divcom" class="card" >
+                            <div id="divcom" class="card" >
                           <div class="row">
                               <asp:TextBox ID="Txtcom" Style="max-width:100%;min-width:100%;min-height:100px;" runat="server"></asp:TextBox>
                               <br />
@@ -449,16 +449,13 @@ flex: 0 1 calc(100% - 308px);
                                   class="edit-btn" runat="server" Text="Add Comment" OnClick="brnaddcom_Click" />
                           </div>
                       </div>
-                            <div class="row">
-                                <br />
-
-                            </div>
+                          
                             <div class="row" id="divVcom" runat="server" >
                            
-                                 </div>
+                            </div>
+                        </div>
                     </div>
-</div>
-                    <div class="col-lg-3 order-3">
+                    <div class="col-lg-3 order-2">
                         <aside class="widget-area">
                             <!-- widget single item start -->
                             <div class="card widget-item">
