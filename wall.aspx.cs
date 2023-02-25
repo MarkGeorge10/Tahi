@@ -36,21 +36,84 @@ namespace Tahi
         {
             string urlImage ="";
             string suggestionName ="";
-            foreach (var friend in DB.Friendships.Where(l => l.ElTahiRequesterUserId == userId).ToList())
+            if (DB.Friendships.Where(l => l.ElTahiRequesterUserId == userId).Count() > 0)
             {
-                foreach (var friendOfFriend in DB.Friendships.Where(l => l.ElTahiRequesterUserId == friend.ElTahiFriendUserId & friend.ElTahiFriendUserId != l.ElTahiFriendUserId).ToList())
+                foreach (var friend in DB.Friendships.Where(l => l.ElTahiRequesterUserId == userId).ToList())
+                {
+                    if (DB.Friendships.Where(l => l.ElTahiRequesterUserId == friend.ElTahiFriendUserId & friend.ElTahiFriendUserId != l.ElTahiFriendUserId).Count() > 0)
+                    {
+                        foreach (var friendOfFriend in DB.Friendships.Where(l => l.ElTahiRequesterUserId == friend.ElTahiFriendUserId & friend.ElTahiFriendUserId != l.ElTahiFriendUserId).ToList())
+                        {
+
+                            foreach (var per in DB.ElTahiUsers.Where(u => u.ElTahiUserID == friendOfFriend.ElTahiFriendUserId))
+                            {
+                                suggestionName = per.ElTahiFirstName + " " + per.ELTahiSecondName + " " + per.ElTahiLastName;
+                            }
+                            foreach (var persimg in DB.ElTahiProfileImages.Where(o => o.ElTahiProfileImageUserID == friendOfFriend.ElTahiFriendUserId))
+                            {
+                                if (DB.ElTahiProfileImages.Where(p => p.ElTahiProfileImageUserID == friendOfFriend.ElTahiRequesterUserId).Count() > 0)
+                                {
+                                    urlImage = persimg.ElTahiProfileImageName;
+
+                                }
+                                else
+                                {
+                                    urlImage = "profile-1.jpg' ";
+                                }
+                            }
+
+                            suggestionBodyItem.Text += "<li class='unorder-list'><div class='profile-thumb'><a href='FollowerProfilePage.aspx?uid="+ friendOfFriend.ElTahiFriendUserId + "'><figure class='profile-thumb-small'><img src='assets/images/profile/" + urlImage + "' alt='profile picture'></figure></a></div><div class='unorder-list-info'><h3 class='list-title'><a href='FollowerProfilePage.aspx?uid=" + friendOfFriend.ElTahiFriendUserId + "'>'" + suggestionName + "'</a></h3></div></li>";
+
+                        }
+
+                    }
+                    else
+                    {
+                        //foreach (var otherFriends in DB.ElTahiUsers.Where(l => l.ElTahiUserID != userId & l.ElTahiUserID != friend.ElTahiFriendUserId).ToList())
+                        //{
+
+                        //    suggestionName = otherFriends.ElTahiFirstName + " " + otherFriends.ELTahiSecondName + " " + otherFriends.ElTahiLastName;
+
+
+                        //    foreach (var persimg in DB.ElTahiProfileImages.Where(o => o.ElTahiProfileImageUserID == otherFriends.ElTahiUserID))
+                        //    {
+                        //        if (DB.ElTahiProfileImages.Where(p => p.ElTahiProfileImageUserID == otherFriends.ElTahiUserID).Count() > 0)
+                        //        {
+                        //            urlImage = persimg.ElTahiProfileImageName;
+
+                        //        }
+                        //        else
+                        //        {
+                        //            urlImage = "profile-1.jpg' ";
+                        //        }
+
+
+                        //    }
+                        //    suggestionBodyItem.Text += "<li class='unorder-list'><div class='profile-thumb'><a href='FollowerProfilePage.aspx?uid="+ otherFriends.ElTahiUserID+ "'><figure class='profile-thumb-small'><img src=assets/images/profile/" + urlImage + " alt='profile picture'></figure></a></div><div class='unorder-list-info'><h3 class='list-title'><a href=''FollowerProfilePage.aspx?uid=" + otherFriends.ElTahiUserID + "''>'" + suggestionName + "'</a></h3></div></li>";
+
+                        //}
+
+                    }
+                   
+
+
+
+                }
+
+
+
+            }
+            else {
+
+                foreach (var otherFriends in DB.ElTahiUsers.Where(l => l.ElTahiUserID != userId).ToList())
                 {
 
-                    Console.WriteLine(friendOfFriend.ElTahiRequesterUserId.ToString());
+                    suggestionName = otherFriends.ElTahiFirstName + " " + otherFriends.ELTahiSecondName + " " + otherFriends.ElTahiLastName;
 
 
-                    foreach (var per in DB.ElTahiUsers.Where(u => u.ElTahiUserID == friendOfFriend.ElTahiRequesterUserId))
+                    foreach (var persimg in DB.ElTahiProfileImages.Where(o => o.ElTahiProfileImageUserID == otherFriends.ElTahiUserID))
                     {
-                        suggestionName = per.ElTahiFirstName + " " + per.ELTahiSecondName + " " + per.ElTahiLastName;
-                    }
-                    foreach (var persimg in DB.ElTahiProfileImages.Where(o => o.ElTahiProfileImageUserID == friendOfFriend.ElTahiRequesterUserId))
-                    {
-                        if (DB.ElTahiProfileImages.Where(p => p.ElTahiProfileImageUserID == friendOfFriend.ElTahiRequesterUserId).Count() > 0)
+                        if (DB.ElTahiProfileImages.Where(p => p.ElTahiProfileImageUserID == otherFriends.ElTahiUserID).Count() > 0)
                         {
                             urlImage = persimg.ElTahiProfileImageName;
 
@@ -59,13 +122,24 @@ namespace Tahi
                         {
                             urlImage = "profile-1.jpg' ";
                         }
-                    }
 
-                    suggestionItem.InnerHtml += "<li class='unorder-list'><div class='profile-thumb'><a href='#'><figure class='profile-thumb-small'><img src='assets/images/profile/profile-small-30.jpg' alt='profile picture'></figure></a></div><div class='unorder-list-info'><h3 class='list-title'><a href='#'>Foodcort Nirala</a></h3><p class='list-subtitle'><a href='#'>'"+suggestionName+"'</a></p></div><button class='like-button'><img class='like-button' src='assets/images/icons/heart.png' alt=''><img class='heart-color' src='assets/images/icons/heart-color.png' alt=''/></button></li>";
+                        //suggestionBodyItem.Attributes.Render("<li class='unorder-list'></li>");
+
+
+
+                        //suggestionBodyItem.Items.Add("<a href=some URL>"+ suggestionName + "</a>");
+                        //testid.items.add("<a href=some URL>Text</a>")
+                        //testid.items.add("<a href=some URL>Text</a>")
+                        //testid.items.add("<a href=some URL>Text</a>")
+
+                        //                        suggestionBodyItem.InnerHtml += "<ul class='like-page-list-wrapper'><li class='unorder-list'><div class='profile-thumb'><a href='#'><figure class='profile-thumb-small'><img src='assets/images/profile/profile-small-30.jpg' alt='profile picture'></figure></a></div><div class='unorder-list-info'><h3 class='list-title'><a href='#'>Foodcort Nirala</a></h3><p class='list-subtitle'><a href='#'>'" + suggestionName + "'</a></p></div><button class='like-button'><img class='like-button' src='assets/images/icons/heart.png' alt=''><img class='heart-color' src='assets/images/icons/heart-color.png' alt=''/></button></li><ul>";
+
+                    }
+                    suggestionBodyItem.Text += "<li class='unorder-list'><div class='profile-thumb'><a href='FollowerProfilePage.aspx?uid="+ otherFriends.ElTahiUserID + "'><figure class='profile-thumb-small'><img src='assets/images/profile/" + urlImage + "' alt='profile picture'></figure></a></div><div class='unorder-list-info'><h3 class='list-title'><a href='FollowerProfilePage.aspx?uid=" + otherFriends.ElTahiUserID + "'>'" + suggestionName + "'</a></h3></div></li>";
 
                 }
-
             }
+         
 
          }
 

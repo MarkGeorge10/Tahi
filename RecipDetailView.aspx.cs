@@ -93,7 +93,7 @@ namespace Tahi
                     }
 
 
-                    divVcom.InnerHtml += " <div class='card' style='min-width: 100%'><div class='post-title d-flex align-items-center'><div class='profile-thumb'> <a href = '#' ><figure class='profile-thumb-middle'> <img src ='assets/images/profile/" + Url + "' alt='profile picture'> </figure> </a></div><div class='posted-author'> <h6 class='author'><a href = '' > " + Name + "</a></h6><span class='post-time'>" + pos.ELTahiComRegDT + "</span></div></br><span class='post-time'>" + pos.ElTahiComment+"</span></div></div>";
+                    divVcom.InnerHtml += " <div class='card' style='min-width: 100%'><div class='post-title d-flex align-items-center'><div class='profile-thumb'> <a href = 'FollowerProfilePage.aspx?uid=" + pos.ELTahiUserID + "' ><figure class='profile-thumb-middle'> <img src ='assets/images/profile/" + Url + "' alt='profile picture'> </figure> </a></div><div class='posted-author'> <h6 class='author'><a href = '' > " + Name + "</a></h6><span class='post-time'>" + pos.ELTahiComRegDT + "</span></div></br><span class='post-time'>" + pos.ElTahiComment+"</span></div></div>";
                       
                     
                 }
@@ -103,7 +103,8 @@ namespace Tahi
                 var ratingData = DB.ElTahiPostScores.Where(r=>   r.ElTahiPostID == recid && r.ElTahiUserID == useridInteger ).FirstOrDefault();
 
 
-                if (ratingData !=null){
+                if (ratingData != null)
+                {
                     ratebtn.Visible = false;
                     // rating.Visible = false;
                     if (ratingData.ElTahiScore == 1)

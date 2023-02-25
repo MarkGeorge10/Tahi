@@ -48,33 +48,20 @@
                 <div class="row">
                     <div class="col-lg-3 order-2 order-lg-1">
                         <aside class="widget-area" style="margin-top:0px ">
-                            <!-- widget single item start -->
-<%--                            <div class="card card-profile widget-item p-0">
-                                <div class="profile-banner">
-                                    <figure class="profile-banner-small">
-                                        <a href="profile.html">
-                                            <img src="assets/images/banner/banner-small.jpg" alt="">
-                                        </a>
-                                        <a href="profile.html" class="profile-thumb-2">
-                                            <img src="assets/images/profile/profile-midle-1.jpg" alt="">
-                                        </a>
-                                    </figure>
-                                    <div class="profile-desc text-center">
-                                        <h6 class="author"><a href="profile.html">Dimbel Lebmid</a></h6>
-                                        <p>Any one can join with but Social network us if you want Any one can join with us if you want</p>
-                                    </div>
-                                </div>
-                            </div>--%>
-                            <!-- widget single item start -->
-
-                            <!-- widget single item start -->
                             <div class="card widget-item">
                                 <h4 class="widget-title">Suggestions</h4>
                                 <div class="widget-body">
-                                    <ul id="suggestionItem" runat="server" class="like-page-list-wrapper">
+                                    
+
+<%--                                    <asp:bulletedlist id="suggestionBodyItem" runat="server" bulletstyle="notset"></asp:bulletedlist>--%>
+                                    <ul class='like-page-list-wrapper'>
+                                        <asp:Literal ID="suggestionBodyItem" runat="server"  ></asp:Literal>
+                            </ul>
+
+                                    <%--
                                         
 
-                                        <%--<li class="unorder-list">
+                                        <li class="unorder-list">
                                             <!-- profile picture end -->
                                             <div class="profile-thumb">
                                                 <a href="#">
@@ -113,8 +100,8 @@
                                                 <img class="heart" src="assets/images/icons/heart.png" alt="">
                                                 <img class="heart-color" src="assets/images/icons/heart-color.png" alt="">
                                             </button>
-                                        </li>--%>
-                                    </ul>
+                                        </li>
+                                    </ul>--%>
                                 </div>
                             </div>
                             <!-- widget single item end -->
@@ -261,15 +248,9 @@
 
                         <!-- post status start -->
                         <div id="postview" runat="server">
-
                                      <div class='card' hidden><div class='post-settings-bar'><span></span><span></span><span></span><div class='post-settings arrow-shape'><ul><li><button>copy link to adda</button></li><li><button>edit post</button></li><li><button>embed adda</button></li></ul></div></div><div class='post-thumb-gallery'><figure class='post-thumb img-popup'><a href='Files/" + pos.ElTahiOtherPostImageURL + "'><img src='assets/images/profile/" + Url + "' alt='post image'/></a></figure></div><a href='jobdetail.aspx?RecID=" + pos.ElTahiOtherPostsID + "'><div class='post -content'><h7 style='font-weight: bold;color: black;'>" + pos.ElTahiOtherPostTitle + "</h7><br><p class='post-desc'>" + pos.ElTahiotherPostDetail + "</p></div></a><div class='post-meta'><button class='post-meta-like'><i class='bi bi-heart-beat'></i><span>201 like</span><strong>201</strong></button><button class='post-meta-like'><i class='bi bi-chat-bubble'></i><span> 41</span></button><button class='post-meta-like'><i class='bi bi-share'></i><span> 07 </span ></button><ul class='comment-share-meta'><li><div class='row'><button class='post-share'><svg style = 'color: #f3da35' width='20' height='20' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'> <path d = 'M7.22303 0.665992C7.32551 0.419604 7.67454 0.419604 7.77702 0.665992L9.41343 4.60039C9.45663 4.70426 9.55432 4.77523 9.66645 4.78422L13.914 5.12475C14.18 5.14607 14.2878 5.47802 14.0852 5.65162L10.849 8.42374C10.7636 8.49692 10.7263 8.61176 10.7524 8.72118L11.7411 12.866C11.803 13.1256 11.5206 13.3308 11.2929 13.1917L7.6564 10.9705C7.5604 10.9119 7.43965 10.9119 7.34365 10.9705L3.70718 13.1917C3.47945 13.3308 3.19708 13.1256 3.25899 12.866L4.24769 8.72118C4.2738 8.61176 4.23648 8.49692 4.15105 8.42374L0.914889 5.65162C0.712228 5.47802 0.820086 5.14607 1.08608 5.12475L5.3336 4.78422C5.44573 4.77523 5.54342 4.70426 5.58662 4.60039L7.22303 0.665992Z' fill='#f3da35'></path> </svg></button><p >3.5</p></div></li></ul></div><div class='post-title d-flex align-items-center'><div class='profile-thumb'><a href = '#' ><figure class='profile-thumb-middle'><img src = 'assets/images/profile/" + Url + "' alt='profile picture'/></figure></a></div><div class='posted-author'><h6 class='author'><a href = '#' > " + Name + " </a></h6 ><span class='post-time'>20 min ago</span></div></div></div>
-
-
                         <!-- post status end -->
-
-                      
-
-                    </div>
+                        </div>
 
 
                     

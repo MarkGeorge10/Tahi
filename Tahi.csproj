@@ -79,6 +79,9 @@
     <Content Include="assets\css\components\buttonStyle.css" />
     <Content Include="assets\css\ratingStyle.css" />
     <Content Include="assets\css\wall\cardstyle.css" />
+    <Content Include="assets\images\profile\1-WhatsApp Image 2021-12-08 at 4.17.28 PM.jpeg" />
+    <Content Include="assets\images\profile\6-Eltahii.PNG" />
+    <Content Include="assets\images\profile\9-IMG-20230115-WA0008.jpg" />
     <Content Include="assets\images\upimage.png" />
     <Content Include="Files\searchjob.jpg" />
     <Content Include="FollowerProfilePage.aspx" />

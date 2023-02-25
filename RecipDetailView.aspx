@@ -454,7 +454,7 @@ flex: 0 1 calc(100% - 308px);
                            
                             </div>
                         </div>
-                    </div>
+                    
                     <div class="col-lg-3 order-2">
                         <aside class="widget-area">
                             <!-- widget single item start -->

@@ -11,8 +11,7 @@ namespace Tahi
     {
 
         db_a8d12b_amahmyEntities DB = new db_a8d12b_amahmyEntities();
-        string Name;
-        string Url;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -29,10 +28,10 @@ namespace Tahi
                 {
                     foreach (var persimg in DB.ElTahiProfileImages.Where(o => o.ElTahiProfileImageUserID == friendUserId))
                     {
+                        
 
 
-
-                        proimge.InnerHtml = "<figure class='profile-picture'><a href = 'profile.aspx'> <img src = 'assets/images/profile/" + persimg.ElTahiProfileImageName + "' alt = 'profile picture' style='width: 170px; height: auto;'></a></figure>";
+                        proimge.InnerHtml = "<figure class='profile-picture'><a href = 'profile.aspx'> <img src ='assets/images/profile/" + persimg.ElTahiProfileImageName + "' alt = 'profile picture' style='width: 170px; height: auto;'></a></figure>";
 
 
                     }
