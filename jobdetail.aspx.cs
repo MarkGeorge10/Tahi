@@ -55,6 +55,140 @@ namespace Tahi
                
                
                 }
+
+                getSuggestions(us);
+                getFollowers(us);
+            }
+        }
+
+        protected void getSuggestions(int userId)
+        {
+            string urlImage = "";
+            string suggestionName = "";
+            List<int> suggestedFriend = new List<int>();
+            List<int> followers = new List<int>();
+
+            if (DB.Friendships.Where(l => l.ElTahiRequesterUserId == userId).Count() > 0)
+            {
+                foreach (var friend in DB.Friendships.Where(l => l.ElTahiRequesterUserId == userId).ToList())
+                {
+                    followers.Add(friend.ElTahiFriendUserId);
+                    if (DB.Friendships.Where(l => l.ElTahiRequesterUserId == friend.ElTahiFriendUserId & friend.ElTahiFriendUserId != l.ElTahiFriendUserId).Count() > 0)
+                    {
+                        foreach (var friendOfFriend in DB.Friendships.Where(l => l.ElTahiRequesterUserId == friend.ElTahiFriendUserId & friend.ElTahiFriendUserId != l.ElTahiFriendUserId).ToList())
+                        {
+
+                            if (friend.ElTahiRequesterUserId != friendOfFriend.ElTahiFriendUserId)
+                            {
+                                suggestedFriend.Add(friendOfFriend.ElTahiFriendUserId);
+
+                            }
+
+
+                        }
+
+                    }
+
+
+
+
+
+                }
+
+                foreach (var suggest in suggestedFriend.Except(followers).ToList())
+                {
+                    foreach (var per in DB.ElTahiUsers.Where(u => u.ElTahiUserID == suggest))
+                    {
+                        suggestionName = per.ElTahiFirstName + " " + per.ELTahiSecondName + " " + per.ElTahiLastName;
+                    }
+                    foreach (var persimg in DB.ElTahiProfileImages.Where(o => o.ElTahiProfileImageUserID == suggest))
+                    {
+                        if (DB.ElTahiProfileImages.Where(p => p.ElTahiProfileImageUserID == suggest).Count() > 0)
+                        {
+                            urlImage = persimg.ElTahiProfileImageName;
+
+                        }
+                        else
+                        {
+                            urlImage = "profile-1.jpg' ";
+                        }
+                    }
+
+                    suggestionJobDetailsBodyItem.Text += "<li class='unorder-list'><div class='profile-thumb'><a href='FollowerProfilePage.aspx?uid=" + suggest + "'><figure class='profile-thumb-small'><img src='assets/images/profile/" + urlImage + "' alt='profile picture'></figure></a></div><div class='unorder-list-info'><h3 class='list-title'><a href='FollowerProfilePage.aspx?uid=" + suggest + "'>'" + suggestionName + "'</a></h3></div></li>";
+
+                }
+
+
+            }
+            else
+            {
+
+                foreach (var otherFriends in DB.ElTahiUsers.Where(l => l.ElTahiUserID != userId).ToList())
+                {
+
+                    suggestionName = otherFriends.ElTahiFirstName + " " + otherFriends.ELTahiSecondName + " " + otherFriends.ElTahiLastName;
+
+
+                    foreach (var persimg in DB.ElTahiProfileImages.Where(o => o.ElTahiProfileImageUserID == otherFriends.ElTahiUserID))
+                    {
+                        if (DB.ElTahiProfileImages.Where(p => p.ElTahiProfileImageUserID == otherFriends.ElTahiUserID).Count() > 0)
+                        {
+                            urlImage = persimg.ElTahiProfileImageName;
+
+                        }
+                        else
+                        {
+                            urlImage = "profile-1.jpg' ";
+                        }
+
+
+                    }
+                    suggestionJobDetailsBodyItem.Text += "<li class='unorder-list'><div class='profile-thumb'><a href='FollowerProfilePage.aspx?uid=" + otherFriends.ElTahiUserID + "'><figure class='profile-thumb-small'><img src='assets/images/profile/" + urlImage + "' alt='profile picture'></figure></a></div><div class='unorder-list-info'><h3 class='list-title'><a href='FollowerProfilePage.aspx?uid=" + otherFriends.ElTahiUserID + "'>'" + suggestionName + "'</a></h3></div></li>";
+
+                }
+            }
+
+
+        }
+
+        protected void getFollowers(int requestorId)
+        {
+            string Name = "";
+            string Url = "";
+            foreach (var friend in DB.Friendships.Where(l => l.ElTahiRequesterUserId == requestorId).ToList())
+            {
+
+
+                if (DB.ElTahiProfileImages.Where(p => p.ElTahiProfileImageUserID == friend.ElTahiFriendUserId).Count() > 0)
+                {
+
+                    foreach (var persimg in DB.ElTahiProfileImages.Where(o => o.ElTahiProfileImageUserID == friend.ElTahiFriendUserId))
+                    {
+
+                        Url = persimg.ElTahiProfileImageName;
+
+
+
+                    }
+                }
+                else
+                {
+                    Url = "profile-1.jpg' ";
+                }
+
+                foreach (var per in DB.ElTahiUsers.Where(u => u.ElTahiUserID == friend.ElTahiFriendUserId))
+                {
+                    Name = per.ElTahiFirstName + " " + per.ELTahiSecondName + " " + per.ElTahiLastName;
+                    Console.WriteLine(Name);
+
+                }
+                FollowerJobDetailsBodyItem.Text += "<li class='unorder-list'><div class='profile-thumb'><a href=FollowerProfilePage.aspx?uid=" + friend.ElTahiFriendUserId + "><figure class='profile-thumb-small'><img src='assets/images/profile/" + Url + "' alt='profile picture'></figure></a></div><div class='unorder-list-info'><h3 class='list-title'><a href='FollowerProfilePage.aspx?uid=" + friend.ElTahiFriendUserId + "'>" + Name + "</a></h3></div></li>";
+
+
+
+
+
+
             }
         }
     }

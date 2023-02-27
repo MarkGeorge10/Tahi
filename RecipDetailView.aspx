@@ -78,7 +78,11 @@ flex: 0 1 calc(100% - 308px);
                                 <h4 class="widget-title">Suggestions</h4>
                                 <div class="widget-body">
                                     <ul class="like-page-list-wrapper">
-                                        <li class="unorder-list">
+
+                                       
+                                            <asp:Literal ID="suggestionDetailsBodyItem" runat="server"  ></asp:Literal>
+                                        
+                                        <%--<li class="unorder-list">
                                             <!-- profile picture end -->
                                             <div class="profile-thumb">
                                                 <a href="#">
@@ -157,7 +161,7 @@ flex: 0 1 calc(100% - 308px);
                                                 <img class="heart" src="assets/images/icons/heart.png" alt="">
                                                 <img class="heart-color" src="assets/images/icons/heart-color.png" alt="">
                                             </button>
-                                        </li>
+                                        </li>--%>
                                     </ul>
                                 </div>
                             </div>
@@ -259,7 +263,7 @@ flex: 0 1 calc(100% - 308px);
                        
 
                         <!-- post status start -->
-                        <div class="card">
+                    <div class="card">
                         <div id="postview" runat="server">
                             <div id="prof" runat="server">
                      
@@ -374,7 +378,7 @@ flex: 0 1 calc(100% - 308px);
 
 
 
-                            <div class='post-content' id="detail1" runat="server">
+                             <div class='post-content' id="detail1" runat="server">
                               
                             </div>
 
@@ -399,7 +403,7 @@ flex: 0 1 calc(100% - 308px);
                               
                             
                             </div>
-                               <div class='post-content'>
+                             <div class='post-content'>
                                 <h5>Rating</h5>
 
                                    <div class="row">
@@ -441,14 +445,14 @@ flex: 0 1 calc(100% - 308px);
                                 <br />
                             </div>
                             <div id="divcom" class="card" >
-                          <div class="row">
-                              <asp:TextBox ID="Txtcom" Style="max-width:100%;min-width:100%;min-height:100px;" runat="server"></asp:TextBox>
-                              <br />
-                              <asp:Button ID="brnaddcom" Style="border: 1px solid #dddddd; border-radius: 1px;
-                                            color: #58595b;  padding-left: 5%; font-weight: bold;" 
-                                  class="edit-btn" runat="server" Text="Add Comment" OnClick="brnaddcom_Click" />
-                          </div>
-                      </div>
+                              <div class="row">
+                                  <asp:TextBox ID="Txtcom" Style="max-width:100%;min-width:100%;min-height:100px;" runat="server"></asp:TextBox>
+                                  <br />
+                                  <asp:Button ID="brnaddcom" Style="border: 1px solid #dddddd; border-radius: 1px;
+                                                color: #58595b;  padding-left: 5%; font-weight: bold;" 
+                                      class="edit-btn" runat="server" Text="Add Comment" OnClick="brnaddcom_Click" />
+                              </div>
+                            </div>
                           
                             <div class="row" id="divVcom" runat="server" >
                            
@@ -565,7 +569,9 @@ flex: 0 1 calc(100% - 308px);
                                 <h4 class="widget-title">Followers</h4>
                                 <div class="widget-body">
                                     <ul class="like-page-list-wrapper">
-                                        <li class="unorder-list">
+
+                                        <asp:Literal ID="FollowerDetailsBodyItem" runat="server"  ></asp:Literal>
+                                        <%--<li class="unorder-list">
                                             <!-- profile picture end -->
                                             <div class="profile-thumb">
                                                 <a href="#">
@@ -644,7 +650,7 @@ flex: 0 1 calc(100% - 308px);
                                                 <img class="heart" src="assets/images/icons/heart.png" alt="">
                                                 <img class="heart-color" src="assets/images/icons/heart-color.png" alt="">
                                             </button>
-                                        </li>
+                                        </li>--%>
                                     </ul>
                                 </div>
                             </div>
@@ -653,7 +659,8 @@ flex: 0 1 calc(100% - 308px);
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
+       </div>
 
     </main>
 </asp:Content>

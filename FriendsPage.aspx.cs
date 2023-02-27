@@ -18,47 +18,53 @@ namespace Tahi
                 int requestorId = int.Parse(personalUserid);
 
 
+                getFollowers(requestorId);
 
-                
 
-                foreach (var friend in DB.Friendships.Where(l => l.ElTahiRequesterUserId == requestorId).ToList())
+
+
+            }
+
+        }
+
+        protected void getFollowers(int requestorId) 
+        {
+            foreach (var friend in DB.Friendships.Where(l => l.ElTahiRequesterUserId == requestorId).ToList())
+            {
+
+
+                if (DB.ElTahiProfileImages.Where(p => p.ElTahiProfileImageUserID == friend.ElTahiFriendUserId).Count() > 0)
                 {
 
-
-                    if (DB.ElTahiProfileImages.Where(p => p.ElTahiProfileImageUserID == friend.ElTahiFriendUserId).Count() > 0)
+                    foreach (var persimg in DB.ElTahiProfileImages.Where(o => o.ElTahiProfileImageUserID == friend.ElTahiFriendUserId))
                     {
-                       
-                        foreach (var persimg in DB.ElTahiProfileImages.Where(o => o.ElTahiProfileImageUserID == friend.ElTahiFriendUserId))
-                        {
 
-                             Url = persimg.ElTahiProfileImageName;
-                          
+                        Url = persimg.ElTahiProfileImageName;
 
-
-                        }
-                    }
-                    else
-                    {
-                        Url = "profile-1.jpg' ";
-                    }
-
-                    foreach (var per in DB.ElTahiUsers.Where(u => u.ElTahiUserID == friend.ElTahiFriendUserId))
-                    {
-                        Name = per.ElTahiFirstName + " " + per.ELTahiSecondName + " " + per.ElTahiLastName;
-                        Console.WriteLine(Name);
 
 
                     }
-                    postview.InnerHtml += "<div class='card'><div class='post-meta'><div class='post-title d-flex align-items-center'><div class='profile-thumb'><a href = 'FollowerProfilePage.aspx?uid=" + friend.ElTahiFriendUserId + "'><figure class='profile-thumb-middle'><img src = 'assets/images/profile/" + Url + "' alt='profile picture'/></figure></a></div><div class='posted-author'><h6 class='author'><a href = 'FollowerProfilePage.aspx?uid=" + friend.ElTahiFriendUserId + "'> " + Name + " </a></h6 ></div></div></div> </div>";
+                }
+                else
+                {
+                    Url = "profile-1.jpg' ";
+                }
 
-
-
-
+                foreach (var per in DB.ElTahiUsers.Where(u => u.ElTahiUserID == friend.ElTahiFriendUserId))
+                {
+                    Name = per.ElTahiFirstName + " " + per.ELTahiSecondName + " " + per.ElTahiLastName;
+                    Console.WriteLine(Name);
 
 
                 }
-            }
+                postview.InnerHtml += "<div class='card'><div class='post-meta'><div class='post-title d-flex align-items-center'><div class='profile-thumb'><a href = 'FollowerProfilePage.aspx?uid=" + friend.ElTahiFriendUserId + "'><figure class='profile-thumb-middle'><img src = 'assets/images/profile/" + Url + "' alt='profile picture'/></figure></a></div><div class='posted-author'><h6 class='author'><a href = 'FollowerProfilePage.aspx?uid=" + friend.ElTahiFriendUserId + "'> " + Name + " </a></h6 ></div></div></div> </div>";
 
+
+
+
+
+
+            }
         }
     }
 }

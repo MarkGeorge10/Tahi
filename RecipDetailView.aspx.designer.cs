@@ -15,6 +15,15 @@ namespace Tahi
     {
 
         /// <summary>
+        /// suggestionDetailsBodyItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal suggestionDetailsBodyItem;
+
+        /// <summary>
         /// postview control.
         /// </summary>
         /// <remarks>
@@ -175,5 +184,14 @@ namespace Tahi
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divVcom;
+
+        /// <summary>
+        /// FollowerDetailsBodyItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal FollowerDetailsBodyItem;
     }
 }

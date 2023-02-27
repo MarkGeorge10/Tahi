@@ -39,7 +39,10 @@
                                 <h4 class="widget-title">Suggestions</h4>
                                 <div class="widget-body">
                                     <ul class="like-page-list-wrapper">
-                                        <li class="unorder-list">
+
+                                             <asp:Literal ID="suggestionJobDetailsBodyItem" runat="server"  ></asp:Literal>
+
+                                       <%-- <li class="unorder-list">
                                             <!-- profile picture end -->
                                             <div class="profile-thumb">
                                                 <a href="#">
@@ -118,7 +121,7 @@
                                                 <img class="heart" src="assets/images/icons/heart.png" alt="">
                                                 <img class="heart-color" src="assets/images/icons/heart-color.png" alt="">
                                             </button>
-                                        </li>
+                                        </li>--%>
                                     </ul>
                                 </div>
                             </div>
@@ -346,7 +349,8 @@
                                     <h4 class="widget-title">Followers</h4>
                                     <div class="widget-body">
                                         <ul class="like-page-list-wrapper">
-                                            <li class="unorder-list">
+                                             <asp:Literal ID="FollowerJobDetailsBodyItem" runat="server"  ></asp:Literal>
+                                            <%--<li class="unorder-list">
                                                 <!-- profile picture end -->
                                                 <div class="profile-thumb">
                                                     <a href="#">
@@ -425,7 +429,7 @@
                                                     <img class="heart" src="assets/images/icons/heart.png" alt="">
                                                     <img class="heart-color" src="assets/images/icons/heart-color.png" alt="">
                                                 </button>
-                                            </li>
+                                            </li>--%>
                                         </ul>
                                     </div>
                                 </div>

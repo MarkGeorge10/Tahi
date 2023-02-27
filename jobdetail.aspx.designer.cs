@@ -7,11 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tahi {
-    
-    
-    public partial class jobdetail {
-        
+namespace Tahi
+{
+
+
+    public partial class jobdetail
+    {
+
+        /// <summary>
+        /// suggestionJobDetailsBodyItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal suggestionJobDetailsBodyItem;
+
         /// <summary>
         /// postview control.
         /// </summary>
@@ -20,7 +31,7 @@ namespace Tahi {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl postview;
-        
+
         /// <summary>
         /// prof control.
         /// </summary>
@@ -29,7 +40,7 @@ namespace Tahi {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl prof;
-        
+
         /// <summary>
         /// detail control.
         /// </summary>
@@ -38,5 +49,14 @@ namespace Tahi {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl detail;
+
+        /// <summary>
+        /// FollowerJobDetailsBodyItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal FollowerJobDetailsBodyItem;
     }
 }
